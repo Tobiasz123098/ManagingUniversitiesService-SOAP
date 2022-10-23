@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://codeusingjava.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  targetNamespace="http://codeusingjava.com">
+
+    <wsdl:types>
+        <xs:schema targetNamespace="http://codeusingjava.com">
+            <xs:element name="inputSOATest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="test" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="outputSOATest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="result" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getStudentById">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="id" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getStudentResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="id" />
+                        <xs:element type="xs:string" name="email" />
+                        <xs:element type="xs:string" name="name" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="createStudentRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="email" />
+                        <xs:element type="xs:string" name="name" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="createStudentResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="id" />
+                        <xs:element type="xs:string" name="email" />
+                        <xs:element type="xs:string" name="name" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="displayAllStudentsRequest">
+                <xs:complexType>
+                    <!--<xs:sequence>
+                        <xs:element type="xs:string" name="test" />
+                    </xs:sequence>-->
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="displayAllStudentsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="email" />
+                        <xs:element type="xs:string" name="name" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteStudentByIdRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="id" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteStudentByIdResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="id" />
+                        <xs:element type="xs:string" name="email" />
+                        <xs:element type="xs:string" name="name" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="updateStudentRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="id" />
+                        <xs:element type="xs:string" name="newEmail" />
+                        <xs:element type="xs:string" name="newName" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="updateStudentResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="id" />
+                        <xs:element type="xs:string" name="updatedEmail" />
+                        <xs:element type="xs:string" name="updatedName" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+
+
+    <wsdl:message name="inputSOATest">
+        <wsdl:part name="in" element="tns:inputSOATest" />
+    </wsdl:message>
+    <wsdl:message name="outputSOATest">
+        <wsdl:part name="out" element="tns:outputSOATest" />
+    </wsdl:message>
+    <wsdl:message name="getStudentById">
+        <wsdl:part name="in" element="tns:getStudentById" />
+    </wsdl:message>
+    <wsdl:message name="getStudentResponse">
+        <wsdl:part name="out" element="tns:getStudentResponse" />
+    </wsdl:message>
+    <wsdl:message name="createStudentRequest">
+        <wsdl:part name="in" element="tns:createStudentRequest" />
+    </wsdl:message>
+    <wsdl:message name="createStudentResponse">
+        <wsdl:part name="out" element="tns:createStudentResponse" />
+    </wsdl:message>
+    <wsdl:message name="displayAllStudentsRequest">
+        <wsdl:part name="in" element="tns:displayAllStudentsRequest" />
+    </wsdl:message>
+    <wsdl:message name="displayAllStudentsResponse">
+        <wsdl:part name="out" element="tns:displayAllStudentsResponse" />
+    </wsdl:message>
+    <wsdl:message name="deleteStudentByIdRequest">
+        <wsdl:part name="in" element="tns:deleteStudentByIdRequest" />
+    </wsdl:message>
+    <wsdl:message name="deleteStudentByIdResponse">
+        <wsdl:part name="out" element="tns:deleteStudentByIdResponse" />
+    </wsdl:message>
+    <wsdl:message name="updateStudentRequest">
+        <wsdl:part name="in" element="tns:updateStudentRequest" />
+    </wsdl:message>
+    <wsdl:message name="updateStudentResponse">
+        <wsdl:part name="out" element="tns:updateStudentResponse" />
+    </wsdl:message>
+
+
+    <wsdl:portType name="SOATestEndpoint">
+        <wsdl:operation name="SOATest">
+            <wsdl:input message="tns:inputSOATest" />
+            <wsdl:output message="tns:outputSOATest" />
+        </wsdl:operation>
+        <wsdl:operation name="SOAStudent">
+            <wsdl:input message="tns:getStudentById" />
+            <wsdl:output message="tns:getStudentResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="CreateStudent">
+            <wsdl:input message="tns:createStudentRequest" />
+            <wsdl:output message="tns:createStudentResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="DisplayStudents">
+            <wsdl:input message="tns:displayAllStudentsRequest" />
+            <wsdl:output message="tns:displayAllStudentsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="DeleteStudent">
+            <wsdl:input message="tns:deleteStudentByIdRequest" />
+            <wsdl:output message="tns:deleteStudentByIdResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="UpdateStudent">
+            <wsdl:input message="tns:updateStudentRequest" />
+            <wsdl:output message="tns:updateStudentResponse" />
+        </wsdl:operation>
+    </wsdl:portType>
+
+
+    <wsdl:binding name="SOATestBinding" type="tns:SOATestEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+        <wsdl:operation name="SOATest">
+            <soap:operation soapAction="http://codeusingjava.com"
+                            style="document" />
+            <wsdl:input>
+                <soap:body parts="in" use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SOAStudent">
+            <soap:operation soapAction="http://codeusingjava.com"
+                            style="document" />
+            <wsdl:input>
+                <soap:body parts="in" use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateStudent">
+            <soap:operation soapAction="http://codeusingjava.com"
+                            style="document" />
+            <wsdl:input>
+                <soap:body parts="in" use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DisplayStudents">
+            <soap:operation soapAction="http://codeusingjava.com"
+                            style="document" />
+            <wsdl:input>
+                <soap:body parts="in" use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeleteStudent">
+            <soap:operation soapAction="http://codeusingjava.com"
+                            style="document" />
+            <wsdl:input>
+                <soap:body parts="in" use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateStudent">
+            <soap:operation soapAction="http://codeusingjava.com"
+                            style="document" />
+            <wsdl:input>
+                <soap:body parts="in" use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="SOATestEndpointService">
+        <wsdl:port name="SOATestEndpoint" binding="tns:SOATestBinding">
+            <soap:address location="http://localhost:8080/codeusingjava/mywsdl" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
