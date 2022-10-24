@@ -7,6 +7,8 @@
 
     <wsdl:types>
         <xs:schema targetNamespace="http://codeusingjava.com">
+
+
             <xs:element name="inputSOATest">
                 <xs:complexType>
                     <xs:sequence>
@@ -30,11 +32,9 @@
             </xs:element>
             <xs:element name="getStudentResponse">
                 <xs:complexType>
-                    <xs:sequence>
-                        <xs:element type="xs:long" name="id" />
-                        <xs:element type="xs:string" name="email" />
-                        <xs:element type="xs:string" name="name" />
-                    </xs:sequence>
+                    <xs:complexContent>
+                        <xs:extension base="tns:Studentsddasdasd"/>
+                    </xs:complexContent>
                 </xs:complexType>
             </xs:element>
             <xs:element name="createStudentRequest">
@@ -64,8 +64,7 @@
             <xs:element name="displayAllStudentsResponse">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:string" name="email" />
-                        <xs:element type="xs:string" name="name" />
+                        <xs:element type="tns:Studentsddasdasd" name="studentList" minOccurs="0" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -103,6 +102,14 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+
+            <xs:complexType name="Studentsddasdasd">
+                <xs:sequence>
+                    <xs:element type="xs:long" name="id" />
+                    <xs:element type="xs:string" name="email" />
+                    <xs:element type="xs:string" name="name" />
+                </xs:sequence>
+            </xs:complexType>
         </xs:schema>
     </wsdl:types>
 

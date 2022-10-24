@@ -66,6 +66,10 @@ public class StudentService {
                 .map((student1 -> mapToStudent(student1)))
                 .collect(Collectors.toList());
 
+        Studentsddasdasd stu = new Studentsddasdasd();
+        stu.getEmail()
+
+        response.getEmail().add();
 
 
         return response;
@@ -75,7 +79,7 @@ public class StudentService {
     //understand 2 classes -> displayAllStudents and maptoStudent
     //modify wsdl to display all students (photo in the phone will help) -> maybe add thymeleaf (website tutorial)
 
-    private Student mapToStudent(Student student){
+    private Student mapToStudent(Student student) {
         Student studentEntity = new Student();
         studentEntity.setName(student.getName());
         studentEntity.setEmail(student.getEmail());
