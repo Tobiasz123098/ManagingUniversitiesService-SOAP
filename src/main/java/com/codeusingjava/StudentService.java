@@ -67,11 +67,11 @@ public class StudentService {
                 .collect(Collectors.toList());
 
         Studentsddasdasd stu = new Studentsddasdasd();
-        stu.getEmail()
+        stu.getEmail();
 
         response.getEmail().add();
 
-
+//checking git
         return response;
     }
 
@@ -117,6 +117,6 @@ public class StudentService {
 
         return response;
     }
-}//jfidsjfd
+}
 
 
