@@ -5,9 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.stream.Collectors;
 
-@Transactional
 @Service
 public class StudentService {
 
@@ -29,13 +27,13 @@ public class StudentService {
         return response;
     }
 
+    @Transactional
     public GetStudentResponse getStudent(GetStudentById req) {
 
         Student one = studentRepository.getOne(req.getId());
 
         ObjectFactory factory = new ObjectFactory();
         GetStudentResponse response = factory.createGetStudentResponse();
-        response.setId(one.getId());
         response.setEmail(one.getEmail());
         response.setName(one.getName());
         return response;
@@ -46,14 +44,16 @@ public class StudentService {
         ObjectFactory factory = new ObjectFactory();
         CreateStudentResponse response = factory.createCreateStudentResponse();
 
-        Student student = new Student();
-        student.setEmail(req.getEmail());
-        student.setName(req.getName());
-        studentRepository.save(student);
+        response.setResult("New student created");
+        try {
+            Student student = new Student();
+            student.setEmail(req.getEmail());
+            student.setName(req.getName());
+            studentRepository.save(student);
 
-        response.setId(student.getId());
-        response.setEmail(req.getEmail());
-        response.setName(req.getName());
+        } catch (Exception e) {
+            response.setResult("Fail: " + e.getMessage());
+        }
 
         return response;
     }
@@ -64,40 +64,31 @@ public class StudentService {
         List<Student> student = studentRepository.findAll();
         student.stream()
                 .map((student1 -> mapToStudent(student1)))
-                .collect(Collectors.toList());
+                .forEach(studentElement -> response.getStudentList().add(studentElement));
 
-        Studentsddasdasd stu = new Studentsddasdasd();
-        stu.getEmail();
-
-        response.getEmail().add();
-
-//checking git
         return response;
     }
 
-    //learn stream
-    //understand 2 classes -> displayAllStudents and maptoStudent
-    //modify wsdl to display all students (photo in the phone will help) -> maybe add thymeleaf (website tutorial)
-
-    private Student mapToStudent(Student student) {
-        Student studentEntity = new Student();
-        studentEntity.setName(student.getName());
-        studentEntity.setEmail(student.getEmail());
-        return studentEntity;
+    private StudentElement mapToStudent(Student student) {
+        StudentElement studentElement = new StudentElement();
+        studentElement.setId(student.getId());
+        studentElement.setName(student.getName());
+        studentElement.setEmail(student.getEmail());
+        return studentElement;
     }
 
     public DeleteStudentByIdResponse deleteStudentById(DeleteStudentByIdRequest req) {
         ObjectFactory factory = new ObjectFactory();
         DeleteStudentByIdResponse response = factory.createDeleteStudentByIdResponse();
 
-        Student one = studentRepository.getOne(req.getId());
-        studentRepository.delete(one);
-        Student student = new Student();
-        response.setId(req.getId());
-        response.setEmail(student.getEmail());
-        response.setName(student.getName());
+        response.setResult("Student deleted");
+        try {
+            Student one = studentRepository.getOne(req.getId());
+            studentRepository.delete(one);
+        } catch (Exception e) {
+            response.setResult("Fail: " + e.getMessage());
+        }
 
-        //add the proper response with email and name property
         return response;
     }
 
@@ -105,15 +96,21 @@ public class StudentService {
         ObjectFactory factory = new ObjectFactory();
         UpdateStudentResponse response = factory.createUpdateStudentResponse();
 
-        response.setId(req.getId());
-        response.setUpdatedEmail(req.getNewEmail());
-        response.setUpdatedName(req.getNewName());
+        response.setResult("Student edited");
+        try {
+            if (studentRepository.exists(req.getId())) {
+            Student student = new Student();
+            student.setId(req.getId());
+            student.setEmail(req.getEmail());
+            student.setName(req.getName());
+            studentRepository.saveAndFlush(student);
+            } else {
+                response.setResult("There is no student with this id");
+            }
 
-        Student student = new Student();
-        student.setId(response.getId());
-        student.setEmail(response.getUpdatedEmail());
-        student.setName(response.getUpdatedName());
-        studentRepository.saveAndFlush(student);
+        } catch (Exception e) {
+            response.setResult("Fail: " + e.getMessage());
+        }
 
         return response;
     }
