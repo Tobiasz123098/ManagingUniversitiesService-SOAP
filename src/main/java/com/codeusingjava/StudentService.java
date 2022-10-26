@@ -44,13 +44,13 @@ public class StudentService {
         ObjectFactory factory = new ObjectFactory();
         CreateStudentResponse response = factory.createCreateStudentResponse();
 
+        Student student = new Student();
+        student.setEmail(req.getEmail());
+        student.setName(req.getName());
+
         response.setResult("New student created");
         try {
-            Student student = new Student();
-            student.setEmail(req.getEmail());
-            student.setName(req.getName());
             studentRepository.save(student);
-
         } catch (Exception e) {
             response.setResult("Fail: " + e.getMessage());
         }
@@ -63,7 +63,7 @@ public class StudentService {
         DisplayAllStudentsResponse response = factory.createDisplayAllStudentsResponse();
         List<Student> student = studentRepository.findAll();
         student.stream()
-                .map((student1 -> mapToStudent(student1)))
+                .map((this::mapToStudent))
                 .forEach(studentElement -> response.getStudentList().add(studentElement));
 
         return response;
@@ -97,23 +97,17 @@ public class StudentService {
         UpdateStudentResponse response = factory.createUpdateStudentResponse();
 
         response.setResult("Student edited");
-        try {
-            if (studentRepository.exists(req.getId())) {
-            Student student = new Student();
-            student.setId(req.getId());
-            student.setEmail(req.getEmail());
-            student.setName(req.getName());
-            studentRepository.saveAndFlush(student);
-            } else {
-                response.setResult("There is no student with this id");
-            }
 
-        } catch (Exception e) {
-            response.setResult("Fail: " + e.getMessage());
+        Student one = studentRepository.findOne(req.getId());
+
+        if (one != null) {
+            one.setEmail(req.getEmail());
+            one.setName(req.getName());
+            studentRepository.saveAndFlush(one);
+        } else {
+            response.setResult("There is no students with this id");
         }
-
         return response;
     }
 }
 
-//test
