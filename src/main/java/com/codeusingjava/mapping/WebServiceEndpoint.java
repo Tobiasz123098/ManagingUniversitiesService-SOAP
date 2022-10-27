@@ -38,8 +38,8 @@ public class WebServiceEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "displayAllStudentsRequest")
     @ResponsePayload
-    public DisplayAllStudentsResponse displayAllStudents(@RequestPayload DisplayAllStudentsRequest req) {
-        return studentService.displayAllStudents(req);
+    public DisplayAllStudentsResponse displayAllStudents() {
+        return studentService.displayAllStudents();
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "deleteStudentByIdRequest")

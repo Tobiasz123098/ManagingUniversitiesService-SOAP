@@ -48,17 +48,17 @@ public class StudentService {
         student.setEmail(req.getEmail());
         student.setName(req.getName());
 
-        response.setResult("New student created");
+        response.setResult(Actions.CREATED.getActionDescription());
         try {
             studentRepository.save(student);
         } catch (Exception e) {
-            response.setResult("Fail: " + e.getMessage());
+            response.setResult(Actions.FAIL.getActionDescription() + e.getMessage());
         }
 
         return response;
     }
 
-    public DisplayAllStudentsResponse displayAllStudents(DisplayAllStudentsRequest req) {
+    public DisplayAllStudentsResponse displayAllStudents() {
         ObjectFactory factory = new ObjectFactory();
         DisplayAllStudentsResponse response = factory.createDisplayAllStudentsResponse();
         List<Student> student = studentRepository.findAll();
@@ -81,12 +81,12 @@ public class StudentService {
         ObjectFactory factory = new ObjectFactory();
         DeleteStudentByIdResponse response = factory.createDeleteStudentByIdResponse();
 
-        response.setResult("Student deleted");
+        response.setResult(Actions.DELETED.getActionDescription());
         try {
             Student one = studentRepository.getOne(req.getId());
             studentRepository.delete(one);
         } catch (Exception e) {
-            response.setResult("Fail: " + e.getMessage());
+            response.setResult(Actions.FAIL.getActionDescription() + e.getMessage());
         }
 
         return response;
@@ -96,7 +96,7 @@ public class StudentService {
         ObjectFactory factory = new ObjectFactory();
         UpdateStudentResponse response = factory.createUpdateStudentResponse();
 
-        response.setResult("Student edited");
+        response.setResult(Actions.EDITED.getActionDescription());
 
         Student one = studentRepository.findOne(req.getId());
 
@@ -105,7 +105,7 @@ public class StudentService {
             one.setName(req.getName());
             studentRepository.saveAndFlush(one);
         } else {
-            response.setResult("There is no students with this id");
+            response.setResult(Actions.NOT_FOUND.getActionDescription());
         }
         return response;
     }
