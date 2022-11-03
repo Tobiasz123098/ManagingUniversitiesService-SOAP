@@ -3,6 +3,7 @@ com/codeusingjava/SpringBootHelloWorldApplication.class
 com/codeusingjava/ObjectFactory.class
 com/codeusingjava/EmailAndName.class
 com/codeusingjava/Student.class
+com/codeusingjava/Uniwersytet.class
 com/codeusingjava/DeleteStudentByIdRequest.class
 com/codeusingjava/package-info.class
 com/codeusingjava/UpdateStudentResponse.class
@@ -11,6 +12,7 @@ com/codeusingjava/StudentElement.class
 com/codeusingjava/DisplayAllStudentsResponse.class
 com/codeusingjava/DisplayAllStudentsRequest.class
 com/codeusingjava/GetStudentById.class
+com/codeusingjava/Actions.class
 com/codeusingjava/ResultInformation.class
 com/codeusingjava/OutputSOATest.class
 com/codeusingjava/UpdateStudentRequest.class

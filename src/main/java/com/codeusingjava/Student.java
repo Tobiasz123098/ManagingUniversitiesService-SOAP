@@ -3,7 +3,7 @@ package com.codeusingjava;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "students")
+@Table(name = "student")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,6 +11,9 @@ public class Student {
 
     private String name;
     private String email;
+    //List<Osiagniecia> list_osiagniecia;
+    //List<Stypendium> list_stypendium;
+    //Index index;
 
     public Long getId() {
         return id;
