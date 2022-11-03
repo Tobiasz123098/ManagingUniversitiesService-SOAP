@@ -10,8 +10,8 @@ public class Osiagniecia {
     private Long id;
 
     //private String nazwa;
-    //private Rodzaj (enum for example)
-    //think about it
+    //Enum RodzajOsiagniecia;
+    //private String opis;
 
 
     public Long getId() {

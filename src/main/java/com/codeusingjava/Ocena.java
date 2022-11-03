@@ -9,7 +9,10 @@ public class Ocena {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //think about it
+    //private Przedmiot przedmiot;
+    //private Prowadzacy prowadzacy;
+    //private int ocena;
+    //private String description;
 
     public Long getId() {
         return id;
