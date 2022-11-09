@@ -14,8 +14,6 @@ public class Uniwersytet {
     private List<Student> student;
 
     @OneToMany(mappedBy = "uniwersytet")
-    private List<Dziekan> dziekan;
-    @OneToMany(mappedBy = "uniwersytet")
     private List<Sala> sal;
     @OneToMany(mappedBy = "uniwersytet")
     private List<Prowadzacy> prowadzacy;
@@ -49,11 +47,4 @@ public class Uniwersytet {
         this.prowadzacy = prowadzacy;
     }
 
-    public List<Dziekan> getDziekan() {
-        return dziekan;
-    }
-
-    public void setDziekan(List<Dziekan> dziekan) {
-        this.dziekan = dziekan;
-    }
 }
