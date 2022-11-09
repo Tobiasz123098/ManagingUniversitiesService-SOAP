@@ -35,7 +35,7 @@ public class StudentService {
         ObjectFactory factory = new ObjectFactory();
         GetStudentResponse response = factory.createGetStudentResponse();
         response.setEmail(one.getEmail());
-        response.setName(one.getName());
+        response.setName(one.getFirstName());
         return response;
     }
 
@@ -46,7 +46,7 @@ public class StudentService {
 
         Student student = new Student();
         student.setEmail(req.getEmail());
-        student.setName(req.getName());
+        student.setFirstName(req.getName());
 
         response.setResult(Actions.CREATED.getActionDescription());
         try {
@@ -72,7 +72,7 @@ public class StudentService {
     private StudentElement mapToStudent(Student student) {
         StudentElement studentElement = new StudentElement();
         studentElement.setId(student.getId());
-        studentElement.setName(student.getName());
+        studentElement.setName(student.getFirstName());
         studentElement.setEmail(student.getEmail());
         return studentElement;
     }
@@ -102,7 +102,7 @@ public class StudentService {
 
         if (one != null) {
             one.setEmail(req.getEmail());
-            one.setName(req.getName());
+            one.setFirstName(req.getName());
             studentRepository.saveAndFlush(one);
         } else {
             response.setResult(Actions.NOT_FOUND.getActionDescription());

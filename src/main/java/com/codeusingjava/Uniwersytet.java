@@ -10,15 +10,50 @@ public class Uniwersytet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private List<Student> list_student;
-    //private List<Sal> list_sal;
-    //private List<Prowadzacy> list_prowadzacy;
+    @OneToMany(mappedBy = "uniwersytet")
+    private List<Student> student;
+
+    @OneToMany(mappedBy = "uniwersytet")
+    private List<Dziekan> dziekan;
+    @OneToMany(mappedBy = "uniwersytet")
+    private List<Sala> sal;
+    @OneToMany(mappedBy = "uniwersytet")
+    private List<Prowadzacy> prowadzacy;
 
 
     public Long getId() {
         return id;
     }
 
-    //add getters, setters and other methods
+    public List<Student> getStudent() {
+        return student;
+    }
 
+    public void setStudent(List<Student> student) {
+        this.student = student;
+    }
+
+    public List<Sala> getSal() {
+        return sal;
+    }
+
+    public void setSal(List<Sala> sal) {
+        this.sal = sal;
+    }
+
+    public List<Prowadzacy> getProwadzacy() {
+        return prowadzacy;
+    }
+
+    public void setProwadzacy(List<Prowadzacy> prowadzacy) {
+        this.prowadzacy = prowadzacy;
+    }
+
+    public List<Dziekan> getDziekan() {
+        return dziekan;
+    }
+
+    public void setDziekan(List<Dziekan> dziekan) {
+        this.dziekan = dziekan;
+    }
 }

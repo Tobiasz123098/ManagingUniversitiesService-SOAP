@@ -9,13 +9,28 @@ public class Stypendium {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    Enum RodzajStypednium;
+    @ManyToOne
+    @JoinColumn(name = "student_id", referencedColumnName = "id")
+    private Student student;
+    private Enum RodzajStypednium;
 
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
     public Long getId() {
         return id;
     }
 
-    //add getters, setters and other methods
+    public Enum getRodzajStypednium() {
+        return RodzajStypednium;
+    }
 
+    public void setRodzajStypednium(Enum rodzajStypednium) {
+        RodzajStypednium = rodzajStypednium;
+    }
 }

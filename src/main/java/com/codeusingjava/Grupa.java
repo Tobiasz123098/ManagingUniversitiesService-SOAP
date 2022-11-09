@@ -10,7 +10,8 @@ public class Grupa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    List<Index> list_index;
+    @OneToMany(mappedBy = "grupa")
+    List<Index> index;
 
     public Long getId() {
         return id;
