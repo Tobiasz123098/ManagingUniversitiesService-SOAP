@@ -1,8 +1,13 @@
 package com.codeusingjava;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "prowadzacy")
 public class Prowadzacy {
     @Id
@@ -19,50 +24,6 @@ public class Prowadzacy {
     private String firstName;
     private String lastName;
     private String email;
-
-    public Przedmiot getPrzedmiot() {
-        return przedmiot;
-    }
-
-    public void setPrzedmiot(Przedmiot przedmiot) {
-        this.przedmiot = przedmiot;
-    }
-
     //private enum Tytul;
 
-    public Uniwersytet getUniwersytet() {
-        return uniwersytet;
-    }
-
-    public void setUniwersytet(Uniwersytet uniwersytet) {
-        this.uniwersytet = uniwersytet;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

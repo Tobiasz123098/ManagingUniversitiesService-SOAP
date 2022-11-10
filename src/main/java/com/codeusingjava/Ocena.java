@@ -1,8 +1,13 @@
 package com.codeusingjava;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "ocena")
 public class Ocena {
     @Id
@@ -10,7 +15,7 @@ public class Ocena {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "index_id")
+    @JoinColumn(name = "index_id", referencedColumnName = "id")
     private Index index;
     @ManyToOne
     @JoinColumn(name = "przedmiot_id", referencedColumnName = "id")
@@ -22,47 +27,4 @@ public class Ocena {
     private int ocena;
     private String description;
 
-    public Index getIndex() {
-        return index;
-    }
-
-    public void setIndex(Index index) {
-        this.index = index;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public Przedmiot getPrzedmiot() {
-        return przedmiot;
-    }
-
-    public void setPrzedmiot(Przedmiot przedmiot) {
-        this.przedmiot = przedmiot;
-    }
-
-    public Prowadzacy getProwadzacy() {
-        return prowadzacy;
-    }
-
-    public void setProwadzacy(Prowadzacy prowadzacy) {
-        this.prowadzacy = prowadzacy;
-    }
-
-    public int getOcena() {
-        return ocena;
-    }
-
-    public void setOcena(int ocena) {
-        this.ocena = ocena;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

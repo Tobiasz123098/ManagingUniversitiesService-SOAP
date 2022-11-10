@@ -1,9 +1,14 @@
 package com.codeusingjava;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "grupa")
 public class Grupa {
     @Id
@@ -21,23 +26,4 @@ public class Grupa {
     @OneToMany(mappedBy = "grupa")
     List<Index> index;
 
-    public Long getId() {
-        return id;
-    }
-
-    public List<Przedmiot> getPrzedmiot() {
-        return przedmiot;
-    }
-
-    public void setPrzedmiot(List<Przedmiot> przedmiot) {
-        this.przedmiot = przedmiot;
-    }
-
-    public List<Index> getIndex() {
-        return index;
-    }
-
-    public void setIndex(List<Index> index) {
-        this.index = index;
-    }
 }

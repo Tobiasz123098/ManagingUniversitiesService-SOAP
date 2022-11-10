@@ -1,8 +1,13 @@
 package com.codeusingjava;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "sale")
 public class Sala {
     @Id
@@ -14,24 +19,4 @@ public class Sala {
     private Uniwersytet uniwersytet;
     private int numerSali;
 
-    public Uniwersytet getUniwersytet() {
-        return uniwersytet;
-    }
-
-    public void setUniwersytet(Uniwersytet uniwersytet) {
-        this.uniwersytet = uniwersytet;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public int getNumerSali() {
-        return numerSali;
-    }
-
-    public void setNumerSali(int numerSali) {
-        this.numerSali = numerSali;
-    }
 }

@@ -1,9 +1,14 @@
 package com.codeusingjava;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "przedmiot")
 public class Przedmiot {
     @Id
@@ -22,40 +27,4 @@ public class Przedmiot {
     @OneToMany(mappedBy = "przedmiot")
     private List<Ocena> ocena;
 
-    public Prowadzacy getProwadzacy() {
-        return prowadzacy;
-    }
-
-    public void setProwadzacy(Prowadzacy prowadzacy) {
-        this.prowadzacy = prowadzacy;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getNazwa() {
-        return nazwa;
-    }
-
-    public void setNazwa(String nazwa) {
-        this.nazwa = nazwa;
-    }
-
-    public List<Ocena> getOcena() {
-        return ocena;
-    }
-
-    public void setOcena(List<Ocena> ocena) {
-        this.ocena = ocena;
-    }
-
-    public List<Grupa> getGrupa() {
-        return grupa;
-    }
-
-    public void setGrupa(List<Grupa> grupa) {
-        this.grupa = grupa;
-    }
 }
