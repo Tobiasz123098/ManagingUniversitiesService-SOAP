@@ -10,15 +10,23 @@ public class Index {
     @ManyToOne
     @JoinColumn(name = "grupa_id", referencedColumnName = "id")
     private Grupa grupa;
+
+    @OneToOne
+    @JoinColumn(name = "student_id", referencedColumnName = "id")
+    private Student student;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 //    private Enum KierunekStudiow;
 
+    public Student getStudent() {
+        return student;
+    }
 
-    @OneToMany(mappedBy = "index")
-    private List<Przedmiot> przedmiot;
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
     public Grupa getGrupa() {
         return grupa;

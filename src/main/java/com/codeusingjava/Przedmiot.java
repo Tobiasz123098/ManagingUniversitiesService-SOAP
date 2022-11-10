@@ -12,23 +12,15 @@ public class Przedmiot {
 
     private String nazwa;
 
-    @ManyToOne
-    @JoinColumn(name = "index_id", referencedColumnName = "id")
-    private Index index;
+    @ManyToMany(mappedBy = "przedmiot")
+    private List<Grupa> grupa;
+
     @OneToOne
     @JoinColumn(name = "prowadzacy_id", referencedColumnName = "id")
     private Prowadzacy prowadzacy;
 
     @OneToMany(mappedBy = "przedmiot")
     private List<Ocena> ocena;
-
-    public Index getIndex() {
-        return index;
-    }
-
-    public void setIndex(Index index) {
-        this.index = index;
-    }
 
     public Prowadzacy getProwadzacy() {
         return prowadzacy;
@@ -43,6 +35,27 @@ public class Przedmiot {
         return id;
     }
 
-    //add getters, setters and other methods
+    public String getNazwa() {
+        return nazwa;
+    }
 
+    public void setNazwa(String nazwa) {
+        this.nazwa = nazwa;
+    }
+
+    public List<Ocena> getOcena() {
+        return ocena;
+    }
+
+    public void setOcena(List<Ocena> ocena) {
+        this.ocena = ocena;
+    }
+
+    public List<Grupa> getGrupa() {
+        return grupa;
+    }
+
+    public void setGrupa(List<Grupa> grupa) {
+        this.grupa = grupa;
+    }
 }

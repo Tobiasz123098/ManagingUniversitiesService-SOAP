@@ -1,6 +1,7 @@
 package com.codeusingjava;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -10,8 +11,8 @@ public class PlanZajec {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long odCzas;
-    private Long doCzas;
+    private LocalDate odCzas;
+    private LocalDate doCzas;
     @OneToMany(mappedBy = "planZajec")
     List<Dzien> dzien;
 
@@ -20,19 +21,19 @@ public class PlanZajec {
         return id;
     }
 
-    public Long getOdCzas() {
+    public LocalDate getOdCzas() {
         return odCzas;
     }
 
-    public void setOdCzas(Long odCzas) {
+    public void setOdCzas(LocalDate odCzas) {
         this.odCzas = odCzas;
     }
 
-    public Long getDoCzas() {
+    public LocalDate getDoCzas() {
         return doCzas;
     }
 
-    public void setDoCzas(Long doCzas) {
+    public void setDoCzas(LocalDate doCzas) {
         this.doCzas = doCzas;
     }
 

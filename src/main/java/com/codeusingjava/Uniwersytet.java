@@ -46,5 +46,4 @@ public class Uniwersytet {
     public void setProwadzacy(List<Prowadzacy> prowadzacy) {
         this.prowadzacy = prowadzacy;
     }
-
 }

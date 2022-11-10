@@ -10,6 +10,9 @@ public class Ocena {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "index_id")
+    private Index index;
+    @ManyToOne
     @JoinColumn(name = "przedmiot_id", referencedColumnName = "id")
     private Przedmiot przedmiot;
 
@@ -18,6 +21,14 @@ public class Ocena {
     private Prowadzacy prowadzacy;
     private int ocena;
     private String description;
+
+    public Index getIndex() {
+        return index;
+    }
+
+    public void setIndex(Index index) {
+        this.index = index;
+    }
 
     public Long getId() {
         return id;

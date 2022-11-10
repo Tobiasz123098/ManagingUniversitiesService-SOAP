@@ -1,6 +1,10 @@
 package com.codeusingjava;
 
 import javax.persistence.*;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "dzien")
@@ -12,12 +16,18 @@ public class Dzien {
     @ManyToOne
     @JoinColumn(name = "plan_zajec_id", referencedColumnName = "id")
     private PlanZajec planZajec;
-    private Long data;
+
+    // https://chrysanthium.com/date-time-hibernate-postgres
+    private LocalDate odKiedySaZajecia; // 2022-03-13 DATE TIMESTAMP
+    private LocalDate doKiedySaZajecia; // ***dniowo nie godzinowo***
+//    private LocalTime odKtorejGodziny; // 14:38:01 INTERVAL
+//    private Duration ileCzasuTrwajaZajecia; // 00:15:00 INTERVAL
+//    private LocalDateTime fdsdsadsa; // 2022-03-13 14:34:15 TIMESTAMP
+
+
     @ManyToOne
     @JoinColumn(name = "przedmiot_id", referencedColumnName = "id")
     private Przedmiot przedmiot;
-    private Long odCzas;
-    private Long doCzas;
 
     public PlanZajec getPlanZajec() {
         return planZajec;
@@ -32,14 +42,6 @@ public class Dzien {
         return id;
     }
 
-    public Long getData() {
-        return data;
-    }
-
-    public void setData(Long data) {
-        this.data = data;
-    }
-
     public Przedmiot getPrzedmiot() {
         return przedmiot;
     }
@@ -48,19 +50,19 @@ public class Dzien {
         this.przedmiot = przedmiot;
     }
 
-    public Long getOdCzas() {
-        return odCzas;
+    public LocalDate getOdKiedySaZajecia() {
+        return odKiedySaZajecia;
     }
 
-    public void setOdCzas(Long odCzas) {
-        this.odCzas = odCzas;
+    public void setOdKiedySaZajecia(LocalDate odKiedySaZajecia) {
+        this.odKiedySaZajecia = odKiedySaZajecia;
     }
 
-    public Long getDoCzas() {
-        return doCzas;
+    public LocalDate getDoKiedySaZajecia() {
+        return doKiedySaZajecia;
     }
 
-    public void setDoCzas(Long doCzas) {
-        this.doCzas = doCzas;
+    public void setDoKiedySaZajecia(LocalDate doKiedySaZajecia) {
+        this.doKiedySaZajecia = doKiedySaZajecia;
     }
 }
