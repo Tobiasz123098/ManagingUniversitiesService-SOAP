@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "sale")
+@Table(name = "sala")
 public class Sala {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +17,7 @@ public class Sala {
     @ManyToOne
     @JoinColumn(name = "uniwersytet_id", referencedColumnName = "id")
     private Uniwersytet uniwersytet;
+
     private int numerSali;
 
 }

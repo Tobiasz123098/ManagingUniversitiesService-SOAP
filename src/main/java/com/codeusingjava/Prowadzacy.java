@@ -18,12 +18,18 @@ public class Prowadzacy {
     @JoinColumn(name = "uniwersytet_id", referencedColumnName = "id")
     private Uniwersytet uniwersytet;
 
-    @OneToOne
+/*    @OneToOne
     @JoinColumn(name = "przedmiot_id", referencedColumnName = "id")
-    private Przedmiot przedmiot;
-    private String firstName;
-    private String lastName;
+    private Przedmiot przedmiot;*/
+
+    private String imie;
+
+    private String nazwisko;
+
     private String email;
-    //private enum Tytul;
+
+    private enum Tytul{
+
+    }
 
 }

@@ -13,14 +13,14 @@ import java.util.List;
 public class Uniwersytet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //dodać parametr generator do adnotacji @GeneratedValue i całą adnotację @SequenceGenerator, gdzie schema będzie default
     private Long id;
 
     @OneToMany(mappedBy = "uniwersytet")
-    private List<Student> student;
+    private List<Student> studenci;
 
     @OneToMany(mappedBy = "uniwersytet")
-    private List<Sala> sal;
+    private List<Sala> sale;
 
     @OneToMany(mappedBy = "uniwersytet")
     private List<Prowadzacy> prowadzacy;

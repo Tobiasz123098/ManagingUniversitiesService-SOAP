@@ -18,6 +18,7 @@ public class Stypendium {
     @ManyToOne
     @JoinColumn(name = "student_id", referencedColumnName = "id")
     private Student student;
-    private Enum RodzajStypednium;
+
+//    private Enum RodzajStypendium; //Tutaj trzeba stworzyc enuma
 
 }

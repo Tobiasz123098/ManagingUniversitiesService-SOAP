@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Getter
@@ -19,17 +20,22 @@ public class Dzien {
     @JoinColumn(name = "plan_zajec_id", referencedColumnName = "id")
     private PlanZajec planZajec;
 
-    private LocalDate odKiedySaZajecia; // 2022-03-13 DATE TIMESTAMP
-    private LocalDate doKiedySaZajecia; // ***dniowo nie godzinowo***
+    private LocalDate dataDnia;
 
-// https://chrysanthium.com/date-time-hibernate-postgres
-//    private LocalTime odKtorejGodziny; // 14:38:01 INTERVAL
-//    private Duration ileCzasuTrwajaZajecia; // 00:15:00 INTERVAL
-//    private LocalDateTime fdsdsadsa; // 2022-03-13 14:34:15 TIMESTAMP
+    private LocalTime odKiedyZajecia; // 2022-03-13 DATE TIMESTAMP
 
+    private LocalTime doKiedyZajecia; // ***dniowo nie godzinowo***
 
     @ManyToOne
     @JoinColumn(name = "przedmiot_id", referencedColumnName = "id")
     private Przedmiot przedmiot;
 
 }
+
+
+
+
+// https://chrysanthium.com/date-time-hibernate-postgres
+//    private LocalTime odKtorejGodziny; // 14:38:01 INTERVAL
+//    private Duration ileCzasuTrwajaZajecia; // 00:15:00 INTERVAL
+//    private LocalDateTime fdsdsadsa; // 2022-03-13 14:34:15 TIMESTAMP

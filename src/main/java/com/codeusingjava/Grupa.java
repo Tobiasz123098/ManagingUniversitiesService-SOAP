@@ -15,15 +15,17 @@ public class Grupa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToMany
+    //PlanZajec
+
+/*    @ManyToMany
     @JoinTable(
             name = "ilosc_przedmiotow",
             joinColumns = @JoinColumn(name = "grupa_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "przedmiot_id", referencedColumnName = "id")
     )
-    List<Przedmiot> przedmiot;
+    List<Przedmiot> przedmioty; */
 
     @OneToMany(mappedBy = "grupa")
-    List<Index> index;
+    List<Index> indexy;
 
 }

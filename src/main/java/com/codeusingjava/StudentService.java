@@ -35,7 +35,7 @@ public class StudentService {
         ObjectFactory factory = new ObjectFactory();
         GetStudentResponse response = factory.createGetStudentResponse();
         response.setEmail(one.getEmail());
-        response.setName(one.getFirstName());
+        response.setName(one.getImie());
         return response;
     }
 
@@ -46,13 +46,13 @@ public class StudentService {
 
         Student student = new Student();
         student.setEmail(req.getEmail());
-        student.setFirstName(req.getName());
+        student.setImie(req.getName());
 
-        response.setResult(Actions.CREATED.getActionDescription());
+        response.setResult(Akcje.CREATED.getOpis());
         try {
             studentRepository.save(student);
         } catch (Exception e) {
-            response.setResult(Actions.FAIL.getActionDescription() + e.getMessage());
+            response.setResult(Akcje.FAIL.getOpis() + e.getMessage());
         }
 
         return response;
@@ -72,7 +72,7 @@ public class StudentService {
     private StudentElement mapToStudent(Student student) {
         StudentElement studentElement = new StudentElement();
         studentElement.setId(student.getId());
-        studentElement.setName(student.getFirstName());
+        studentElement.setName(student.getImie());
         studentElement.setEmail(student.getEmail());
         return studentElement;
     }
@@ -81,12 +81,12 @@ public class StudentService {
         ObjectFactory factory = new ObjectFactory();
         DeleteStudentByIdResponse response = factory.createDeleteStudentByIdResponse();
 
-        response.setResult(Actions.DELETED.getActionDescription());
+        response.setResult(Akcje.DELETED.getOpis());
         try {
             Student one = studentRepository.getOne(req.getId());
             studentRepository.delete(one);
         } catch (Exception e) {
-            response.setResult(Actions.FAIL.getActionDescription() + e.getMessage());
+            response.setResult(Akcje.FAIL.getOpis() + e.getMessage());
         }
 
         return response;
@@ -96,16 +96,16 @@ public class StudentService {
         ObjectFactory factory = new ObjectFactory();
         UpdateStudentResponse response = factory.createUpdateStudentResponse();
 
-        response.setResult(Actions.EDITED.getActionDescription());
+        response.setResult(Akcje.EDITED.getOpis());
 
         Student one = studentRepository.findOne(req.getId());
 
         if (one != null) {
             one.setEmail(req.getEmail());
-            one.setFirstName(req.getName());
+            one.setImie(req.getName());
             studentRepository.saveAndFlush(one);
         } else {
-            response.setResult(Actions.NOT_FOUND.getActionDescription());
+            response.setResult(Akcje.NOT_FOUND.getOpis());
         }
         return response;
     }

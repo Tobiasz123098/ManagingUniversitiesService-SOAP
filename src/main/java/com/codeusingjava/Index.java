@@ -11,6 +11,9 @@ import javax.persistence.*;
 @Table(name = "index")
 public class Index {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @ManyToOne
     @JoinColumn(name = "grupa_id", referencedColumnName = "id")
     private Grupa grupa;
@@ -19,9 +22,6 @@ public class Index {
     @JoinColumn(name = "student_id", referencedColumnName = "id")
     private Student student;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 //    private Enum KierunekStudiow;
 
 }

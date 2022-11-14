@@ -17,6 +17,7 @@ public class Ocena {
     @ManyToOne
     @JoinColumn(name = "index_id", referencedColumnName = "id")
     private Index index;
+
     @ManyToOne
     @JoinColumn(name = "przedmiot_id", referencedColumnName = "id")
     private Przedmiot przedmiot;
@@ -24,7 +25,9 @@ public class Ocena {
     @ManyToOne
     @JoinColumn(name = "prowadzacy_id", referencedColumnName = "id")
     private Prowadzacy prowadzacy;
+
     private int ocena;
-    private String description;
+
+    private String opis;
 
 }

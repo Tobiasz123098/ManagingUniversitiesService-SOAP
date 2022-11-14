@@ -19,12 +19,15 @@ public class Student {
     @JoinColumn(name = "uniwersytet_id", referencedColumnName = "id")
     private Uniwersytet uniwersytet;
 
-    private String firstName;
-    private String lastName;
+    private String imie;
+
+    private String nazwisko;
+
     private String email;
 
     @OneToMany(mappedBy = "student")
-    List<Osiagniecia> osiagniecia;
+    List<Osiagniecie> osiagniecia;
+
     @OneToMany(mappedBy = "student")
     List<Stypendium> stypendia;
 

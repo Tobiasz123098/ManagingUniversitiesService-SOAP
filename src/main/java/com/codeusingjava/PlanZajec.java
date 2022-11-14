@@ -10,15 +10,17 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name = "planZajec")
+@Table(name = "plan_zajec")
 public class PlanZajec {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDate odCzas;
-    private LocalDate doCzas;
+    private LocalDate czasOd;
+
+    private LocalDate czasDo;
+
     @OneToMany(mappedBy = "planZajec")
-    List<Dzien> dzien;
+    List<Dzien> dni;
 
 }

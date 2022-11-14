@@ -11,3 +11,6 @@ create table [if not exists] osiagniecia {
     nazwa text not null,
     opis text
 };
+
+select nspname
+from pg_catalog.pg_namespace; --to show list of all schemas

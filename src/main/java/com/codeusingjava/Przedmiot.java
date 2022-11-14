@@ -17,14 +17,14 @@ public class Przedmiot {
 
     private String nazwa;
 
-    @ManyToMany(mappedBy = "przedmiot")
-    private List<Grupa> grupa;
+/*    @ManyToMany(mappedBy = "przedmiot")
+    private List<Grupa> grupy;  */
 
     @OneToOne
     @JoinColumn(name = "prowadzacy_id", referencedColumnName = "id")
     private Prowadzacy prowadzacy;
 
     @OneToMany(mappedBy = "przedmiot")
-    private List<Ocena> ocena;
+    private List<Ocena> oceny;
 
 }
