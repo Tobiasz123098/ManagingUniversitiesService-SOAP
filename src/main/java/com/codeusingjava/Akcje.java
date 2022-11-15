@@ -2,6 +2,7 @@ package com.codeusingjava;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.ToString;
 
 @AllArgsConstructor
 public enum Akcje {
@@ -14,8 +15,4 @@ public enum Akcje {
     @Getter
     private final String opis;
 
-    @Override
-    public String toString() {
-        return opis;
-    }
 }

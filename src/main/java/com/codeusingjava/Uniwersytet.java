@@ -13,7 +13,15 @@ import java.util.List;
 public class Uniwersytet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //dodać parametr generator do adnotacji @GeneratedValue i całą adnotację @SequenceGenerator, gdzie schema będzie default
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "uniwersytet_id_gen"
+    )
+    @SequenceGenerator(
+            name = "uniwersytet_id_gen",
+            sequenceName = "uniwersytet_id_seq",
+            allocationSize = 1
+    )
     private Long id;
 
     @OneToMany(mappedBy = "uniwersytet")
@@ -24,5 +32,5 @@ public class Uniwersytet {
 
     @OneToMany(mappedBy = "uniwersytet")
     private List<Prowadzacy> prowadzacy;
-
+//ewentualnie usunąć listę prowadzących
 }

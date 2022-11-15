@@ -13,7 +13,15 @@ import java.time.LocalTime;
 @Table(name = "dzien")
 public class Dzien {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "dzien_id_gen"
+    )
+    @SequenceGenerator(
+            name = "dzien_id_gen",
+            sequenceName = "dzien_id_seq",
+            allocationSize = 1
+    )
     private Long id;
 
     @ManyToOne
@@ -29,7 +37,6 @@ public class Dzien {
     @ManyToOne
     @JoinColumn(name = "przedmiot_id", referencedColumnName = "id")
     private Przedmiot przedmiot;
-
 }
 
 

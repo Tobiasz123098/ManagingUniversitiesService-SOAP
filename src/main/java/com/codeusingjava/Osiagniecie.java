@@ -11,7 +11,15 @@ import javax.persistence.*;
 @Table(name = "osiagniecie")
 public class Osiagniecie {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "osiagniecie_id_gen"
+    )
+    @SequenceGenerator(
+            name = "osiagniecie_id_gen",
+            sequenceName = "osiagniecie_id_seq",
+            allocationSize = 1
+    )
     private Long id;
 
     @ManyToOne

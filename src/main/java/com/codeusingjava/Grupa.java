@@ -12,10 +12,20 @@ import java.util.List;
 @Table(name = "grupa")
 public class Grupa {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "grupa_id_gen"
+    )
+    @SequenceGenerator(
+            name = "grupa_id_gen",
+            sequenceName = "grupa_id_seq",
+            allocationSize = 1
+    )
     private Long id;
 
-    //PlanZajec
+    @OneToOne
+    @JoinColumn(name = "plan_zajec_id", referencedColumnName = "id")
+    private PlanZajec planZajec;
 
 /*    @ManyToMany
     @JoinTable(

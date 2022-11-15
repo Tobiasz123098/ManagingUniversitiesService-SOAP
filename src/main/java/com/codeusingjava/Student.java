@@ -12,7 +12,15 @@ import java.util.List;
 @Table(name = "student")
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_id_gen"
+    )
+    @SequenceGenerator(
+            name = "student_id_gen",
+            sequenceName = "student_id_seq",
+            allocationSize = 1
+    )
     private Long id;
 
     @ManyToOne

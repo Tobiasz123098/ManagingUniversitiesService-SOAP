@@ -12,7 +12,15 @@ import javax.persistence.*;
 public class Stypendium {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "stypendium_id_gen"
+    )
+    @SequenceGenerator(
+            name = "stypendium_id_gen",
+            sequenceName = "stypendium_id_seq",
+            allocationSize = 1
+    )
     private Long id;
 
     @ManyToOne
