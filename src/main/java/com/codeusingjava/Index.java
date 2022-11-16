@@ -34,6 +34,8 @@ public class Index {
     @OneToMany(mappedBy = "index")
     private List<Ocena> oceny;
 
-//    private Enum KierunekStudiow;
+    private enum KierunekStudiow {
+
+    }
 
 }

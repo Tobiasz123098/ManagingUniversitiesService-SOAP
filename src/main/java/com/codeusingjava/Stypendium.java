@@ -27,6 +27,8 @@ public class Stypendium {
     @JoinColumn(name = "student_id", referencedColumnName = "id")
     private Student student;
 
-//    private Enum RodzajStypendium; //Tutaj trzeba stworzyc enuma
+    private enum RodzajStypendium {
+
+    }
 
 }

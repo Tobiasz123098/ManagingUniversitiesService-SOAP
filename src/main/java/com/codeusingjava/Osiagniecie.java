@@ -30,7 +30,7 @@ public class Osiagniecie {
 
     private String opis;
 
-    private enum RodzajOsiagniecia{
+    private enum RodzajOsiagniecia {
 
     }
 }
