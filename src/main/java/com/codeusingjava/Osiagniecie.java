@@ -26,11 +26,9 @@ public class Osiagniecie {
     @JoinColumn(name = "student_id", referencedColumnName = "id")
     private Student student;
 
-    private String nazwa;
-
     private String opis;
 
-    private enum RodzajOsiagniecia {
+    @Enumerated(value = EnumType.STRING)
+    private RodzajOsiagniecia rodzajOsiagniecia;
 
-    }
 }

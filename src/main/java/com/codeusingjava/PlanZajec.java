@@ -24,9 +24,9 @@ public class PlanZajec {
     )
     private Long id;
 
-    private LocalDate czasOd;
+    private LocalDate dzienOd;
 
-    private LocalDate czasDo;
+    private LocalDate dzienDo;
 
     @OneToMany(mappedBy = "planZajec")
     List<Dzien> dni;

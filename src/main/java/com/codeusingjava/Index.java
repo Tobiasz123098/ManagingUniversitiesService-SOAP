@@ -34,8 +34,7 @@ public class Index {
     @OneToMany(mappedBy = "index")
     private List<Ocena> oceny;
 
-    private enum KierunekStudiow {
-
-    }
+    @Enumerated(value = EnumType.STRING)
+    private KierunekStudiow kierunekStudiow;
 
 }

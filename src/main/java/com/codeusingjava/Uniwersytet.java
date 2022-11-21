@@ -32,5 +32,6 @@ public class Uniwersytet {
 
     @OneToMany(mappedBy = "uniwersytet")
     private List<Prowadzacy> prowadzacy;
-//ewentualnie usunąć listę prowadzących
+
+    //ewentualnie usunąć listę prowadzących
 }

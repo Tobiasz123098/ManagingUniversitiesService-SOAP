@@ -41,7 +41,6 @@ public class Dzien {
 
 
 
-
 // https://chrysanthium.com/date-time-hibernate-postgres
 //    private LocalTime odKtorejGodziny; // 14:38:01 INTERVAL
 //    private Duration ileCzasuTrwajaZajecia; // 00:15:00 INTERVAL

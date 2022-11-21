@@ -1,5 +1,12 @@
 package com.codeusingjava;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public enum Tytul {
-    PROFESOR, DOKTOR;
+    PROFESOR,
+    PROFESOR_HABILITOWANY,
+    DOKTOR,
+    MAGISTER;
+
 }

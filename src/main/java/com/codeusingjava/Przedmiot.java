@@ -28,6 +28,8 @@ public class Przedmiot {
     @JoinColumn(name = "prowadzacy_id", referencedColumnName = "id")
     private Prowadzacy prowadzacy;
 
+}
+
 /*
     @OneToMany(mappedBy = "przedmiot")
     private List<Ocena> oceny;
@@ -35,4 +37,3 @@ public class Przedmiot {
    @ManyToMany(mappedBy = "przedmiot")
     private List<Grupa> grupy;
 */
-}

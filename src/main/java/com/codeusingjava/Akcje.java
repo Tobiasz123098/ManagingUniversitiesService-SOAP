@@ -2,7 +2,6 @@ package com.codeusingjava;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
 
 @AllArgsConstructor
 public enum Akcje {

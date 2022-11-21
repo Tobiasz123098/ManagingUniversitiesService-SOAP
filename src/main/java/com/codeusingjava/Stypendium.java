@@ -27,8 +27,7 @@ public class Stypendium {
     @JoinColumn(name = "student_id", referencedColumnName = "id")
     private Student student;
 
-    private enum RodzajStypendium {
-
-    }
+    @Enumerated(value = EnumType.STRING)
+    private RodzajStypendium rodzajStypendium;
 
 }
