@@ -109,5 +109,17 @@ public class StudentService {
         }
         return response;
     }
+
+   /* numerIndexu
+    private void dodajStudentaDoUni() {
+        Student student = new Student();
+        Index index = new Index();
+        index.setNumerIndexu("asdfdsg");   to jest właśnie numerIndexu, który dodajemy podczas dodawania studenta do uniwersytetu -- dlatego tez w klasie Student przy encji Index nalezy dodac kaskade @OneToOne(cascade = CascadeType.PERSIST), dzięki niej przy utworzeniu (dodaniu studenta do uniwersytetu) od razu zapisuje się w bazie indeks, wraz z numerem itd.
+
+        index.setStudent(student);
+        student.setIndex(index);
+
+
+    }*/
 }
 

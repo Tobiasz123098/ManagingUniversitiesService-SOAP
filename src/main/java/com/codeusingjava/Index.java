@@ -23,6 +23,7 @@ public class Index {
             allocationSize = 1
     )
     private Long id;
+    private String numerIndexu;
     @ManyToOne
     @JoinColumn(name = "grupa_id", referencedColumnName = "id")
     private Grupa grupa;

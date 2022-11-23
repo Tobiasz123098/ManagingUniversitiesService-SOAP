@@ -23,6 +23,8 @@ public class Grupa {
     )
     private Long id;
 
+    private String nazwaGrupy;
+
     @OneToOne
     @JoinColumn(name = "plan_zajec_id", referencedColumnName = "id")
     private PlanZajec planZajec;
@@ -34,6 +36,7 @@ public class Grupa {
             inverseJoinColumns = @JoinColumn(name = "przedmiot_id", referencedColumnName = "id")
     )
     List<Przedmiot> przedmioty; */
+
 
     @OneToMany(mappedBy = "grupa")
     List<Index> indexy;

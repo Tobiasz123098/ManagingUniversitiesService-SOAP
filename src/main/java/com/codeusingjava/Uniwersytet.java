@@ -24,6 +24,8 @@ public class Uniwersytet {
     )
     private Long id;
 
+    private String nazwa;
+
     @OneToMany(mappedBy = "uniwersytet")
     private List<Student> studenci;
 

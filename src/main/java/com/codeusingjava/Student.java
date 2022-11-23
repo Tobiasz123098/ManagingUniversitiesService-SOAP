@@ -39,7 +39,7 @@ public class Student {
     @OneToMany(mappedBy = "student")
     List<Stypendium> stypendia;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "index_id", referencedColumnName = "id")
     private Index index;
 

@@ -34,6 +34,7 @@ public class Dzien {
 
     private LocalTime doKiedyZajecia; // ***dniowo nie godzinowo***
 
+
     @ManyToOne
     @JoinColumn(name = "przedmiot_id", referencedColumnName = "id")
     private Przedmiot przedmiot;

@@ -21,13 +21,13 @@ com/codeusingjava/Osiagniecie.class
 com/codeusingjava/ResultInformation.class
 com/codeusingjava/Tytul.class
 com/codeusingjava/PlanZajec.class
-com/codeusingjava/Prowadzacy$Tytul.class
-com/codeusingjava/Osiagniecie$RodzajOsiagniecia.class
+com/codeusingjava/RodzajStypendium.class
 com/codeusingjava/OutputSOATest.class
 com/codeusingjava/UpdateStudentRequest.class
 com/codeusingjava/Przedmiot.class
 com/codeusingjava/GetStudentResponse.class
 com/codeusingjava/StudentRepository.class
+com/codeusingjava/KierunekStudiow.class
 com/codeusingjava/config/WebServiceConfig.class
 com/codeusingjava/Akcje.class
 com/codeusingjava/StudentController.class

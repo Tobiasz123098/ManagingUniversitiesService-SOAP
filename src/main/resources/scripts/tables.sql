@@ -1,5 +1,6 @@
 create table uniwersytet (
-    id bigint not null primary key default nextval('uniwersytet_id_seq'::regclass)
+    id bigint not null primary key default nextval('uniwersytet_id_seq'::regclass),
+    nazwa text not null
 );
 
 create table sala (
@@ -29,10 +30,12 @@ create table student (
     uniwersytet_id bigint not null,
     index_id bigint not null,
     foreign key (uniwersytet_id)
-        references uniwersytet (id) match full,
+        references uniwersytet (id) match full
     foreign key (index_id)
         references index (id) match full
 );
+
+alter table student add foreign key index_id references index (id);  --adding foreign key <index_id> to existing table <student>
 
 create table osiagniecie (
     id bigint not null primary key default nextval('osiagniecie_id_seq'::regclass),
@@ -51,17 +54,6 @@ create table stypendium (
         references student (id) match full
 );
 
-create table index (
-    id bigint not null primary key default nextval('index_id_seq'::regclass),
-    grupa_id bigint not null,
-    student_id bigint not null,
-    kierunek_studiow text not null,
-    foreign key (student_id)
-        references student (id) match full,
-    foreign key (grupa_id)
-        references grupa (id) match full
-);
-
 create table ocena (
     id bigint not null primary key default nextval('ocena_id_seq'::regclass),
     index_id bigint not null,
@@ -73,14 +65,25 @@ create table ocena (
 
     --klucz kompozytowy
 create table ocena_dzien (
-    ocena_id bigint references ocena (id) on cascade delete,           --on cascade delete   on cascade update  https://medium.com/geoblinktech/postgresql-foreign-keys-with-condition-on-update-cascade-330e1b25b6e5
-    dzien_id bigint references dzien (id) on cascade delete,
-    constraint ocena_dzien_pkey not null primary key (ocena_id, dzien_id),
+    ocena_id bigint references ocena (id) on delete cascade,
+    dzien_id bigint references dzien (id) on delete cascade,
+    constraint ocena_dzien_pkey primary key (ocena_id, dzien_id),
     foreign key (ocena_id)
         references ocena (id) match full,
     foreign key (dzien_id)
         references dzien (id) match full
-)
+);
+
+create table index (
+    id bigint not null primary key default nextval('index_id_seq'::regclass),
+    grupa_id bigint not null,
+    student_id bigint not null,
+    kierunek_studiow text not null,
+    foreign key (student_id)
+        references student (id) match full,
+    foreign key (grupa_id)
+        references grupa (id) match full
+);
 
 create table grupa (
     id bigint not null primary key default nextval('grupa_id_seq'::regclass),
@@ -119,3 +122,4 @@ create table przedmiot (
 
 select nspname
 from pg_catalog.pg_namespace; --to show list of all schemas
+--on cascade delete   on cascade update  https://medium.com/geoblinktech/postgresql-foreign-keys-with-condition-on-update-cascade-330e1b25b6e5
