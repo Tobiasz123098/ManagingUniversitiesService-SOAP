@@ -2,7 +2,7 @@
 
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:tns="http://codeusingjava.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl"
                   targetNamespace="http://codeusingjava.com">
 
     <wsdl:types>

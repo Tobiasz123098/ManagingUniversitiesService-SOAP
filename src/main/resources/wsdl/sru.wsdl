@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:sru="http://sruuniwersytet.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl"
+                  targetNamespace="http://sruuniwersytet.com">
+
+    <wsdl:types>
+        <xs:schema targetNamespace="http://sruuniwersytet.com">
+
+            <xs:element name="utworzUniwersytet">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="nazwa" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="dodajProwadzacegoDoUniwersytetu">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="imie" />
+                        <xs:element type="xs:string" name="nazwisko" />
+                        <xs:element type="xs:string" name="email" />
+                        <xs:element type="xs:string" name="Tytul" />  <!--Tutaj doda? enum, zobaczy? czy taki trzeba utworzy? w WSDL-->
+                        <xs:element type="xs:long" name="idUniwersytetu" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="dodajSaleDoUniwersytetu">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:int" name="numerSali" />
+                        <xs:element type="xs:long" name="idUniwersytetu" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="dodajStudentaDoUniwersytetu">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="imie" />
+                        <xs:element type="xs:string" name="nazwisko" />
+                        <xs:element type="xs:string" name="email" />
+                        <xs:element type="xs:long" name="idUniwersytetu" />
+                        <xs:element type="xs:int" name="numerIndexu" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="dodajOsiagnieciaDoStudenta">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="RodzajOsiagniecia" />  <!--Tutaj dada? enum-->
+                        <xs:element type="xs:string" name="opis" />
+                        <xs:element type="xs:long" name="idStudenta" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="dodajStypendiumDoStudenta">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="RodzajStypendium" />
+                        <xs:element type="xs:long" name="idStudenta" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="utworzGrupe">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="nazwaGrupy" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="dodajIndexDoGrupy">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="idGrupy" />
+                        <xs:element type="xs:long" name="idIndexu" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="utworzPlanZajec">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="dzienOd" />  <!--Zobaczy? jak doda? dat? jako typedate w WSDL-->
+                        <xs:element type="xs:string" name="dzienDo" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="przypiszPlanZajecDoGrupy">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="idPlanuZajec" />
+                        <xs:element type="xs:long" name="idGrupy" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="dodajDzienDoPlanuZajec">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="idDnia" />
+                        <xs:element type="xs:long" name="idPlanuZajec" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="utworzDzien">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="dataDnia" />  <!--Zobaczy? jak doda? dat? jako typedate w WSDL-->
+                        <xs:element type="xs:string" name="odKiedyZajecia" />
+                        <xs:element type="xs:string" name="doKiedyZajecia" />
+                        <xs:element type="xs:long" name="idPrzedmiotu" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="utworzPrzedmiot">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="nazwa" />
+                        <xs:element type="xs:long" name="idProwadzacego" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="utworzOcene">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:int" name="ocena" />
+                        <xs:element type="xs:string" name="opis" />
+                        <xs:element type="xs:long" name="idDnia" />
+                        <xs:element type="xs:long" name="idIndexu" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="wyswietlPlanZajec">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="idPlanuZajec" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="wyswietlProwadzacych">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="idUniwersytetu" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="wyswietlStudentow">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="idUniwersytetu" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+
+
+
+    <wsdl:message name="utworzUniwersytet">
+        <wsdl:part name="in" element="sru:utworzUniwersytet" />
+    </wsdl:message>
+
+    <wsdl:message name="dodajProwadzacegoDoUniwersytetu">
+        <wsdl:part name="in" element="sru:dodajProwadzacegoDoUniwersytetu" />
+    </wsdl:message>
+
+    <wsdl:message name="dodajSaleDoUniwersytetu">
+        <wsdl:part name="in" element="sru:dodajSaleDoUniwersytetu" />
+    </wsdl:message>
+
+    <wsdl:message name="dodajStudentaDoUniwersytetu">
+        <wsdl:part name="in" element="sru:dodajStudentaDoUniwersytetu" />
+    </wsdl:message>
+
+    <wsdl:message name="dodajOsiagnieciaDoStudenta">
+        <wsdl:part name="in" element="sru:dodajOsiagnieciaDoStudenta" />
+    </wsdl:message>
+
+    <wsdl:message name="dodajStypendiumDoStudenta">
+        <wsdl:part name="in" element="sru:dodajStypendiumDoStudenta" />
+    </wsdl:message>
+
+    <wsdl:message name="utworzGrupe">
+        <wsdl:part name="in" element="sru:utworzGrupe" />
+    </wsdl:message>
+
+    <wsdl:message name="dodajIndexDoGrupy">
+        <wsdl:part name="in" element="sru:dodajIndexDoGrupy" />
+    </wsdl:message>
+
+    <wsdl:message name="utworzPlanZajec">
+        <wsdl:part name="in" element="sru:utworzPlanZajec" />
+    </wsdl:message>
+
+    <wsdl:message name="przypiszPlanZajecDoGrupy">
+        <wsdl:part name="in" element="sru:przypiszPlanZajecDoGrupy" />
+    </wsdl:message>
+
+    <wsdl:message name="dodajDzienDoPlanuZajec">
+        <wsdl:part name="in" element="sru:dodajDzienDoPlanuZajec" />
+    </wsdl:message>
+
+    <wsdl:message name="utworzDzien">
+        <wsdl:part name="in" element="sru:utworzDzien" />
+    </wsdl:message>
+
+    <wsdl:message name="utworzPrzedmiot">
+        <wsdl:part name="in" element="sru:utworzPrzedmiot" />
+    </wsdl:message>
+
+    <wsdl:message name="utworzOcene">
+        <wsdl:part name="in" element="sru:utworzOcene" />
+    </wsdl:message>
+
+    <wsdl:message name="wyswietlPlanZajec">
+        <wsdl:part name="out" element="sru:wyswietlPlanZajec" />
+    </wsdl:message>
+
+    <wsdl:message name="wyswietlProwadzacych">
+        <wsdl:part name="out" element="sru:wyswietlProwadzacych" />
+    </wsdl:message>
+
+    <wsdl:message name="wyswietlStudentow">
+        <wsdl:part name="out" element="sru:wyswietlStudentow" />
+    </wsdl:message>
+
+
+  <!--
+    <wsdl:portType name="SRUEndpoint">
+
+        <wsdl:operation name="SRUUtworzUniwersytet">
+            <wsdl:input message="tns:inputSOATest" />
+            <wsdl:output message="tns:outputSOATest" />
+        </wsdl:operation>
+        <wsdl:operation name="SOAStudent">
+            <wsdl:input message="tns:getStudentById" />
+            <wsdl:output message="tns:getStudentResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="CreateStudent">
+            <wsdl:input message="tns:createStudentRequest" />
+            <wsdl:output message="tns:createStudentResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="DisplayStudents">
+            <wsdl:input message="tns:displayAllStudentsRequest" />
+            <wsdl:output message="tns:displayAllStudentsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="DeleteStudent">
+            <wsdl:input message="tns:deleteStudentByIdRequest" />
+            <wsdl:output message="tns:deleteStudentByIdResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="UpdateStudent">
+            <wsdl:input message="tns:updateStudentRequest" />
+            <wsdl:output message="tns:updateStudentResponse" />
+        </wsdl:operation>
+
+    </wsdl:portType>
+    -->
+
+</wsdl:definitions>
