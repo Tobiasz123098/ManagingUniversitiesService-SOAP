@@ -1,5 +1,6 @@
 package com.codeusingjava;
 
+import com.codeusingjava.student.domena.Student;
 import lombok.Getter;
 import lombok.Setter;
 

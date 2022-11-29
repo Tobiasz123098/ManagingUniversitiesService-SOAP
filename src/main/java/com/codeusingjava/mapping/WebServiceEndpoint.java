@@ -1,6 +1,7 @@
 package com.codeusingjava.mapping;
 
 import com.codeusingjava.*;
+import com.codeusingjava.student.serwisy.StudentSerwis;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -11,10 +12,10 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 public class WebServiceEndpoint {
     private static final String NAMESPACE_URI = "http://codeusingjava.com";
 
-    private final StudentService studentService;
+    private final StudentSerwis studentService;
 
     @Autowired
-    public WebServiceEndpoint(StudentService studentService) {
+    public WebServiceEndpoint(StudentSerwis studentService) {
         this.studentService = studentService;
     }
 

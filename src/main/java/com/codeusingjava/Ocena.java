@@ -1,5 +1,6 @@
 package com.codeusingjava;
 
+import com.codeusingjava.index.domena.Index;
 import lombok.Getter;
 import lombok.Setter;
 

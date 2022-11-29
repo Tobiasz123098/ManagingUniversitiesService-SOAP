@@ -19,13 +19,21 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
 
-        return new ServletRegistrationBean(servlet, "/codeusingjava/*");
+        return new ServletRegistrationBean(servlet, "/codeusingjava/*", "/sruuniwersytet/*");
     }
 
     @Bean(name="helloworld")
     public Wsdl11Definition defaultWsdl11Definition() {
         SimpleWsdl11Definition wsdlDefinition = new SimpleWsdl11Definition();
         wsdlDefinition.setWsdl(new ClassPathResource("/wsdl/helloworld.wsdl"));
+
+        return wsdlDefinition;
+    }
+
+    @Bean(name="sru")
+    public Wsdl11Definition defaultWsdl11DefinitionSRU() {
+        SimpleWsdl11Definition wsdlDefinition = new SimpleWsdl11Definition();
+        wsdlDefinition.setWsdl(new ClassPathResource("/wsdl/sru.wsdl"));
 
         return wsdlDefinition;
     }
