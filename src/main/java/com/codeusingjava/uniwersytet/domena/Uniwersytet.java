@@ -1,12 +1,13 @@
 package com.codeusingjava.uniwersytet.domena;
 
-import com.codeusingjava.Prowadzacy;
-import com.codeusingjava.Sala;
+import com.codeusingjava.prowadzacy.domena.Prowadzacy;
+import com.codeusingjava.sala.domena.Sala;
 import com.codeusingjava.student.domena.Student;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -36,7 +37,11 @@ public class Uniwersytet {
     private List<Sala> sale;
 
     @OneToMany(mappedBy = "uniwersytet")
-    private List<Prowadzacy> prowadzacy;
+    private List<Prowadzacy> prowadzacy = new ArrayList<>();
 
-    //ewentualnie usunąć listę prowadzących
+    public void dodajProwadzacego(Prowadzacy prowadzacy) {
+        this.getProwadzacy().add(prowadzacy);
+        prowadzacy.setUniwersytet(this);
+    }
+
 }

@@ -1,7 +1,7 @@
 package com.codeusingjava.index.domena;
 
-import com.codeusingjava.Grupa;
-import com.codeusingjava.Ocena;
+import com.codeusingjava.grupa.domena.Grupa;
+import com.codeusingjava.ocena.domena.Ocena;
 import com.codeusingjava.student.domena.Student;
 import lombok.Getter;
 import lombok.Setter;

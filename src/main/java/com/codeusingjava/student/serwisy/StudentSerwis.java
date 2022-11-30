@@ -3,6 +3,8 @@ package com.codeusingjava.student.serwisy;
 import com.codeusingjava.*;
 import com.codeusingjava.student.domena.Student;
 import com.codeusingjava.student.repozytoria.StudentRepozytorium;
+import com.codeusingjava.walidacja.Akcje;
+import com.sruuniwersytet.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +21,7 @@ public class StudentSerwis {
         this.studentRepository = studentRepository;
     }
 
-    public OutputSOATest hello(InputSOATest req) {
+    /*public OutputSOATest hello(InputSOATest req) {
 
         String outputString = "Hello " + req.getTest() + "!";
 
@@ -111,10 +113,19 @@ public class StudentSerwis {
             response.setResult(Akcje.NOT_FOUND.getOpis());
         }
         return response;
-    }
+    }*/
 
-   /* numerIndexu
-    private void dodajStudentaDoUni() {
+
+}
+
+
+
+
+
+
+
+/* numerIndexu
+    private void dodajStudentaDoUniwersytetu() {
         Student student = new Student();
         Index index = new Index();
         index.setNumerIndexu("asdfdsg");   to jest właśnie numerIndexu, który dodajemy podczas dodawania studenta do uniwersytetu -- dlatego tez w klasie Student przy encji Index nalezy dodac kaskade @OneToOne(cascade = CascadeType.PERSIST), dzięki niej przy utworzeniu (dodaniu studenta do uniwersytetu) od razu zapisuje się w bazie indeks, wraz z numerem itd.
@@ -124,5 +135,3 @@ public class StudentSerwis {
 
 
     }*/
-}
-

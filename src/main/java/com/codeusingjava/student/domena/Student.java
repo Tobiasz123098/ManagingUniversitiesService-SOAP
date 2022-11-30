@@ -1,8 +1,8 @@
 package com.codeusingjava.student.domena;
 
 import com.codeusingjava.index.domena.Index;
-import com.codeusingjava.Osiagniecie;
-import com.codeusingjava.Stypendium;
+import com.codeusingjava.osiagniecie.domena.Osiagniecie;
+import com.codeusingjava.stypendium.domena.Stypendium;
 import com.codeusingjava.uniwersytet.domena.Uniwersytet;
 import lombok.Getter;
 import lombok.Setter;
