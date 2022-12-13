@@ -58,7 +58,6 @@ com/sruuniwersytet/UtworzDzienZapytanie.class
 com/codeusingjava/grupa/domena/Grupa.class
 com/codeusingjava/stypendium/repozytoria/StypendiumRepozytorium.class
 com/sruuniwersytet/DodajSaleDoUniwersytetuZapytanie.class
-com/codeusingjava/SRUController.class
 com/codeusingjava/prowadzacy/serwisy/ProwadzacySerwis.class
 com/codeusingjava/planzajec/domena/PlanZajec.class
 com/codeusingjava/student/domena/Student.class

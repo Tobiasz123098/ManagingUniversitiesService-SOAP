@@ -37,10 +37,10 @@ public class ProwadzacySerwis {
         prowadzacy.setEmail(req.getEmail());
         prowadzacy.setTytul(Tytul.valueOf(req.getTytul().toUpperCase()));
 
-
         try {
             Uniwersytet uniwersytet = uniwersytetRepozytorium.getOne(req.getIdUniwersytetu());
             uniwersytet.dodajProwadzacego(prowadzacy);
+            prowadzacy = prowadzacyRepozytorium.save(prowadzacy);
             response.setIdObiektu(prowadzacy.getId());
             response.setWynikWalidacji("Dodano prowadzącego do uniwersytetu");
         } catch (Exception e) {

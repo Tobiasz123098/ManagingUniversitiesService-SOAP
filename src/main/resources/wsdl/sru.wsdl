@@ -64,7 +64,8 @@
                         <xs:element type="xs:string" name="nazwisko" />
                         <xs:element type="xs:string" name="email" />
                         <xs:element type="xs:long" name="idUniwersytetu" />
-                        <xs:element type="xs:int" name="numerIndexu" />
+                        <xs:element type="xs:string" name="numerIndexu" />
+                        <xs:element type="xs:string" name="KierunekStudiow" />
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -143,8 +144,8 @@
             <xs:element name="utworzPlanZajecZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:string" name="dzienOd" />  <!--Zobaczyć jak dodać datę jako typedate w WSDL-->
-                        <xs:element type="xs:string" name="dzienDo" />
+                        <xs:element type="xs:date" name="dzienOd" />  <!--Zobaczyć jak dodać datę jako typedate w WSDL-->
+                        <xs:element type="xs:date" name="dzienDo" />
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -191,9 +192,9 @@
             <xs:element name="utworzDzienZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:string" name="dataDnia" />  <!--Zobaczyć jak dodać datć jako typedate w WSDL-->
-                        <xs:element type="xs:string" name="odKiedyZajecia" />
-                        <xs:element type="xs:string" name="doKiedyZajecia" />
+                        <xs:element type="xs:date" name="dataDnia" />  <!--Zobaczyć jak dodać datć jako typedate w WSDL-->
+                        <xs:element type="xs:time" name="odKiedyZajecia" />
+                        <xs:element type="xs:time" name="doKiedyZajecia" />
                         <xs:element type="xs:long" name="idPrzedmiotu" />
                     </xs:sequence>
                 </xs:complexType>

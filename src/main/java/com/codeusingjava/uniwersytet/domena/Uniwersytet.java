@@ -31,10 +31,10 @@ public class Uniwersytet {
     private String nazwa;
 
     @OneToMany(mappedBy = "uniwersytet")
-    private List<Student> studenci;
+    private List<Student> studenci = new ArrayList<>();
 
     @OneToMany(mappedBy = "uniwersytet")
-    private List<Sala> sale;
+    private List<Sala> sale = new ArrayList<>();
 
     @OneToMany(mappedBy = "uniwersytet")
     private List<Prowadzacy> prowadzacy = new ArrayList<>();
@@ -42,6 +42,16 @@ public class Uniwersytet {
     public void dodajProwadzacego(Prowadzacy prowadzacy) {
         this.getProwadzacy().add(prowadzacy);
         prowadzacy.setUniwersytet(this);
+    }
+
+    public void dodajSale(Sala sala) {
+        this.getSale().add(sala);
+        sala.setUniwersytet(this);
+    }
+
+    public void dodajStudenta(Student student) {
+        this.getStudenci().add(student);
+        student.setUniwersytet(this);
     }
 
 }

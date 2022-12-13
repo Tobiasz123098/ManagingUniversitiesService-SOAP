@@ -4,8 +4,10 @@ import com.codeusingjava.index.domena.Index;
 import com.codeusingjava.planzajec.domena.PlanZajec;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.jpa.repository.Modifying;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -32,7 +34,13 @@ public class Grupa {
     private PlanZajec planZajec;
 
     @OneToMany(mappedBy = "grupa")
-    List<Index> indexy;
+    List<Index> indexy = new ArrayList<>();
+
+    @Modifying
+    public void dodajIndex(Index index) {
+        this.getIndexy().add(index);
+        index.setGrupa(this);
+    }
 }
 
 

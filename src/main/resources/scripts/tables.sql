@@ -76,7 +76,7 @@ create table ocena_dzien (
 
 create table index (
     id bigint not null primary key default nextval('index_id_seq'::regclass),
-    grupa_id bigint not null,
+    grupa_id bigint,
     student_id bigint not null,
     kierunek_studiow text not null,
     foreign key (student_id)
@@ -87,7 +87,7 @@ create table index (
 
 create table grupa (
     id bigint not null primary key default nextval('grupa_id_seq'::regclass),
-    plan_zajec_id bigint not null,
+    plan_zajec_id bigint,
     foreign key (plan_zajec_id)
         references plan_zajec (id) match full
 );
@@ -123,3 +123,4 @@ create table przedmiot (
 select nspname
 from pg_catalog.pg_namespace; --to show list of all schemas
 --on cascade delete   on cascade update  https://medium.com/geoblinktech/postgresql-foreign-keys-with-condition-on-update-cascade-330e1b25b6e5
+--ALTER TABLE person ALTER COLUMN phone DROP NOT NULL;   aby pozbyć się not nulla na podanej kolumnie

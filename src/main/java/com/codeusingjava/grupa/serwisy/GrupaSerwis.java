@@ -1,6 +1,11 @@
 package com.codeusingjava.grupa.serwisy;
 
+import com.codeusingjava.grupa.domena.Grupa;
 import com.codeusingjava.grupa.repozytoria.GrupaRepozytorium;
+import com.sruuniwersytet.ObjectFactory;
+import com.sruuniwersytet.UtworzGrupeOdpowiedz;
+import com.sruuniwersytet.UtworzGrupeZapytanie;
+import com.sruuniwersytet.UtworzUniwersytetOdpowiedz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +19,23 @@ public class GrupaSerwis {
         this.grupaRepozytorium = grupaRepozytorium;
     }
 
-    //utworzenie metod
+    public UtworzGrupeOdpowiedz utworzGrupe(UtworzGrupeZapytanie req) {
+
+        ObjectFactory factory = new ObjectFactory();
+        UtworzGrupeOdpowiedz response = factory.createUtworzGrupeOdpowiedz();
+
+        Grupa grupa = new Grupa();
+        grupa.setNazwaGrupy(req.getNazwaGrupy());
+
+        try {
+            grupa = grupaRepozytorium.save(grupa);
+
+            response.setIdObiektu(grupa.getId());
+            response.setWynikWalidacji("Utworzono grupę o id: " + grupa.getId());
+        } catch (Exception e) {
+            response.setWynikWalidacji(e.getMessage());
+        }
+
+        return response;
+    }
 }

@@ -28,6 +28,7 @@ public class UniwersytetSerwis {
 
         try {
             uniwersytet = uniwersytetRepozytorium.save(uniwersytet);
+
             response.setIdObiektu(uniwersytet.getId());
             response.setWynikWalidacji("Utworzono uniwersytet o id: " + uniwersytet.getId());
         } catch (Exception e) {
