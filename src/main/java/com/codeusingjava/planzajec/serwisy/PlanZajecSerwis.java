@@ -1,28 +1,29 @@
 package com.codeusingjava.planzajec.serwisy;
 
+import com.codeusingjava.grupa.domena.Grupa;
+import com.codeusingjava.grupa.repozytoria.GrupaRepozytorium;
 import com.codeusingjava.planzajec.domena.PlanZajec;
 import com.codeusingjava.planzajec.repozytoria.PlanZajecRepozytorium;
-import com.sruuniwersytet.ObjectFactory;
-import com.sruuniwersytet.UtworzPlanZajecOdpowiedz;
-import com.sruuniwersytet.UtworzPlanZajecZapytanie;
+import com.sruuniwersytet.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.util.GregorianCalendar;
 
 @Service
 public class PlanZajecSerwis {
 
     private final PlanZajecRepozytorium planZajecRepozytorium;
 
+    private final GrupaRepozytorium grupaRepozytorium;
+
     @Autowired
-    public PlanZajecSerwis(PlanZajecRepozytorium planZajecRepozytorium) {
+    public PlanZajecSerwis(PlanZajecRepozytorium planZajecRepozytorium,
+                           GrupaRepozytorium grupaRepozytorium) {
         this.planZajecRepozytorium = planZajecRepozytorium;
+        this.grupaRepozytorium = grupaRepozytorium;
     }
 
     public UtworzPlanZajecOdpowiedz utworzPlanZajec(UtworzPlanZajecZapytanie req) {
@@ -30,21 +31,15 @@ public class PlanZajecSerwis {
         ObjectFactory factory = new ObjectFactory();
         UtworzPlanZajecOdpowiedz response = factory.createUtworzPlanZajecOdpowiedz();
 
-        XMLGregorianCalendar cal1 = req.getDzienOd();
-        XMLGregorianCalendar cal2 = req.getDzienDo();
-
         PlanZajec planZajec = new PlanZajec();
 
-        LocalDate dzienOd = LocalDate.of(
-                cal1.getYear(),
-                cal1.getMonth(),
-                cal1.getDay());
-        planZajec.setDzienOd(dzienOd);
+        LocalDate dzienOd = LocalDate.from(req.getDzienOd().toGregorianCalendar().toZonedDateTime()
+                .withZoneSameInstant(ZoneId.systemDefault()).toLocalDateTime());
 
-        LocalDate dzienDo = LocalDate.of(
-                cal2.getYear(),
-                cal2.getMonth(),
-                cal2.getDay());
+        LocalDate dzienDo = LocalDate.from(req.getDzienDo().toGregorianCalendar().toZonedDateTime()
+                .withZoneSameInstant(ZoneId.systemDefault()).toLocalDateTime());
+
+        planZajec.setDzienOd(dzienOd);
         planZajec.setDzienDo(dzienDo);
 
         try {
@@ -52,6 +47,28 @@ public class PlanZajecSerwis {
 
             response.setIdObiektu(planZajec.getId());
             response.setWynikWalidacji("Utworzono nowy plan zajęć o id: " + planZajec.getId());
+        } catch (Exception e) {
+            response.setWynikWalidacji(e.getMessage());
+        }
+
+        return response;
+    }
+
+    public PrzypiszPlanZajecDoGrupyOdpowiedz przypiszPlanZajecDoGrupy(PrzypiszPlanZajecDoGrupyZapytanie req) {
+
+        ObjectFactory factory = new ObjectFactory();
+        PrzypiszPlanZajecDoGrupyOdpowiedz response = factory.createPrzypiszPlanZajecDoGrupyOdpowiedz();
+
+        try {
+            PlanZajec planZajec = planZajecRepozytorium.findOne(req.getIdPlanuZajec());
+            Grupa grupa = grupaRepozytorium.findOne(req.getIdGrupy());
+
+            grupa.setPlanZajec(planZajec);
+            grupa = grupaRepozytorium.save(grupa);
+
+            response.setIdObiektu(grupa.getId());
+            response.setWynikWalidacji("Przypisano plan zajęć o id: " + planZajec.getId() +
+                    " do grupy o id: " + grupa.getId());
         } catch (Exception e) {
             response.setWynikWalidacji(e.getMessage());
         }

@@ -1,10 +1,13 @@
 package com.codeusingjava.mapowanie;
 
+import com.codeusingjava.dzien.serwisy.DzienSerwis;
 import com.codeusingjava.grupa.serwisy.GrupaSerwis;
 import com.codeusingjava.index.serwisy.IndexSerwis;
+import com.codeusingjava.ocena.serwisy.OcenaSerwis;
 import com.codeusingjava.osiagniecie.serwisy.OsiagniecieSerwis;
 import com.codeusingjava.planzajec.serwisy.PlanZajecSerwis;
 import com.codeusingjava.prowadzacy.serwisy.ProwadzacySerwis;
+import com.codeusingjava.przedmiot.serwisy.PrzedmiotSerwis;
 import com.codeusingjava.sala.serwisy.SalaSerwis;
 import com.codeusingjava.student.serwisy.StudentSerwis;
 import com.codeusingjava.stypendium.serwisy.StypendiumSerwis;
@@ -38,6 +41,12 @@ public class SRUWSEndpoint {
 
     private final PlanZajecSerwis planZajecSerwis;
 
+    private final DzienSerwis dzienSerwis;
+
+    private final PrzedmiotSerwis przedmiotSerwis;
+
+    private final OcenaSerwis ocenaSerwis;
+
     @Autowired
     public SRUWSEndpoint(UniwersytetSerwis uniwersytetSerwis,
                          ProwadzacySerwis prowadzacySerwis,
@@ -47,7 +56,10 @@ public class SRUWSEndpoint {
                          StypendiumSerwis stypendiumSerwis,
                          GrupaSerwis grupaSerwis,
                          IndexSerwis indexSerwis,
-                         PlanZajecSerwis planZajecSerwis) {
+                         PlanZajecSerwis planZajecSerwis,
+                         DzienSerwis dzienSerwis,
+                         PrzedmiotSerwis przedmiotSerwis,
+                         OcenaSerwis ocenaSerwis) {
         this.uniwersytetSerwis = uniwersytetSerwis;
         this.prowadzacySerwis = prowadzacySerwis;
         this.salaSerwis = salaSerwis;
@@ -57,11 +69,14 @@ public class SRUWSEndpoint {
         this.grupaSerwis = grupaSerwis;
         this.indexSerwis = indexSerwis;
         this.planZajecSerwis = planZajecSerwis;
+        this.dzienSerwis = dzienSerwis;
+        this.przedmiotSerwis = przedmiotSerwis;
+        this.ocenaSerwis = ocenaSerwis;
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "utworzUniwersytetZapytanie")
     @ResponsePayload
-    public UtworzUniwersytetOdpowiedz utworzUniwersytet(@RequestPayload UtworzUniwersytetZapytanie req){
+    public UtworzUniwersytetOdpowiedz utworzUniwersytet(@RequestPayload UtworzUniwersytetZapytanie req) {
         return uniwersytetSerwis.utworzUniwersytet(req);
     }
 
@@ -70,6 +85,7 @@ public class SRUWSEndpoint {
     public DodajProwadzacegoDoUniwersytetuOdpowiedz dodajProwadzacegoDoUniwersytetu(@RequestPayload DodajProwadzacegoDoUniwersytetuZapytanie req) {
         return prowadzacySerwis.dodajProwadzacegoDoUniwersytetu(req);
     }
+
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "dodajSaleDoUniwersytetuZapytanie")
     @ResponsePayload
     public DodajSaleDoUniwersytetuOdpowiedz dodajSaleDoUniwersytetu(@RequestPayload DodajSaleDoUniwersytetuZapytanie req) {
@@ -95,7 +111,7 @@ public class SRUWSEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "dodajStypendiumDoStudentaZapytanie")
     @ResponsePayload
-    public DodajStypendiumDoStudentaOdpowiedz dodajStypendiumDoStudentaOdpowiedz (@RequestPayload DodajStypendiumDoStudentaZapytanie req) {
+    public DodajStypendiumDoStudentaOdpowiedz dodajStypendiumDoStudentaOdpowiedz(@RequestPayload DodajStypendiumDoStudentaZapytanie req) {
         return stypendiumSerwis.dodajStypendiumDoStudenta(req);
     }
 
@@ -115,5 +131,35 @@ public class SRUWSEndpoint {
     @ResponsePayload
     public UtworzPlanZajecOdpowiedz utworzPlanZajec(@RequestPayload UtworzPlanZajecZapytanie req) {
         return planZajecSerwis.utworzPlanZajec(req);
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "przypiszPlanZajecDoGrupyZapytanie")
+    @ResponsePayload
+    public PrzypiszPlanZajecDoGrupyOdpowiedz przypiszPlanZajecDoGrupy(@RequestPayload PrzypiszPlanZajecDoGrupyZapytanie req) {
+        return planZajecSerwis.przypiszPlanZajecDoGrupy(req);
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "utworzPrzedmiotZapytanie")
+    @ResponsePayload
+    public UtworzPrzedmiotOdpowiedz utworzPrzedmiot(@RequestPayload UtworzPrzedmiotZapytanie req) {
+        return przedmiotSerwis.utworzPrzedmiot(req);
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "utworzDzienZapytanie")
+    @ResponsePayload
+    public UtworzDzienOdpowiedz utworzDzien(@RequestPayload UtworzDzienZapytanie req) {
+        return dzienSerwis.utworzDzien(req);
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "dodajDzienDoPlanuZajecZapytanie")
+    @ResponsePayload
+    public DodajDzienDoPlanuZajecOdpowiedz dodajDzienDoPlanuZajec(@RequestPayload DodajDzienDoPlanuZajecZapytanie req) {
+        return dzienSerwis.dodajDzienDoPlanuZajec(req);
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "utworzOceneZapytanie")
+    @ResponsePayload
+    public UtworzOceneOdpowiedz utworzOcene(@RequestPayload UtworzOceneZapytanie req) {
+        return ocenaSerwis.utworzOcene(req);
     }
 }

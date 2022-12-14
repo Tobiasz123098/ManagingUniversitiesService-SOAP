@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -30,6 +31,10 @@ public class PlanZajec {
     private LocalDate dzienDo;
 
     @OneToMany(mappedBy = "planZajec")
-    List<Dzien> dni;
+    List<Dzien> dni = new ArrayList<>();
 
+    public void dodajDzien(Dzien dzien) {
+        this.getDni().add(dzien);
+        dzien.setPlanZajec(this);
+    }
 }
