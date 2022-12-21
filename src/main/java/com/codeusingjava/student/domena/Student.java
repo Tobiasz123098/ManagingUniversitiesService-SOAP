@@ -4,6 +4,7 @@ import com.codeusingjava.index.domena.Index;
 import com.codeusingjava.osiagniecie.domena.Osiagniecie;
 import com.codeusingjava.stypendium.domena.Stypendium;
 import com.codeusingjava.uniwersytet.domena.Uniwersytet;
+import com.sruuniwersytet.StudentElement;
 import lombok.Getter;
 import lombok.Setter;
 

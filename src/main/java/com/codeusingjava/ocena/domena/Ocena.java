@@ -36,7 +36,7 @@ public class Ocena {
             joinColumns = @JoinColumn(name = "ocena_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "dzien_id", referencedColumnName = "id")
     )
-    private List<Dzien> dzien;
+    private List<Dzien> dzien = new ArrayList<>();
 
     private int ocena;
 

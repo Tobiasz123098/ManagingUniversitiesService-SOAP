@@ -12,8 +12,6 @@ import com.sruuniwersytet.UtworzOceneZapytanie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class OcenaSerwis {
 
@@ -45,9 +43,8 @@ public class OcenaSerwis {
             Index index = indexRepozytorium.findOne(req.getIdIndexu());
             Dzien dzien = dzienRepozytorium.findOne(req.getIdDnia());
 
+            ocena.getDzien().add(dzien);
             ocena.setIndex(index);
-            ocena.setDzien((List<Dzien>) dzien);
-            // nie może tutaj być kastowania, najprawdopodobniej trzeba będzie dodać kaskadę
 
             ocena = ocenaRepozytorium.save(ocena);
 

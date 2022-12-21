@@ -33,7 +33,6 @@ com/codeusingjava/index/repozytoria/IndexRepozytorium.class
 com/sruuniwersytet/package-info.class
 com/sruuniwersytet/UtworzGrupeOdpowiedz.class
 com/codeusingjava/walidacja/Akcje.class
-com/codeusingjava/mapowanie/WebServiceEndpoint.class
 com/codeusingjava/przedmiot/serwisy/PrzedmiotSerwis.class
 com/sruuniwersytet/UtworzUniwersytetOdpowiedz.class
 com/sruuniwersytet/ObjectFactory.class
@@ -43,17 +42,20 @@ com/codeusingjava/stypendium/serwisy/StypendiumSerwis.class
 com/sruuniwersytet/DodajStudentaDoUniwersytetuZapytanie.class
 com/codeusingjava/stypendium/domena/RodzajStypendium.class
 com/sruuniwersytet/WyswietlStudentowZapytanie.class
+com/sruuniwersytet/StudentElement.class
 com/sruuniwersytet/DodajIndexDoGrupyOdpowiedz.class
 com/codeusingjava/uniwersytet/repozytoria/UniwersytetRepozytorium.class
 com/codeusingjava/ocena/repozytoria/OcenaRepozytorium.class
 com/sruuniwersytet/WyswietlPlanZajecOdpowiedz.class
 com/sruuniwersytet/PrzypiszPlanZajecDoGrupyOdpowiedz.class
+com/codeusingjava/configuracja/LocalDateTimeAttributeConverter.class
 com/sruuniwersytet/UtworzOceneOdpowiedz.class
 com/codeusingjava/sala/serwisy/SalaSerwis.class
 com/codeusingjava/uniwersytet/serwisy/UniwersytetSerwis.class
 com/codeusingjava/index/serwisy/IndexSerwis.class
 com/codeusingjava/SpringBootHelloWorldApplication.class
 com/sruuniwersytet/DodajDzienDoPlanuZajecOdpowiedz.class
+com/codeusingjava/configuracja/LocalDateAttributeConverter.class
 com/sruuniwersytet/UtworzDzienZapytanie.class
 com/codeusingjava/grupa/domena/Grupa.class
 com/codeusingjava/stypendium/repozytoria/StypendiumRepozytorium.class
@@ -68,6 +70,7 @@ com/sruuniwersytet/WyswietlProwadzacychZapytanie.class
 com/sruuniwersytet/DodajStypendiumDoStudentaZapytanie.class
 com/codeusingjava/przedmiot/domena/Przedmiot.class
 com/sruuniwersytet/UtworzPlanZajecZapytanie.class
+com/codeusingjava/student/serwisy/StudentSerwisImpl.class
 com/sruuniwersytet/DodajIndexDoGrupyZapytanie.class
 com/sruuniwersytet/IdObiektuWynikWalidacji.class
 com/codeusingjava/ocena/serwisy/OcenaSerwis.class

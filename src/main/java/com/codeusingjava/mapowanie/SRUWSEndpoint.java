@@ -162,4 +162,10 @@ public class SRUWSEndpoint {
     public UtworzOceneOdpowiedz utworzOcene(@RequestPayload UtworzOceneZapytanie req) {
         return ocenaSerwis.utworzOcene(req);
     }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "wyswietlStudentowZapytanie")
+    @ResponsePayload
+    public WyswietlStudentowOdpowiedz wyswietlStudentow(@RequestPayload WyswietlStudentowZapytanie req) {
+        return studentSerwis.wyswietlStudentow(req);
+    }
 }

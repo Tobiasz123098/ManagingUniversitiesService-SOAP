@@ -280,9 +280,9 @@
             </xs:element>
             <xs:element name="wyswietlStudentowOdpowiedz">
                 <xs:complexType>
-                    <xs:complexContent>
-                        <xs:extension base="sru:IdObiektuWynikWalidacji"/>
-                    </xs:complexContent>
+                    <xs:sequence>
+                        <xs:element type="sru:StudentElement" name="student" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
                 </xs:complexType>
             </xs:element>
 
@@ -291,6 +291,14 @@
                 <xs:sequence>
                     <xs:element type="xs:long" name="idObiektu" />
                     <xs:element type="xs:string" name="wynikWalidacji" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="StudentElement">
+                <xs:sequence>
+                    <xs:element type="xs:long" name="id" />
+                    <xs:element type="xs:string" name="name" />
+                    <xs:element type="xs:string" name="nazwisko" />
+                    <xs:element type="xs:string" name="email" />
                 </xs:sequence>
             </xs:complexType>
         </xs:schema>
@@ -683,7 +691,7 @@
 
     <wsdl:service name="SRUEndpointSerwis">
         <wsdl:port name="SRUEndpoint" binding="sru:SRUBinding">
-            <soap:address location="http://localhost:8080/sruuniwersytet/mywsdl"/>
+            <soap:address location="http://localhost:8080/sruuniwersytet/sru.wsdl"/>
         </wsdl:port>
     </wsdl:service>
 

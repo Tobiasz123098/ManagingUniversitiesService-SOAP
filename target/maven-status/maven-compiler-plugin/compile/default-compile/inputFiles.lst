@@ -20,16 +20,18 @@
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/przedmiot/serwisy/PrzedmiotSerwis.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/DodajSaleDoUniwersytetuZapytanie.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/prowadzacy/domena/Tytul.java
+/home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/StudentElement.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/UtworzOceneZapytanie.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/WyswietlPlanZajecZapytanie.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/UtworzUniwersytetOdpowiedz.java
-/home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/mapowanie/WebServiceEndpoint.java
+/home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/configuracja/LocalDateTimeAttributeConverter.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/sala/serwisy/SalaSerwis.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/przedmiot/repozytoria/PrzedmiotRepozytorium.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/UtworzOceneOdpowiedz.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/uniwersytet/serwisy/UniwersytetSerwis.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/grupa/repozytoria/GrupaRepozytorium.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/walidacja/Akcje.java
+/home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/student/serwisy/StudentSerwisImpl.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/DodajOsiagnieciaDoStudentaOdpowiedz.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/osiagniecie/serwisy/OsiagniecieSerwis.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/UtworzDzienZapytanie.java
@@ -56,6 +58,7 @@
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/student/repozytoria/StudentRepozytorium.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/osiagniecie/repozytoria/OsiagniecieRepozytorium.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/stypendium/domena/Stypendium.java
+/home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/configuracja/LocalDateAttributeConverter.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/DodajDzienDoPlanuZajecZapytanie.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/ocena/serwisy/OcenaSerwis.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/WyswietlPlanZajecOdpowiedz.java
