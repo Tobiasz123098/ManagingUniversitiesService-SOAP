@@ -23,11 +23,13 @@ com/sruuniwersytet/DodajDzienDoPlanuZajecZapytanie.class
 com/codeusingjava/dzien/repozytoria/DzienRepozytorium.class
 com/codeusingjava/stypendium/domena/Stypendium.class
 com/codeusingjava/mapowanie/SRUWSEndpoint.class
+com/sruuniwersytet/WyswietlStudentaPoIdZapytanie.class
 com/sruuniwersytet/UtworzPlanZajecOdpowiedz.class
 com/sruuniwersytet/WyswietlProwadzacychOdpowiedz.class
 com/codeusingjava/sala/repozytoria/SalaRepozytorium.class
 com/codeusingjava/prowadzacy/repozytoria/ProwadzacyRepozytorium.class
 com/codeusingjava/osiagniecie/domena/Osiagniecie.class
+com/sruuniwersytet/StypendiumElement.class
 com/sruuniwersytet/DodajStypendiumDoStudentaOdpowiedz.class
 com/codeusingjava/index/repozytoria/IndexRepozytorium.class
 com/sruuniwersytet/package-info.class
@@ -50,11 +52,13 @@ com/sruuniwersytet/WyswietlPlanZajecOdpowiedz.class
 com/sruuniwersytet/PrzypiszPlanZajecDoGrupyOdpowiedz.class
 com/codeusingjava/configuracja/LocalDateTimeAttributeConverter.class
 com/sruuniwersytet/UtworzOceneOdpowiedz.class
+com/sruuniwersytet/OsiagniecieElement.class
 com/codeusingjava/sala/serwisy/SalaSerwis.class
 com/codeusingjava/uniwersytet/serwisy/UniwersytetSerwis.class
 com/codeusingjava/index/serwisy/IndexSerwis.class
 com/codeusingjava/SpringBootHelloWorldApplication.class
 com/sruuniwersytet/DodajDzienDoPlanuZajecOdpowiedz.class
+com/sruuniwersytet/WyswietlStudentaPoIdOdpowiedz.class
 com/codeusingjava/configuracja/LocalDateAttributeConverter.class
 com/sruuniwersytet/UtworzDzienZapytanie.class
 com/codeusingjava/grupa/domena/Grupa.class

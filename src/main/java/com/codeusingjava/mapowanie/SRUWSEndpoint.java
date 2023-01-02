@@ -168,4 +168,10 @@ public class SRUWSEndpoint {
     public WyswietlStudentowOdpowiedz wyswietlStudentow(@RequestPayload WyswietlStudentowZapytanie req) {
         return studentSerwis.wyswietlStudentow(req);
     }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "wyswietlStudentaPoIdZapytanie")
+    @ResponsePayload
+    public WyswietlStudentaPoIdOdpowiedz wyswietlStudentaPoId(@RequestPayload WyswietlStudentaPoIdZapytanie req) {
+        return studentSerwis.wyswietlStudentaPoId(req);
+    }
 }

@@ -3,16 +3,17 @@ package com.codeusingjava.student.serwisy;
 import com.codeusingjava.index.domena.Index;
 import com.codeusingjava.index.domena.KierunekStudiow;
 import com.codeusingjava.index.repozytoria.IndexRepozytorium;
+import com.codeusingjava.osiagniecie.domena.Osiagniecie;
+import com.codeusingjava.osiagniecie.domena.RodzajOsiagniecia;
+import com.codeusingjava.osiagniecie.repozytoria.OsiagniecieRepozytorium;
 import com.codeusingjava.student.domena.Student;
 import com.codeusingjava.student.repozytoria.StudentRepozytorium;
+import com.codeusingjava.stypendium.domena.RodzajStypendium;
+import com.codeusingjava.stypendium.domena.Stypendium;
+import com.codeusingjava.stypendium.repozytoria.StypendiumRepozytorium;
 import com.codeusingjava.uniwersytet.domena.Uniwersytet;
 import com.codeusingjava.uniwersytet.repozytoria.UniwersytetRepozytorium;
-import com.sruuniwersytet.DodajStudentaDoUniwersytetuOdpowiedz;
-import com.sruuniwersytet.DodajStudentaDoUniwersytetuZapytanie;
-import com.sruuniwersytet.ObjectFactory;
-import com.sruuniwersytet.StudentElement;
-import com.sruuniwersytet.WyswietlStudentowOdpowiedz;
-import com.sruuniwersytet.WyswietlStudentowZapytanie;
+import com.sruuniwersytet.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,12 +26,18 @@ public class StudentSerwisImpl implements StudentSerwis {
     private final StudentRepozytorium studentRepository;
 
     private final UniwersytetRepozytorium uniwersytetRepozytorium;
+    private final StypendiumRepozytorium stypendiumRepozytorium;
+    private final OsiagniecieRepozytorium osiagniecieRepozytorium;
 
     @Autowired
-    public StudentSerwisImpl(StudentRepozytorium studentRepository, UniwersytetRepozytorium uniwersytetRepozytorium, IndexRepozytorium indexRepozytorium)
+    public StudentSerwisImpl(StudentRepozytorium studentRepository, UniwersytetRepozytorium uniwersytetRepozytorium, IndexRepozytorium indexRepozytorium,
+                             StypendiumRepozytorium stypendiumRepozytorium,
+                             OsiagniecieRepozytorium osiagniecieRepozytorium)
     {
         this.studentRepository = studentRepository;
         this.uniwersytetRepozytorium = uniwersytetRepozytorium;
+        this.stypendiumRepozytorium = stypendiumRepozytorium;
+        this.osiagniecieRepozytorium = osiagniecieRepozytorium;
     }
 
     @Transactional
@@ -83,6 +90,31 @@ public class StudentSerwisImpl implements StudentSerwis {
         return response;
     }
 
+
+    public WyswietlStudentaPoIdOdpowiedz wyswietlStudentaPoId(WyswietlStudentaPoIdZapytanie req) {
+        ObjectFactory factory = new ObjectFactory();
+        WyswietlStudentaPoIdOdpowiedz response = factory.createWyswietlStudentaPoIdOdpowiedz();
+
+        try {
+            Student student = studentRepository.findOne(req.getIdStudenta());
+//            StudentElement studentElement = mapToStudent(student);
+            //dopisać dane samego studenta, żeby wyświetlały się na samej górze
+            List<Stypendium> stypendium = stypendiumRepozytorium.findByStudentId(student.getId());
+            stypendium.stream()
+                    .map((this::mapToStypendium))
+                    .forEach(stypendiumElement -> response.getStypendium().add(stypendiumElement));
+            List<Osiagniecie> osiagniecie = osiagniecieRepozytorium.findByStudentId(student.getId());
+            osiagniecie.stream()
+                    .map((this::mapToOsiagniecie))
+                    .forEach(osiagniecieElement -> response.getOsiagniecie().add(osiagniecieElement));
+        } catch (Exception e) {
+            //exception handler
+            System.out.println(e.getMessage());
+        }
+
+        return response;
+    }
+
     private StudentElement mapToStudent(Student student) {
         StudentElement studentElement = new StudentElement();
         studentElement.setId(student.getId());
@@ -91,6 +123,22 @@ public class StudentSerwisImpl implements StudentSerwis {
         studentElement.setEmail(student.getEmail());
         return studentElement;
     }
+
+    private StypendiumElement mapToStypendium(Stypendium stypendium) {
+        StypendiumElement stypendiumElement = new StypendiumElement();
+        stypendiumElement.setId(stypendium.getId());
+        stypendiumElement.setRodzajStypendium(String.valueOf(stypendium.getRodzajStypendium()));
+        return stypendiumElement;
+    }
+
+    private OsiagniecieElement mapToOsiagniecie(Osiagniecie osiagniecie) {
+        OsiagniecieElement osiagniecieElement = new OsiagniecieElement();
+        osiagniecieElement.setId(osiagniecie.getId());
+        osiagniecieElement.setRodzajOsiagniecia(String.valueOf(osiagniecie.getRodzajOsiagniecia()));
+        osiagniecieElement.setOpis(osiagniecie.getOpis());
+        return osiagniecieElement;
+    }
+
 
     /*public OutputSOATest hello(InputSOATest req) {
 

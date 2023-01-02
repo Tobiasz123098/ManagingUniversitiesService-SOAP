@@ -286,6 +286,23 @@
                 </xs:complexType>
             </xs:element>
 
+            <xs:element name="wyswietlStudentaPoIdZapytanie">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="idStudenta"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="wyswietlStudentaPoIdOdpowiedz">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="sru:StudentElement" name="student" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element type="sru:StypendiumElement" name="stypendium" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element type="sru:OsiagniecieElement" name="osiagniecie" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
 
             <xs:complexType name="IdObiektuWynikWalidacji">
                 <xs:sequence>
@@ -299,6 +316,19 @@
                     <xs:element type="xs:string" name="name" />
                     <xs:element type="xs:string" name="nazwisko" />
                     <xs:element type="xs:string" name="email" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="StypendiumElement">
+                <xs:sequence>
+                    <xs:element type="xs:long" name="id" />
+                    <xs:element type="xs:string" name="RodzajStypendium" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="OsiagniecieElement">
+                <xs:sequence>
+                    <xs:element type="xs:long" name="id" />
+                    <xs:element type="xs:string" name="RodzajOsiagniecia" />
+                    <xs:element type="xs:string" name="opis" />
                 </xs:sequence>
             </xs:complexType>
         </xs:schema>
@@ -425,6 +455,13 @@
         <wsdl:part name="out" element="sru:wyswietlStudentowOdpowiedz" />
     </wsdl:message>
 
+    <wsdl:message name="wyswietlStudentaPoIdZapytanie">
+        <wsdl:part name="in" element="sru:wyswietlStudentaPoIdZapytanie" />
+    </wsdl:message>
+    <wsdl:message name="wyswietlStudentaPoIdOdpowiedz">
+        <wsdl:part name="out" element="sru:wyswietlStudentaPoIdOdpowiedz" />
+    </wsdl:message>
+
 
     <wsdl:portType name="SRUEndpoint">
 
@@ -496,6 +533,11 @@
             <wsdl:input message="sru:wyswietlStudentowZapytanie" />
             <wsdl:output message="sru:wyswietlStudentowOdpowiedz" />
         </wsdl:operation>
+        <wsdl:operation name="SRUWyswietlStudentaPoId">
+            <wsdl:input message="sru:wyswietlStudentaPoIdZapytanie" />
+            <wsdl:output message="sru:wyswietlStudentaPoIdOdpowiedz" />
+        </wsdl:operation>
+
     </wsdl:portType>
 
     <wsdl:binding name="SRUBinding" type="sru:SRUEndpoint">
@@ -678,6 +720,17 @@
         </wsdl:operation>
 
         <wsdl:operation name="SRUWyswietlStudentow">
+            <soap:operation soapAction="http://sruuniwersytet.com"
+                            style="document" />
+            <wsdl:input>
+                <soap:body parts="in" use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="SRUWyswietlStudentaPoId">
             <soap:operation soapAction="http://sruuniwersytet.com"
                             style="document" />
             <wsdl:input>

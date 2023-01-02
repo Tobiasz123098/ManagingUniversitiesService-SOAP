@@ -13,6 +13,7 @@
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/DodajStudentaDoUniwersytetuZapytanie.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/stypendium/domena/RodzajStypendium.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/grupa/serwisy/GrupaSerwis.java
+/home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/StypendiumElement.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/index/repozytoria/IndexRepozytorium.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/SpringBootHelloWorldApplication.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/osiagniecie/domena/Osiagniecie.java
@@ -55,6 +56,7 @@
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/DodajDzienDoPlanuZajecOdpowiedz.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/UtworzPrzedmiotOdpowiedz.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/DodajIndexDoGrupyZapytanie.java
+/home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/OsiagniecieElement.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/student/repozytoria/StudentRepozytorium.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/osiagniecie/repozytoria/OsiagniecieRepozytorium.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/stypendium/domena/Stypendium.java
@@ -71,6 +73,7 @@
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/DodajIndexDoGrupyOdpowiedz.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/prowadzacy/serwisy/ProwadzacySerwis.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/ocena/domena/Ocena.java
+/home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/WyswietlStudentaPoIdOdpowiedz.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/uniwersytet/repozytoria/UniwersytetRepozytorium.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/WyswietlStudentowZapytanie.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/package-info.java
@@ -82,4 +85,5 @@
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/student/serwisy/StudentSerwis.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/WyswietlStudentowOdpowiedz.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/sala/domena/Sala.java
+/home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/WyswietlStudentaPoIdZapytanie.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/DodajProwadzacegoDoUniwersytetuZapytanie.java
