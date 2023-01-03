@@ -97,8 +97,11 @@ public class StudentSerwisImpl implements StudentSerwis {
 
         try {
             Student student = studentRepository.findOne(req.getIdStudenta());
-//            StudentElement studentElement = mapToStudent(student);
-            //dopisać dane samego studenta, żeby wyświetlały się na samej górze
+            response.setId(student.getId());
+            response.setName(student.getImie());
+            response.setNazwisko(student.getNazwisko());
+            response.setEmail(student.getEmail());
+
             List<Stypendium> stypendium = stypendiumRepozytorium.findByStudentId(student.getId());
             stypendium.stream()
                     .map((this::mapToStypendium))

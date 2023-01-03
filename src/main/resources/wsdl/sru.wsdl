@@ -295,14 +295,11 @@
             </xs:element>
             <xs:element name="wyswietlStudentaPoIdOdpowiedz">
                 <xs:complexType>
-                    <xs:sequence>
-                        <xs:element type="sru:StudentElement" name="student" minOccurs="0" maxOccurs="unbounded"/>
-                        <xs:element type="sru:StypendiumElement" name="stypendium" minOccurs="0" maxOccurs="unbounded"/>
-                        <xs:element type="sru:OsiagniecieElement" name="osiagniecie" minOccurs="0" maxOccurs="unbounded"/>
-                    </xs:sequence>
+                    <xs:complexContent>
+                        <xs:extension base="sru:StudentElementWithLists"/>
+                    </xs:complexContent>
                 </xs:complexType>
             </xs:element>
-
 
             <xs:complexType name="IdObiektuWynikWalidacji">
                 <xs:sequence>
@@ -329,6 +326,16 @@
                     <xs:element type="xs:long" name="id" />
                     <xs:element type="xs:string" name="RodzajOsiagniecia" />
                     <xs:element type="xs:string" name="opis" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="StudentElementWithLists">
+                <xs:sequence>
+                    <xs:element type="xs:long" name="id" />
+                    <xs:element type="xs:string" name="name" />
+                    <xs:element type="xs:string" name="nazwisko" />
+                    <xs:element type="xs:string" name="email" />
+                    <xs:element type="sru:StypendiumElement" name="stypendium" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element type="sru:OsiagniecieElement" name="osiagniecie" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:complexType>
         </xs:schema>

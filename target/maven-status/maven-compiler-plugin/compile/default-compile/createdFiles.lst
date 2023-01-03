@@ -15,6 +15,7 @@ com/codeusingjava/index/domena/KierunekStudiow.class
 com/codeusingjava/prowadzacy/domena/Prowadzacy.class
 com/sruuniwersytet/UtworzUniwersytetZapytanie.class
 com/sruuniwersytet/DodajSaleDoUniwersytetuOdpowiedz.class
+com/sruuniwersytet/StudentElementWithLists.class
 com/sruuniwersytet/WyswietlStudentowOdpowiedz.class
 com/codeusingjava/osiagniecie/repozytoria/OsiagniecieRepozytorium.class
 com/codeusingjava/ocena/domena/Ocena.class
