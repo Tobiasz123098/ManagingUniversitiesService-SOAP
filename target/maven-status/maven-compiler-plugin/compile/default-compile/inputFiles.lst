@@ -23,7 +23,6 @@
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/prowadzacy/domena/Tytul.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/StudentElement.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/UtworzOceneZapytanie.java
-/home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/WyswietlPlanZajecZapytanie.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/UtworzUniwersytetOdpowiedz.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/configuracja/LocalDateTimeAttributeConverter.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/sala/serwisy/SalaSerwis.java
@@ -48,6 +47,7 @@
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/configuracja/WebServiceConfig.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/UtworzGrupeZapytanie.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/UtworzPlanZajecOdpowiedz.java
+/home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/ProwadzacyElement.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/index/domena/Index.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/student/domena/Student.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/sala/repozytoria/SalaRepozytorium.java
@@ -64,7 +64,6 @@
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/configuracja/LocalDateAttributeConverter.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/DodajDzienDoPlanuZajecZapytanie.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/ocena/serwisy/OcenaSerwis.java
-/home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/WyswietlPlanZajecOdpowiedz.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/mapowanie/SRUWSEndpoint.java
 /home/tobiasz/prj/WebService/src/main/java/com/codeusingjava/przedmiot/domena/Przedmiot.java
 /home/tobiasz/prj/WebService/target/generated-sources/xjc/com/sruuniwersytet/IdObiektuWynikWalidacji.java

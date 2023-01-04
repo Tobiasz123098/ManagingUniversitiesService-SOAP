@@ -36,6 +36,22 @@ public class Dzien {
 
     private LocalTime doKiedyZajecia; // ***dniowo nie godzinowo***
 
+    /*
+
+    dzien_planu_zajec (
+        id,
+        plan_zajec_id,
+        dzien_tygodnia [PONIEDZIALEK, WTOREK, itp]
+    )
+
+    dzien_x_przedmiot (
+        dzien_id,
+        przedmiot_id,
+        godzina_rozpoczecia,
+        godzina_zakonczenia
+    )
+
+     */
 
     @ManyToOne
     @JoinColumn(name = "przedmiot_id", referencedColumnName = "id")

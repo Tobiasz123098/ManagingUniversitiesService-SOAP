@@ -5,13 +5,12 @@ import com.codeusingjava.prowadzacy.domena.Tytul;
 import com.codeusingjava.prowadzacy.repozytoria.ProwadzacyRepozytorium;
 import com.codeusingjava.uniwersytet.domena.Uniwersytet;
 import com.codeusingjava.uniwersytet.repozytoria.UniwersytetRepozytorium;
-import com.sruuniwersytet.DodajProwadzacegoDoUniwersytetuOdpowiedz;
-import com.sruuniwersytet.DodajProwadzacegoDoUniwersytetuZapytanie;
-import com.sruuniwersytet.ObjectFactory;
+import com.sruuniwersytet.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class ProwadzacySerwis {
@@ -48,5 +47,33 @@ public class ProwadzacySerwis {
         }
 
         return response;
+    }
+
+    public WyswietlProwadzacychOdpowiedz wyswietlProwadzacych(WyswietlProwadzacychZapytanie req) {
+
+        ObjectFactory factory = new ObjectFactory();
+        WyswietlProwadzacychOdpowiedz response = factory.createWyswietlProwadzacychOdpowiedz();
+
+        try {
+            List<Prowadzacy> prowadzacy = prowadzacyRepozytorium.findByUniwersytetId(req.getIdUniwersytetu());
+            prowadzacy.stream()
+                    .map((this::mapToProwadzacy))
+                    .forEach(prowadzacyElement -> response.getProwadzacy().add(prowadzacyElement));
+        } catch (Exception e) {
+            //exception handler
+            System.out.println(e.getMessage());
+        }
+
+        return response;
+    }
+
+    private ProwadzacyElement mapToProwadzacy(Prowadzacy prowadzacy) {
+        ProwadzacyElement prowadzacyElement = new ProwadzacyElement();
+        prowadzacyElement.setId(prowadzacy.getId());
+        prowadzacyElement.setName(prowadzacy.getImie());
+        prowadzacyElement.setNazwisko(prowadzacy.getNazwisko());
+        prowadzacyElement.setEmail(prowadzacy.getEmail());
+        prowadzacyElement.setTytul(String.valueOf(prowadzacy.getTytul()));
+        return prowadzacyElement;
     }
 }

@@ -9,10 +9,12 @@ import com.codeusingjava.ocena.repozytoria.OcenaRepozytorium;
 import com.sruuniwersytet.ObjectFactory;
 import com.sruuniwersytet.UtworzOceneOdpowiedz;
 import com.sruuniwersytet.UtworzOceneZapytanie;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class OcenaSerwis {
 
     private final OcenaRepozytorium ocenaRepozytorium;
@@ -51,6 +53,7 @@ public class OcenaSerwis {
             response.setIdObiektu(ocena.getId());
             response.setWynikWalidacji("Utworzono ocenę o id: " + ocena.getId());
         } catch (Exception e) {
+            log.error("hjhjjh",e);
             response.setWynikWalidacji(e.getMessage());
         }
 

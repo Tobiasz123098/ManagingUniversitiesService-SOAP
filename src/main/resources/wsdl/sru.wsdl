@@ -241,36 +241,6 @@
                 </xs:complexType>
             </xs:element>
 
-            <xs:element name="wyswietlPlanZajecZapytanie">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element type="xs:long" name="idPlanuZajec" />
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="wyswietlPlanZajecOdpowiedz">
-                <xs:complexType>
-                    <xs:complexContent>
-                        <xs:extension base="sru:IdObiektuWynikWalidacji"/>
-                    </xs:complexContent>
-                </xs:complexType>
-            </xs:element>
-
-            <xs:element name="wyswietlProwadzacychZapytanie">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element type="xs:long" name="idUniwersytetu" />
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="wyswietlProwadzacychOdpowiedz">
-                <xs:complexType>
-                    <xs:complexContent>
-                        <xs:extension base="sru:IdObiektuWynikWalidacji"/>
-                    </xs:complexContent>
-                </xs:complexType>
-            </xs:element>
-
             <xs:element name="wyswietlStudentowZapytanie">
                 <xs:complexType>
                     <xs:sequence>
@@ -298,6 +268,21 @@
                     <xs:complexContent>
                         <xs:extension base="sru:StudentElementWithLists"/>
                     </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="wyswietlProwadzacychZapytanie">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="idUniwersytetu" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="wyswietlProwadzacychOdpowiedz">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="sru:ProwadzacyElement" name="prowadzacy" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
                 </xs:complexType>
             </xs:element>
 
@@ -336,6 +321,15 @@
                     <xs:element type="xs:string" name="email" />
                     <xs:element type="sru:StypendiumElement" name="stypendium" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element type="sru:OsiagniecieElement" name="osiagniecie" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ProwadzacyElement">
+                <xs:sequence>
+                    <xs:element type="xs:long" name="id" />
+                    <xs:element type="xs:string" name="name" />
+                    <xs:element type="xs:string" name="nazwisko" />
+                    <xs:element type="xs:string" name="email" />
+                    <xs:element type="xs:string" name="Tytul" />
                 </xs:sequence>
             </xs:complexType>
         </xs:schema>
@@ -441,20 +435,6 @@
         <wsdl:part name="out" element="sru:utworzOceneOdpowiedz" />
     </wsdl:message>
 
-    <wsdl:message name="wyswietlPlanZajecZapytanie">
-        <wsdl:part name="in" element="sru:wyswietlPlanZajecZapytanie" />
-    </wsdl:message>
-    <wsdl:message name="wyswietlPlanZajecOdpowiedz">
-        <wsdl:part name="out" element="sru:wyswietlPlanZajecOdpowiedz" />
-    </wsdl:message>
-
-    <wsdl:message name="wyswietlProwadzacychZapytanie">
-        <wsdl:part name="in" element="sru:wyswietlProwadzacychZapytanie" />
-    </wsdl:message>
-    <wsdl:message name="wyswietlProwadzacychOdpowiedz">
-        <wsdl:part name="out" element="sru:wyswietlProwadzacychOdpowiedz" />
-    </wsdl:message>
-
     <wsdl:message name="wyswietlStudentowZapytanie">
         <wsdl:part name="in" element="sru:wyswietlStudentowZapytanie" />
     </wsdl:message>
@@ -467,6 +447,13 @@
     </wsdl:message>
     <wsdl:message name="wyswietlStudentaPoIdOdpowiedz">
         <wsdl:part name="out" element="sru:wyswietlStudentaPoIdOdpowiedz" />
+    </wsdl:message>
+
+    <wsdl:message name="wyswietlProwadzacychZapytanie">
+        <wsdl:part name="in" element="sru:wyswietlProwadzacychZapytanie" />
+    </wsdl:message>
+    <wsdl:message name="wyswietlProwadzacychOdpowiedz">
+        <wsdl:part name="out" element="sru:wyswietlProwadzacychOdpowiedz" />
     </wsdl:message>
 
 
@@ -528,14 +515,6 @@
             <wsdl:input message="sru:utworzOceneZapytanie" />
             <wsdl:output message="sru:utworzOceneOdpowiedz" />
         </wsdl:operation>
-        <wsdl:operation name="SRUWyswietlPlanZajec">
-            <wsdl:input message="sru:wyswietlPlanZajecZapytanie" />
-            <wsdl:output message="sru:wyswietlPlanZajecOdpowiedz" />
-        </wsdl:operation>
-        <wsdl:operation name="SRUWyswietlProwadzacych">
-            <wsdl:input message="sru:wyswietlProwadzacychZapytanie" />
-            <wsdl:output message="sru:wyswietlProwadzacychOdpowiedz" />
-        </wsdl:operation>
         <wsdl:operation name="SRUWyswietlStudentow">
             <wsdl:input message="sru:wyswietlStudentowZapytanie" />
             <wsdl:output message="sru:wyswietlStudentowOdpowiedz" />
@@ -543,6 +522,10 @@
         <wsdl:operation name="SRUWyswietlStudentaPoId">
             <wsdl:input message="sru:wyswietlStudentaPoIdZapytanie" />
             <wsdl:output message="sru:wyswietlStudentaPoIdOdpowiedz" />
+        </wsdl:operation>
+        <wsdl:operation name="SRUWyswietlProwadzacych">
+            <wsdl:input message="sru:wyswietlProwadzacychZapytanie" />
+            <wsdl:output message="sru:wyswietlProwadzacychOdpowiedz" />
         </wsdl:operation>
 
     </wsdl:portType>
@@ -704,28 +687,6 @@
             </wsdl:output>
         </wsdl:operation>
 
-        <wsdl:operation name="SRUWyswietlPlanZajec">
-            <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
-            <wsdl:input>
-                <soap:body parts="in" use="literal" />
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body parts="out" use="literal" />
-            </wsdl:output>
-        </wsdl:operation>
-
-        <wsdl:operation name="SRUWyswietlProwadzacych">
-            <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
-            <wsdl:input>
-                <soap:body parts="in" use="literal" />
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body parts="out" use="literal" />
-            </wsdl:output>
-        </wsdl:operation>
-
         <wsdl:operation name="SRUWyswietlStudentow">
             <soap:operation soapAction="http://sruuniwersytet.com"
                             style="document" />
@@ -738,6 +699,17 @@
         </wsdl:operation>
 
         <wsdl:operation name="SRUWyswietlStudentaPoId">
+            <soap:operation soapAction="http://sruuniwersytet.com"
+                            style="document" />
+            <wsdl:input>
+                <soap:body parts="in" use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="SRUWyswietlProwadzacych">
             <soap:operation soapAction="http://sruuniwersytet.com"
                             style="document" />
             <wsdl:input>
