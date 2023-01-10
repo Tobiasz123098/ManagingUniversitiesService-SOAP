@@ -43,8 +43,9 @@ public class OcenaSerwisTest {
         String msg = "Utworzono ocenę o id: " + ocena.getId();
         // when
         Mockito.when(ocenaRepozytorium.save(any(Ocena.class))).thenReturn(ocena);
-        Mockito.when(indexRepozytorium.findOne(anyLong())).thenReturn(new Index());
-        Mockito.when(dzienRepozytorium.findOne(anyLong())).thenReturn(new Dzien());
+        Index mockedIndex = new Index();
+        mockedIndex.setId(-100l);
+        Mockito.when(indexRepozytorium.findOne(anyLong())).thenReturn(mockedIndex);
         UtworzOceneZapytanie req = new UtworzOceneZapytanie();
         //then
         UtworzOceneOdpowiedz res =  ocenaSerwis.utworzOcene(req);
@@ -60,7 +61,6 @@ public class OcenaSerwisTest {
         // when
         Mockito.when(ocenaRepozytorium.save(any(Ocena.class))).thenThrow(new IllegalStateException("dupa"));
         Mockito.when(indexRepozytorium.findOne(anyLong())).thenReturn(new Index());
-        Mockito.when(dzienRepozytorium.findOne(anyLong())).thenReturn(new Dzien());
         UtworzOceneZapytanie req = new UtworzOceneZapytanie();
         //then
         UtworzOceneOdpowiedz res =  ocenaSerwis.utworzOcene(req);
