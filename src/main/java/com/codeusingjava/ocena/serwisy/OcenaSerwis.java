@@ -45,6 +45,8 @@ public class OcenaSerwis {
             Index index = indexRepozytorium.findOne(req.getIdIndexu());
             Dzien dzien = dzienRepozytorium.findOne(req.getIdDnia());
 
+
+            //fudsihfiusdhff
             ocena.getDzien().add(dzien);
             ocena.setIndex(index);
 
