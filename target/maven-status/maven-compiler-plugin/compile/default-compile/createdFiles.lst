@@ -35,6 +35,7 @@ com/codeusingjava/index/repozytoria/IndexRepozytorium.class
 com/sruuniwersytet/package-info.class
 com/sruuniwersytet/UtworzGrupeOdpowiedz.class
 com/codeusingjava/walidacja/Akcje.class
+com/codeusingjava/dzien/serwisy/DzienWalidator.class
 com/codeusingjava/przedmiot/serwisy/PrzedmiotSerwis.class
 com/sruuniwersytet/UtworzUniwersytetOdpowiedz.class
 com/sruuniwersytet/ObjectFactory.class

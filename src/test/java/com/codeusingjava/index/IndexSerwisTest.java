@@ -31,19 +31,16 @@ public class IndexSerwisTest {
     private GrupaRepozytorium grupaRepozytorium;
 
     @Test
-    void testDodajIndexDoGrupy() {
+    void dodaj_index_do_grupy_test() {
+        //given
         Index index = new Index();
-
         index.setId(2L);
         String msg = "Dodano index do grupy";
+        DodajIndexDoGrupyZapytanie req = new DodajIndexDoGrupyZapytanie();
 
         //when
         Mockito.when(indexRepozytorium.save(any(Index.class))).thenReturn(index);
-
         Mockito.when(indexRepozytorium.findOne(anyLong())).thenReturn(new Index());
-
-        DodajIndexDoGrupyZapytanie req = new DodajIndexDoGrupyZapytanie();
-
         //then
         DodajIndexDoGrupyOdpowiedz res = indexSerwis.dodajIndexDoGrupy(req);
 
@@ -52,15 +49,14 @@ public class IndexSerwisTest {
     }
 
     @Test
-    void testDodajIndexDoGrupyWyjatek() {
-        Index index = new Index();
+    void dodaj_index_do_grupy_wyjatek_test() {
+        //given
+        DodajIndexDoGrupyZapytanie req = new DodajIndexDoGrupyZapytanie();
         //when
         Mockito.when(indexRepozytorium.save(any(Index.class))).thenThrow(new IllegalStateException("dupa"));
-
         Mockito.when(indexRepozytorium.findOne(anyLong())).thenReturn(new Index());
         Mockito.when(grupaRepozytorium.findOne(anyLong())).thenReturn(new Grupa());
 
-        DodajIndexDoGrupyZapytanie req = new DodajIndexDoGrupyZapytanie();
         //then
         DodajIndexDoGrupyOdpowiedz res = indexSerwis.dodajIndexDoGrupy(req);
 

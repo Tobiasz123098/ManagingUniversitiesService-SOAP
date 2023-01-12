@@ -25,13 +25,17 @@ public class DzienSerwis {
 
     private final PrzedmiotRepozytorium przedmiotRepozytorium;
 
+    private final DzienWalidator dzienWalidator;
+
     @Autowired
     public DzienSerwis(DzienRepozytorium dzienRepozytorium,
                        PlanZajecRepozytorium planZajecRepozytorium,
-                       PrzedmiotRepozytorium przedmiotRepozytorium) {
+                       PrzedmiotRepozytorium przedmiotRepozytorium,
+                       DzienWalidator dzienWalidator) {
         this.dzienRepozytorium = dzienRepozytorium;
         this.planZajecRepozytorium = planZajecRepozytorium;
         this.przedmiotRepozytorium = przedmiotRepozytorium;
+        this.dzienWalidator = dzienWalidator;
     }
 
     public UtworzDzienOdpowiedz utworzDzien(UtworzDzienZapytanie req) {
@@ -39,20 +43,24 @@ public class DzienSerwis {
         ObjectFactory factory = new ObjectFactory();
         UtworzDzienOdpowiedz response = factory.createUtworzDzienOdpowiedz();
 
-        Dzien dzien = new Dzien();
+        if (!dzienWalidator.waliduj(req, response)) {
+            return response;
+        }
 
-        LocalDate dataDnia = LocalDate.from(req.getDataDnia().toGregorianCalendar().toZonedDateTime()
-                .withZoneSameInstant(ZoneId.systemDefault()).toLocalDateTime());
+            Dzien dzien = new Dzien();
 
-        LocalDateTime odKiedyZajecia = req.getOdKiedyZajecia().toGregorianCalendar().toZonedDateTime()
-                        .toLocalDateTime();
+            LocalDate dataDnia = LocalDate.from(req.getDataDnia().toGregorianCalendar().toZonedDateTime()
+                    .withZoneSameInstant(ZoneId.systemDefault()).toLocalDateTime());
 
-        LocalDateTime doKiedyZajecia = req.getDoKiedyZajecia().toGregorianCalendar().toZonedDateTime()
-                        .toLocalDateTime();
+            LocalDateTime odKiedyZajecia = req.getOdKiedyZajecia().toGregorianCalendar().toZonedDateTime()
+                    .toLocalDateTime();
 
-        dzien.setDataDnia(dataDnia);
-        dzien.setOdKiedyZajecia(LocalTime.from(odKiedyZajecia));
-        dzien.setDoKiedyZajecia(LocalTime.from(doKiedyZajecia));
+            LocalDateTime doKiedyZajecia = req.getDoKiedyZajecia().toGregorianCalendar().toZonedDateTime()
+                    .toLocalDateTime();
+
+            dzien.setDataDnia(dataDnia);
+            dzien.setOdKiedyZajecia(LocalTime.from(odKiedyZajecia));
+            dzien.setDoKiedyZajecia(LocalTime.from(doKiedyZajecia));
 
         try {
             Przedmiot przedmiot = przedmiotRepozytorium.findOne(req.getIdPrzedmiotu());

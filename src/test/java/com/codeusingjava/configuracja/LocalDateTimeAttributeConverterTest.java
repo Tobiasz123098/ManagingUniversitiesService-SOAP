@@ -13,7 +13,7 @@ class LocalDateTimeAttributeConverterTest {
     private LocalDateTimeAttributeConverter converter = new LocalDateTimeAttributeConverter();
 
     @Test
-    void convertToDatabaseColumn() {
+    void convert_to_database_column_test() {
         LocalTime localTime = LocalTime.of(10, 15);
         Time time = converter.convertToDatabaseColumn(localTime);
         assertNotNull(time);
@@ -21,7 +21,7 @@ class LocalDateTimeAttributeConverterTest {
     }
 
     @Test
-    void convertToEntityAttribute() {
+    void convert_to_entity_attribute_test() {
         Time time = Time.valueOf(LocalTime.of(10, 15));
         LocalTime localTime = converter.convertToEntityAttribute(time);
         assertNotNull(localTime);
@@ -29,12 +29,12 @@ class LocalDateTimeAttributeConverterTest {
     }
 
     @Test
-    public void testConvertToDatabaseColumn_withNullInput() {
+    public void convert_to_database_column_with_null_input_test() {
         assertEquals(null, converter.convertToDatabaseColumn(null));
     }
 
     @Test
-    public void testConvertToEntityAttribute_withNullInput() {
+    public void convert_to_entity_attribute_with_null_input_test() {
         assertEquals(null, converter.convertToEntityAttribute(null));
     }
 }
