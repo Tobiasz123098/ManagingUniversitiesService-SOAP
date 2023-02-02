@@ -5,7 +5,6 @@ import com.codeusingjava.grupa.repozytoria.GrupaRepozytorium;
 import com.sruuniwersytet.ObjectFactory;
 import com.sruuniwersytet.UtworzGrupeOdpowiedz;
 import com.sruuniwersytet.UtworzGrupeZapytanie;
-import com.sruuniwersytet.UtworzUniwersytetOdpowiedz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

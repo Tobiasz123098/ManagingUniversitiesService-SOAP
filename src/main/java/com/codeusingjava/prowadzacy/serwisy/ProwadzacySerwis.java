@@ -6,6 +6,7 @@ import com.codeusingjava.prowadzacy.repozytoria.ProwadzacyRepozytorium;
 import com.codeusingjava.uniwersytet.domena.Uniwersytet;
 import com.codeusingjava.uniwersytet.repozytoria.UniwersytetRepozytorium;
 import com.sruuniwersytet.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,7 +46,6 @@ public class ProwadzacySerwis {
         } catch (Exception e) {
             response.setWynikWalidacji("Wystąpił błąd: " + e.getMessage());
         }
-
         return response;
     }
 
@@ -60,7 +60,6 @@ public class ProwadzacySerwis {
                     .map((this::mapToProwadzacy))
                     .forEach(prowadzacyElement -> response.getProwadzacy().add(prowadzacyElement));
         } catch (Exception e) {
-            //exception handler
             System.out.println(e.getMessage());
         }
 

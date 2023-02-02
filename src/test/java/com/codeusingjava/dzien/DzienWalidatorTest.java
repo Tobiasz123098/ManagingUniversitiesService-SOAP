@@ -18,7 +18,7 @@ public class DzienWalidatorTest {
     private DzienWalidator dzienWalidator;
 
     @Test
-    public void utworz_dzien_bez_daty_dnia_test() {
+    void utworz_dzien_bez_daty_dnia_test() {
 //        given
         UtworzDzienZapytanie req = new UtworzDzienZapytanie();
         ObjectFactory factory = new ObjectFactory();

@@ -74,4 +74,21 @@ public class DzienSerwisTest {
         Assertions.assertNotNull(res);
         Assertions.assertEquals(msg ,res.getWynikWalidacji());
     }
+
+    @Test
+    void utworz_dzien_z_datami_wyjatek_test() {
+//        given
+        UtworzDzienZapytanie req = new UtworzDzienZapytanie();
+        req.setDataDnia(new XMLGregorianCalendarImpl());
+        req.setOdKiedyZajecia(new XMLGregorianCalendarImpl());
+        req.setDoKiedyZajecia(new XMLGregorianCalendarImpl());
+//        when
+        Mockito.when(dzienRepozytorium.save(any(Dzien.class))).thenThrow(new IllegalStateException("dupa"));
+        Mockito.when(przedmiotRepozytorium.findOne(anyLong())).thenReturn(new Przedmiot());
+        Mockito.when(dzienWalidator.waliduj(any(), any())).thenReturn(true);
+        UtworzDzienOdpowiedz res = dzienSerwis.utworzDzien(req);
+//        then
+        Assertions.assertNotNull(res);
+        Assertions.assertEquals("dupa" ,res.getWynikWalidacji());
+    }
 }

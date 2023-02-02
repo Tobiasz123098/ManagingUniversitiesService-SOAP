@@ -64,15 +64,15 @@ create table ocena (
 );
 
     --klucz kompozytowy
-create table ocena_dzien (
-    ocena_id bigint references ocena (id) on delete cascade,
-    dzien_id bigint references dzien (id) on delete cascade,
-    constraint ocena_dzien_pkey primary key (ocena_id, dzien_id),
-    foreign key (ocena_id)
-        references ocena (id) match full,
-    foreign key (dzien_id)
-        references dzien (id) match full
-);
+    create table ocena_dzien (
+        ocena_id bigint references ocena (id) on delete cascade,
+        dzien_id bigint references dzien (id) on delete cascade,
+        constraint ocena_dzien_pkey primary key (ocena_id, dzien_id),
+        foreign key (ocena_id)
+            references ocena (id) match full,
+        foreign key (dzien_id)
+            references dzien (id) match full
+    );
 
 create table index (
     id bigint not null primary key default nextval('index_id_seq'::regclass),

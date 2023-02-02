@@ -29,7 +29,7 @@
                         <xs:element type="xs:string" name="nazwisko" />
                         <xs:element type="xs:string" name="email" />
                         <xs:element type="xs:string" name="Tytul" />  <!--Tutaj dodać enum, zobaczyć czy taki trzeba utworzyć w WSDL-->
-                        <xs:element type="xs:long" name="idUniwersytetu" />
+                        <xs:element type="xs:long" name="idUniwersytetu" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -82,7 +82,7 @@
                     <xs:sequence>
                         <xs:element type="xs:string" name="RodzajOsiagniecia" />  <!--Tutaj dadać enum-->
                         <xs:element type="xs:string" name="opis" />
-                        <xs:element type="xs:long" name="idStudenta" />
+                        <xs:element type="xs:long" name="idStudenta" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -128,8 +128,8 @@
             <xs:element name="dodajIndexDoGrupyZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:long" name="idGrupy" />
-                        <xs:element type="xs:long" name="idIndexu" />
+                        <xs:element type="xs:long" name="idGrupy" minOccurs="0"/>
+                        <xs:element type="xs:long" name="idIndexu" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -160,8 +160,8 @@
             <xs:element name="przypiszPlanZajecDoGrupyZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:long" name="idPlanuZajec" />
-                        <xs:element type="xs:long" name="idGrupy" />
+                        <xs:element type="xs:long" name="idPlanuZajec" minOccurs="0"/>
+                        <xs:element type="xs:long" name="idGrupy" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -226,10 +226,10 @@
             <xs:element name="utworzOceneZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:int" name="ocena" />
-                        <xs:element type="xs:string" name="opis" />
-                        <xs:element type="xs:long" name="idDnia" />
-                        <xs:element type="xs:long" name="idIndexu" />
+                        <xs:element type="xs:int" name="ocena" minOccurs="0"/>
+                        <xs:element type="xs:string" name="opis"/>
+                        <xs:element type="xs:long" name="idDnia" minOccurs="0"/>
+                        <xs:element type="xs:long" name="idIndexu" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -274,7 +274,7 @@
             <xs:element name="wyswietlProwadzacychZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:long" name="idUniwersytetu" />
+                        <xs:element type="xs:long" name="idUniwersytetu" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>

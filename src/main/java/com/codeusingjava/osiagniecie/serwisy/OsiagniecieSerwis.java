@@ -35,9 +35,12 @@ public class OsiagniecieSerwis {
 
         Osiagniecie osiagniecie = new Osiagniecie();
         osiagniecie.setOpis(req.getOpis());
-        osiagniecie.setRodzajOsiagniecia(RodzajOsiagniecia.valueOf(req.getRodzajOsiagniecia().toUpperCase()));
 
         try {
+            String rodzajOsiagnieciaZapytanie = req.getRodzajOsiagniecia();
+            RodzajOsiagniecia rodzajOsiagniecia = RodzajOsiagniecia.valueOf(rodzajOsiagnieciaZapytanie.toUpperCase());
+            osiagniecie.setRodzajOsiagniecia(rodzajOsiagniecia);
+
             Student student = studentRepozytorium.findOne(req.getIdStudenta());
             student.dodajOsiagniecie(osiagniecie);
 
