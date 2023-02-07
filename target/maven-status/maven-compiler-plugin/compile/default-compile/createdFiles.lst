@@ -7,7 +7,6 @@ com\codeusingjava\index\domena\Index.class
 com\codeusingjava\osiagniecie\serwisy\OsiagniecieWalidator.class
 com\sruuniwersytet\WyswietlProwadzacychOdpowiedz.class
 com\sruuniwersytet\DodajStypendiumDoStudentaOdpowiedz.class
-com\codeusingjava\GlobalExceptionHandler.class
 com\codeusingjava\mapowanie\SRUWSEndpoint.class
 com\sruuniwersytet\PrzypiszPlanZajecDoGrupyZapytanie.class
 com\codeusingjava\dzien\repozytoria\DzienRepozytorium.class
@@ -51,14 +50,12 @@ com\sruuniwersytet\OsiagniecieElement.class
 com\codeusingjava\stypendium\repozytoria\StypendiumRepozytorium.class
 com\codeusingjava\student\repozytoria\StudentRepozytorium.class
 com\sruuniwersytet\UtworzOceneOdpowiedz.class
-com\codeusingjava\ErrorResponse.class
 com\codeusingjava\ocena\serwisy\OcenaWalidator.class
 com\codeusingjava\ocena\repozytoria\OcenaRepozytorium.class
 com\codeusingjava\grupa\repozytoria\GrupaRepozytorium.class
 com\sruuniwersytet\UtworzPrzedmiotOdpowiedz.class
 com\sruuniwersytet\DodajDzienDoPlanuZajecOdpowiedz.class
 com\sruuniwersytet\DodajOsiagnieciaDoStudentaZapytanie.class
-com\codeusingjava\NieMoznaWyswietlicProwadzacychWyjatek.class
 com\sruuniwersytet\StypendiumElement.class
 com\codeusingjava\index\repozytoria\IndexRepozytorium.class
 com\codeusingjava\prowadzacy\domena\Prowadzacy.class
@@ -96,6 +93,8 @@ com\codeusingjava\osiagniecie\serwisy\OsiagniecieSerwis.class
 com\sruuniwersytet\DodajProwadzacegoDoUniwersytetuOdpowiedz.class
 com\codeusingjava\przedmiot\serwisy\PrzedmiotWalidator.class
 com\codeusingjava\configuracja\LocalDateTimeAttributeConverter.class
+com\codeusingjava\prowadzacy\wyjatki\NieMoznaWyswietlicProwadzacychException.class
+com\codeusingjava\planzajec\wyjatki\NieMoznaWyswietlicPlanuZajecException.class
 com\sruuniwersytet\DodajSaleDoUniwersytetuZapytanie.class
 com\codeusingjava\student\domena\Student.class
 com\sruuniwersytet\UtworzDzienZapytanie.class

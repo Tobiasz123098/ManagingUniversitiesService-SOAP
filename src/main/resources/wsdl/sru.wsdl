@@ -44,8 +44,8 @@
             <xs:element name="dodajSaleDoUniwersytetuZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:int" name="numerSali" />
-                        <xs:element type="xs:long" name="idUniwersytetu" />
+                        <xs:element type="xs:int" name="numerSali" minOccurs="0"/>
+                        <xs:element type="xs:long" name="idUniwersytetu" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -211,7 +211,7 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element type="xs:string" name="nazwa" />
-                        <xs:element type="xs:long" name="idProwadzacego" />
+                        <xs:element type="xs:long" name="idProwadzacego" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>

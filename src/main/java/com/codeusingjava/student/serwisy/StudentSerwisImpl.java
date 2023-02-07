@@ -8,6 +8,8 @@ import com.codeusingjava.osiagniecie.domena.RodzajOsiagniecia;
 import com.codeusingjava.osiagniecie.repozytoria.OsiagniecieRepozytorium;
 import com.codeusingjava.student.domena.Student;
 import com.codeusingjava.student.repozytoria.StudentRepozytorium;
+import com.codeusingjava.student.wyjatki.NieMoznaWyswietlicStudentaPoId;
+import com.codeusingjava.student.wyjatki.NieMoznaWyswietlicStudentowException;
 import com.codeusingjava.stypendium.domena.RodzajStypendium;
 import com.codeusingjava.stypendium.domena.Stypendium;
 import com.codeusingjava.stypendium.repozytoria.StypendiumRepozytorium;
@@ -80,12 +82,10 @@ public class StudentSerwisImpl implements StudentSerwis {
             student.stream()
                     .map((this::mapToStudent))
                     .forEach(studentElement -> response.getStudent().add(studentElement));
+            return response;
         } catch (Exception e) {
-            //exception handler
-            System.out.println(e.getMessage());
+            throw new NieMoznaWyswietlicStudentowException("Nie znaleziono żadnych studentów", e);
         }
-
-        return response;
     }
 
 
@@ -108,12 +108,10 @@ public class StudentSerwisImpl implements StudentSerwis {
             osiagniecie.stream()
                     .map((this::mapToOsiagniecie))
                     .forEach(osiagniecieElement -> response.getOsiagniecie().add(osiagniecieElement));
+            return response;
         } catch (Exception e) {
-            //exception handler
-            System.out.println(e.getMessage());
+            throw new NieMoznaWyswietlicStudentaPoId("Nie znaleziono studenta po id", e);
         }
-
-        return response;
     }
 
     private StudentElement mapToStudent(Student student) {

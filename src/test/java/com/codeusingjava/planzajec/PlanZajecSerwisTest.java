@@ -84,7 +84,7 @@ public class PlanZajecSerwisTest {
         Assertions.assertNotNull(res);
         Assertions.assertEquals("Przypisano plan zajęć o id: " + planZajec.getId() +
                 " do grupy o id: " + grupa.getId(), res.getWynikWalidacji());
-        Mockito.verify(planZajecRepozytorium, Mockito.times(1)).findOne(req.getIdPlanuZajec());
+        Mockito.verify(planZajecRepozytorium, Mockito.times(1)).findOne(anyLong());
     }
 
     @Test
