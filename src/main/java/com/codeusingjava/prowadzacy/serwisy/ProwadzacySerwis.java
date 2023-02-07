@@ -1,12 +1,12 @@
 package com.codeusingjava.prowadzacy.serwisy;
 
+import com.codeusingjava.prowadzacy.wyjatki.NieMoznaWyswietlicProwadzacychException;
 import com.codeusingjava.prowadzacy.domena.Prowadzacy;
 import com.codeusingjava.prowadzacy.domena.Tytul;
 import com.codeusingjava.prowadzacy.repozytoria.ProwadzacyRepozytorium;
 import com.codeusingjava.uniwersytet.domena.Uniwersytet;
 import com.codeusingjava.uniwersytet.repozytoria.UniwersytetRepozytorium;
 import com.sruuniwersytet.*;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -59,11 +59,11 @@ public class ProwadzacySerwis {
             prowadzacy.stream()
                     .map((this::mapToProwadzacy))
                     .forEach(prowadzacyElement -> response.getProwadzacy().add(prowadzacyElement));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+            return response;
 
-        return response;
+        } catch (Exception e) {
+            throw new NieMoznaWyswietlicProwadzacychException("Nie znalezniono prowadzących w uniwersytecie", e);
+        }
     }
 
     private ProwadzacyElement mapToProwadzacy(Prowadzacy prowadzacy) {

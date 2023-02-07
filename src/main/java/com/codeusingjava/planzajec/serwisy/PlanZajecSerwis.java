@@ -4,6 +4,7 @@ import com.codeusingjava.grupa.domena.Grupa;
 import com.codeusingjava.grupa.repozytoria.GrupaRepozytorium;
 import com.codeusingjava.planzajec.domena.PlanZajec;
 import com.codeusingjava.planzajec.repozytoria.PlanZajecRepozytorium;
+import com.codeusingjava.planzajec.wyjatki.NieMoznaWyswietlicPlanuZajecException;
 import com.sruuniwersytet.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,10 +70,11 @@ public class PlanZajecSerwis {
             response.setIdObiektu(grupa.getId());
             response.setWynikWalidacji("Przypisano plan zajęć o id: " + planZajec.getId() +
                     " do grupy o id: " + grupa.getId());
-        } catch (Exception e) {
-            response.setWynikWalidacji(e.getMessage());
-        }
 
-        return response;
+            return response;
+
+        } catch (Exception e) {
+            throw new NieMoznaWyswietlicPlanuZajecException("Nie znaleziono planu zajęć", e);
+        }
     }
 }

@@ -1,6 +1,8 @@
 package com.codeusingjava.prowadzacy;
 
+import com.codeusingjava.prowadzacy.wyjatki.NieMoznaWyswietlicProwadzacychException;
 import com.codeusingjava.prowadzacy.domena.Prowadzacy;
+import com.codeusingjava.prowadzacy.domena.Tytul;
 import com.codeusingjava.prowadzacy.repozytoria.ProwadzacyRepozytorium;
 import com.codeusingjava.prowadzacy.serwisy.ProwadzacySerwis;
 import com.codeusingjava.uniwersytet.domena.Uniwersytet;
@@ -14,8 +16,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -40,6 +41,7 @@ public class ProwadzacySerwisTest {
         String msg = "Dodano prowadzącego do uniwersytetu";
         DodajProwadzacegoDoUniwersytetuZapytanie req = new DodajProwadzacegoDoUniwersytetuZapytanie();
         req.setTytul("PROFESOR");
+        req.setIdUniwersytetu(1L);
         //when
         Mockito.when(uniwersytetRepozytorium.getOne(anyLong())).thenReturn(new Uniwersytet());
         Mockito.when(prowadzacyRepozytorium.save(any(Prowadzacy.class))).thenReturn(prowadzacy);
@@ -55,6 +57,7 @@ public class ProwadzacySerwisTest {
         String msg = "Wystąpił błąd: dupa";
         DodajProwadzacegoDoUniwersytetuZapytanie req = new DodajProwadzacegoDoUniwersytetuZapytanie();
         req.setTytul("PROFESOR");
+        req.setIdUniwersytetu(1L);
         //when
         Mockito.when(uniwersytetRepozytorium.getOne(anyLong())).thenReturn(new Uniwersytet());
         Mockito.when(prowadzacyRepozytorium.save(any(Prowadzacy.class))).thenThrow(new IllegalStateException("dupa"));
@@ -67,28 +70,34 @@ public class ProwadzacySerwisTest {
     @Test
     void wyswietl_prowadzacych_test() {
         //given
-        List<Prowadzacy> prowadzacy = new ArrayList<>();
+        Prowadzacy prowadzacy = new Prowadzacy();
         WyswietlProwadzacychZapytanie req = new WyswietlProwadzacychZapytanie();
         req.setIdUniwersytetu(1L);
+        //dodawanie i uzupełnianie prowadzacego
+        prowadzacy.setId(1L);
+        prowadzacy.setImie("Hieronim");
+        prowadzacy.setNazwisko("Kowalski");
+        prowadzacy.setEmail("kowalski@gmail.com");
+        prowadzacy.setTytul(Tytul.valueOf("PROFESOR"));
         //when
-        Mockito.when(prowadzacyRepozytorium.findByUniwersytetId(anyLong())).thenReturn(prowadzacy);
+        Mockito.when(prowadzacyRepozytorium.findByUniwersytetId(anyLong())).thenReturn(Collections.singletonList(prowadzacy));
         WyswietlProwadzacychOdpowiedz res = prowadzacySerwis.wyswietlProwadzacych(req);
         //then
         Assertions.assertNotNull(res);
-        Assertions.assertEquals(prowadzacy, res.getProwadzacy());
+        Assertions.assertEquals(prowadzacy.getId(), res.getProwadzacy().get(0).getId());
+        Assertions.assertEquals(prowadzacy.getImie(), res.getProwadzacy().get(0).getName());
+        Assertions.assertEquals(prowadzacy.getNazwisko(), res.getProwadzacy().get(0).getNazwisko());
+        Assertions.assertEquals(prowadzacy.getEmail(), res.getProwadzacy().get(0).getEmail());
+        Assertions.assertEquals(prowadzacy.getTytul(), Tytul.valueOf(res.getProwadzacy().get(0).getTytul()));
     }
 
-    @Test
+    @Test()
     void wyswietl_prowadzacych_wyjatek_test() {
         //given
-        List<Prowadzacy> prowadzacy = new ArrayList<>();
         WyswietlProwadzacychZapytanie req = new WyswietlProwadzacychZapytanie();
-        req.setIdUniwersytetu(1L);
         //when
         Mockito.when(prowadzacyRepozytorium.findByUniwersytetId(anyLong())).thenThrow(new IllegalStateException("dupa"));
-        WyswietlProwadzacychOdpowiedz res = prowadzacySerwis.wyswietlProwadzacych(req);
         //then
-        Assertions.assertNotNull(res);
-        Assertions.assertEquals(prowadzacy, res.getProwadzacy());
+        Assertions.assertThrows(NieMoznaWyswietlicProwadzacychException.class, () -> prowadzacySerwis.wyswietlProwadzacych(req));
     }
 }

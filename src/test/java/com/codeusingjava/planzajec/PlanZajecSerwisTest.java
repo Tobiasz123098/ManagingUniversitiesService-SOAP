@@ -5,6 +5,7 @@ import com.codeusingjava.grupa.repozytoria.GrupaRepozytorium;
 import com.codeusingjava.planzajec.domena.PlanZajec;
 import com.codeusingjava.planzajec.repozytoria.PlanZajecRepozytorium;
 import com.codeusingjava.planzajec.serwisy.PlanZajecSerwis;
+import com.codeusingjava.planzajec.wyjatki.NieMoznaWyswietlicPlanuZajecException;
 import com.sruuniwersytet.PrzypiszPlanZajecDoGrupyOdpowiedz;
 import com.sruuniwersytet.PrzypiszPlanZajecDoGrupyZapytanie;
 import com.sruuniwersytet.UtworzPlanZajecOdpowiedz;
@@ -72,6 +73,8 @@ public class PlanZajecSerwisTest {
         Grupa grupa = new Grupa();
         grupa.setId(2L);
         PrzypiszPlanZajecDoGrupyZapytanie req = new PrzypiszPlanZajecDoGrupyZapytanie();
+        req.setIdGrupy(1L);
+        req.setIdPlanuZajec(2L);
         //when
         Mockito.when(planZajecRepozytorium.findOne(anyLong())).thenReturn(planZajec);
         Mockito.when(grupaRepozytorium.findOne(anyLong())).thenReturn(new Grupa());
@@ -81,6 +84,7 @@ public class PlanZajecSerwisTest {
         Assertions.assertNotNull(res);
         Assertions.assertEquals("Przypisano plan zajęć o id: " + planZajec.getId() +
                 " do grupy o id: " + grupa.getId(), res.getWynikWalidacji());
+        Mockito.verify(planZajecRepozytorium, Mockito.times(1)).findOne(req.getIdPlanuZajec());
     }
 
     @Test
@@ -88,12 +92,8 @@ public class PlanZajecSerwisTest {
         //given
         PrzypiszPlanZajecDoGrupyZapytanie req = new PrzypiszPlanZajecDoGrupyZapytanie();
         //when
-        Mockito.when(planZajecRepozytorium.findOne(anyLong())).thenReturn(new PlanZajec());
         Mockito.when(grupaRepozytorium.findOne(anyLong())).thenReturn(new Grupa());
-        Mockito.when(grupaRepozytorium.save(any(Grupa.class))).thenThrow(new IllegalStateException("dupa"));
-        PrzypiszPlanZajecDoGrupyOdpowiedz res = planZajecSerwis.przypiszPlanZajecDoGrupy(req);
         //then
-        Assertions.assertNotNull(res);
-        Assertions.assertEquals("dupa", res.getWynikWalidacji());
+        Assertions.assertThrows(NieMoznaWyswietlicPlanuZajecException.class, () -> planZajecSerwis.przypiszPlanZajecDoGrupy(req));
     }
 }

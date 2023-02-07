@@ -2,6 +2,7 @@ C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\stypendium\r
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\student\domena\Student.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\student\repozytoria\StudentRepozytorium.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\grupa\domena\Grupa.java
+C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\NieMoznaWyswietlicProwadzacychWyjatek.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\prowadzacy\domena\Prowadzacy.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\prowadzacy\serwisy\ProwadzacyWalidator.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\przedmiot\serwisy\PrzedmiotSerwis.java
@@ -16,6 +17,7 @@ C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersy
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\IdObiektuWynikWalidacji.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\UtworzOceneOdpowiedz.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\grupa\repozytoria\GrupaRepozytorium.java
+C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\ErrorResponse.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\prowadzacy\repozytoria\ProwadzacyRepozytorium.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\UtworzPrzedmiotOdpowiedz.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\stypendium\serwisy\StypendiumSerwis.java
@@ -84,6 +86,7 @@ C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersy
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\WyswietlProwadzacychOdpowiedz.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\DodajProwadzacegoDoUniwersytetuOdpowiedz.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\planzajec\domena\PlanZajec.java
+C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\GlobalExceptionHandler.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\index\domena\Index.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\ocena\serwisy\OcenaWalidator.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\planzajec\serwisy\PlanZajecWalidator.java

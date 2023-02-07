@@ -1,9 +1,7 @@
 package com.codeusingjava.prowadzacy;
 
 import com.codeusingjava.prowadzacy.serwisy.ProwadzacyWalidator;
-import com.sruuniwersytet.DodajProwadzacegoDoUniwersytetuOdpowiedz;
-import com.sruuniwersytet.DodajProwadzacegoDoUniwersytetuZapytanie;
-import com.sruuniwersytet.ObjectFactory;
+import com.sruuniwersytet.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -113,5 +111,30 @@ public class ProwadzacyWalidatorTest {
         //then
         Assertions.assertNotNull(res);
         Assertions.assertNull(res.getWynikWalidacji());
+    }
+
+    @Test
+    void wyswietl_prowadzacych_bez_id_uniwersytetu_test() {
+        //given
+        WyswietlProwadzacychZapytanie req = new WyswietlProwadzacychZapytanie();
+        ObjectFactory factory = new ObjectFactory();
+        WyswietlProwadzacychOdpowiedz res = factory.createWyswietlProwadzacychOdpowiedz();
+        //when
+        prowadzacyWalidator.waliduj_wyswietl_prowadzacych(req, res);
+        //then
+        Assertions.assertNotNull(res);
+    }
+
+    @Test
+    void wyswietl_prowadzacych_wszystko_ustawione_poprawnie_test() {
+        //given
+        WyswietlProwadzacychZapytanie req = new WyswietlProwadzacychZapytanie();
+        ObjectFactory factory = new ObjectFactory();
+        WyswietlProwadzacychOdpowiedz res = factory.createWyswietlProwadzacychOdpowiedz();
+        req.setIdUniwersytetu(1L);
+        //when
+        prowadzacyWalidator.waliduj_wyswietl_prowadzacych(req, res);
+        //then
+        Assertions.assertNotNull(res);
     }
 }
