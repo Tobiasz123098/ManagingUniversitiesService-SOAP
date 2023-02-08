@@ -14,7 +14,7 @@ public class PlanZajecWalidator {
     public static final String POLE_ID_GRUPY_NIE_MOŻE_BYĆ_PUSTE = "Pole 'id grupy' nie może być puste";
     public static final String POLE_ID_PLANU_ZAJEC_NIE_MOŻE_BYĆ_PUSTE = "Pole 'id planu zajec' nie może być puste";
 
-    public boolean waliduj_utworz_plan_zajec(UtworzPlanZajecZapytanie req, UtworzPlanZajecOdpowiedz res) {
+    public boolean walidujUtworzPlanZajec(UtworzPlanZajecZapytanie req, UtworzPlanZajecOdpowiedz res) {
 
         if (req.getDzienOd() == null) {
             res.setWynikWalidacji(POLE_DZIEN_OD_NIE_MOŻE_BYĆ_PUSTE);
@@ -29,7 +29,7 @@ public class PlanZajecWalidator {
         return true;
     }
 
-    public boolean waliduj_przypisz_plan_zajec_do_grupy(PrzypiszPlanZajecDoGrupyZapytanie req, PrzypiszPlanZajecDoGrupyOdpowiedz res) {
+    public boolean walidujPrzypiszPlanZajecDoGrupy(PrzypiszPlanZajecDoGrupyZapytanie req, PrzypiszPlanZajecDoGrupyOdpowiedz res) {
 
         if (req.getIdGrupy() == null) {
             res.setWynikWalidacji(POLE_ID_GRUPY_NIE_MOŻE_BYĆ_PUSTE);

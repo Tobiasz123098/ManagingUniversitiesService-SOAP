@@ -78,7 +78,7 @@ public class DzienWalidatorTest {
         dzienWalidator.waliduj(req, res);
 //        then
         Assertions.assertNotNull(res);
-        Assertions.assertEquals(null, res.getWynikWalidacji());
+        Assertions.assertNull(res.getWynikWalidacji());
     }
 }
 

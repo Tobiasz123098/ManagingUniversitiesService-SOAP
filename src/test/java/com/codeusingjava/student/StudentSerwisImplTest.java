@@ -1,13 +1,12 @@
 package com.codeusingjava.student;
 
-import com.codeusingjava.index.domena.Index;
 import com.codeusingjava.osiagniecie.domena.Osiagniecie;
 import com.codeusingjava.osiagniecie.domena.RodzajOsiagniecia;
 import com.codeusingjava.osiagniecie.repozytoria.OsiagniecieRepozytorium;
-import com.codeusingjava.prowadzacy.wyjatki.NieMoznaWyswietlicProwadzacychException;
 import com.codeusingjava.student.domena.Student;
 import com.codeusingjava.student.repozytoria.StudentRepozytorium;
 import com.codeusingjava.student.serwisy.StudentSerwisImpl;
+import com.codeusingjava.student.wyjatki.NieMoznaWyswietlicStudentaPoIdException;
 import com.codeusingjava.student.wyjatki.NieMoznaWyswietlicStudentowException;
 import com.codeusingjava.stypendium.domena.RodzajStypendium;
 import com.codeusingjava.stypendium.domena.Stypendium;
@@ -56,6 +55,7 @@ public class StudentSerwisImplTest {
         DodajStudentaDoUniwersytetuZapytanie req = new DodajStudentaDoUniwersytetuZapytanie();
         String msg = "Dodano studenta do uniwersytetu i nadano mu index o nr: " + req.getNumerIndexu();
         req.setKierunekStudiow("IT");
+        req.setIdUniwersytetu(1L);
         //when
         Mockito.when(uniwersytetRepozytorium.findOne(anyLong())).thenReturn(new Uniwersytet());
         Mockito.when(studentRepozytorium.save(any(Student.class))).thenReturn(student);
@@ -70,6 +70,7 @@ public class StudentSerwisImplTest {
         //given
         DodajStudentaDoUniwersytetuZapytanie req = new DodajStudentaDoUniwersytetuZapytanie();
         req.setKierunekStudiow("IT");
+        req.setIdUniwersytetu(1L);
         //when
         Mockito.when(uniwersytetRepozytorium.findOne(anyLong())).thenReturn(new Uniwersytet());
         Mockito.when(studentRepozytorium.save(any(Student.class))).thenThrow(new IllegalStateException("dupa"));
@@ -88,6 +89,7 @@ public class StudentSerwisImplTest {
         student.setImie("imie");
         student.setNazwisko("nazwisko");
         student.setEmail("email");
+        req.setIdUniwersytetu(1L);
         //when
         Mockito.when(studentRepozytorium.findByUniwersytetId(anyLong())).thenReturn(Collections.singletonList(student));
         WyswietlStudentowOdpowiedz res = studentSerwis.wyswietlStudentow(req);
@@ -129,6 +131,7 @@ public class StudentSerwisImplTest {
         osiagniecie.setStudent(student);
         osiagniecie.setOpis("opis");
         osiagniecie.setRodzajOsiagniecia(RodzajOsiagniecia.valueOf("OLIMPIADA"));
+        osiagniecieList.add(osiagniecie);
 
         student.setId(2L);
         student.setImie("imie");
@@ -159,7 +162,12 @@ public class StudentSerwisImplTest {
 
     @Test
     void wyswietl_studenta_po_id_wyjatek_test() {
-
+        //given
+        WyswietlStudentaPoIdZapytanie req = new WyswietlStudentaPoIdZapytanie();
+        //when
+        Mockito.when(studentRepozytorium.findOne(anyLong())).thenThrow(new IllegalStateException("dupa"));
+        //then
+        Assertions.assertThrows(NieMoznaWyswietlicStudentaPoIdException.class, () -> studentSerwis.wyswietlStudentaPoId(req));
     }
 }
 

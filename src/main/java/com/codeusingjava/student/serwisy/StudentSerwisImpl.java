@@ -4,13 +4,11 @@ import com.codeusingjava.index.domena.Index;
 import com.codeusingjava.index.domena.KierunekStudiow;
 import com.codeusingjava.index.repozytoria.IndexRepozytorium;
 import com.codeusingjava.osiagniecie.domena.Osiagniecie;
-import com.codeusingjava.osiagniecie.domena.RodzajOsiagniecia;
 import com.codeusingjava.osiagniecie.repozytoria.OsiagniecieRepozytorium;
 import com.codeusingjava.student.domena.Student;
 import com.codeusingjava.student.repozytoria.StudentRepozytorium;
-import com.codeusingjava.student.wyjatki.NieMoznaWyswietlicStudentaPoId;
+import com.codeusingjava.student.wyjatki.NieMoznaWyswietlicStudentaPoIdException;
 import com.codeusingjava.student.wyjatki.NieMoznaWyswietlicStudentowException;
-import com.codeusingjava.stypendium.domena.RodzajStypendium;
 import com.codeusingjava.stypendium.domena.Stypendium;
 import com.codeusingjava.stypendium.repozytoria.StypendiumRepozytorium;
 import com.codeusingjava.uniwersytet.domena.Uniwersytet;
@@ -110,7 +108,7 @@ public class StudentSerwisImpl implements StudentSerwis {
                     .forEach(osiagniecieElement -> response.getOsiagniecie().add(osiagniecieElement));
             return response;
         } catch (Exception e) {
-            throw new NieMoznaWyswietlicStudentaPoId("Nie znaleziono studenta po id", e);
+            throw new NieMoznaWyswietlicStudentaPoIdException("Nie znaleziono studenta po id", e);
         }
     }
 

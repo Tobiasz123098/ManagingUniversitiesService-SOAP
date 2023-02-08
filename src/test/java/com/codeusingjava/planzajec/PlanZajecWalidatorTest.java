@@ -23,7 +23,7 @@ public class PlanZajecWalidatorTest {
         UtworzPlanZajecOdpowiedz res = factory.createUtworzPlanZajecOdpowiedz();
         req.setDzienDo(new XMLGregorianCalendarImpl());
         //when
-        planZajecWalidator.waliduj_utworz_plan_zajec(req, res);
+        planZajecWalidator.walidujUtworzPlanZajec(req, res);
         //then
         Assertions.assertNotNull(res);
         Assertions.assertEquals(PlanZajecWalidator.POLE_DZIEN_OD_NIE_MOŻE_BYĆ_PUSTE, res.getWynikWalidacji());
@@ -37,7 +37,7 @@ public class PlanZajecWalidatorTest {
         UtworzPlanZajecOdpowiedz res = factory.createUtworzPlanZajecOdpowiedz();
         req.setDzienOd(new XMLGregorianCalendarImpl());
         //when
-        planZajecWalidator.waliduj_utworz_plan_zajec(req, res);
+        planZajecWalidator.walidujUtworzPlanZajec(req, res);
         //then
         Assertions.assertNotNull(res);
         Assertions.assertEquals(PlanZajecWalidator.POLE_DZIEN_DO_NIE_MOŻE_BYĆ_PUSTE, res.getWynikWalidacji());
@@ -52,7 +52,7 @@ public class PlanZajecWalidatorTest {
         req.setDzienOd(new XMLGregorianCalendarImpl());
         req.setDzienDo(new XMLGregorianCalendarImpl());
         //when
-        planZajecWalidator.waliduj_utworz_plan_zajec(req, res);
+        planZajecWalidator.walidujUtworzPlanZajec(req, res);
         //then
         Assertions.assertNotNull(res);
         Assertions.assertNull(res.getWynikWalidacji());
@@ -66,7 +66,7 @@ public class PlanZajecWalidatorTest {
         PrzypiszPlanZajecDoGrupyOdpowiedz res = factory.createPrzypiszPlanZajecDoGrupyOdpowiedz();
         req.setIdPlanuZajec(1L);
         //when
-        planZajecWalidator.waliduj_przypisz_plan_zajec_do_grupy(req, res);
+        planZajecWalidator.walidujPrzypiszPlanZajecDoGrupy(req, res);
         //then
         Assertions.assertNotNull(res);
         Assertions.assertEquals(PlanZajecWalidator.POLE_ID_GRUPY_NIE_MOŻE_BYĆ_PUSTE, res.getWynikWalidacji());
@@ -80,7 +80,7 @@ public class PlanZajecWalidatorTest {
         PrzypiszPlanZajecDoGrupyOdpowiedz res = factory.createPrzypiszPlanZajecDoGrupyOdpowiedz();
         req.setIdGrupy(1L);
         //when
-        planZajecWalidator.waliduj_przypisz_plan_zajec_do_grupy(req, res);
+        planZajecWalidator.walidujPrzypiszPlanZajecDoGrupy(req, res);
         //then
         Assertions.assertNotNull(res);
         Assertions.assertEquals(PlanZajecWalidator.POLE_ID_PLANU_ZAJEC_NIE_MOŻE_BYĆ_PUSTE, res.getWynikWalidacji());
@@ -95,7 +95,7 @@ public class PlanZajecWalidatorTest {
         req.setIdGrupy(1L);
         req.setIdPlanuZajec(2L);
         //when
-        planZajecWalidator.waliduj_przypisz_plan_zajec_do_grupy(req, res);
+        planZajecWalidator.walidujPrzypiszPlanZajecDoGrupy(req, res);
         //then
         Assertions.assertNotNull(res);
         Assertions.assertNull(res.getWynikWalidacji());

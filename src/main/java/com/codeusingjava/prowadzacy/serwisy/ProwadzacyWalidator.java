@@ -17,7 +17,7 @@ public class ProwadzacyWalidator {
     public static final String POLE_TYTUŁ_NIE_MOŻE_BYĆ_PUSTE = "Pole 'tytul' nie może być puste";
     public static final String POLE_ID_UNIWERSYTETU_NIE_MOŻE_BYĆ_PUSTE = "Pole 'id uniwersytetu' nie może być puste";
 
-    public boolean waliduj_dodaj_prowadzacego_do_uniwersytetu(DodajProwadzacegoDoUniwersytetuZapytanie req, DodajProwadzacegoDoUniwersytetuOdpowiedz res) {
+    public boolean walidujDodajProwadzacegoDoUniwersytetu(DodajProwadzacegoDoUniwersytetuZapytanie req, DodajProwadzacegoDoUniwersytetuOdpowiedz res) {
 
         if (req.getImie() == null) {
             res.setWynikWalidacji(POLE_IMIE_NIE_MOŻE_BYĆ_PUSTE);
@@ -47,7 +47,7 @@ public class ProwadzacyWalidator {
         return true;
     }
 
-    public boolean waliduj_wyswietl_prowadzacych(WyswietlProwadzacychZapytanie req, WyswietlProwadzacychOdpowiedz res) {
+    public boolean walidujWyswietlProwadzacych(WyswietlProwadzacychZapytanie req, WyswietlProwadzacychOdpowiedz res) {
 
         if (req.getIdUniwersytetu() == null) {
             log.error(POLE_ID_UNIWERSYTETU_NIE_MOŻE_BYĆ_PUSTE);

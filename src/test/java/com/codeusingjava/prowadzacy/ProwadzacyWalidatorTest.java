@@ -24,7 +24,7 @@ public class ProwadzacyWalidatorTest {
         req.setTytul("PROFESOR");
         req.setIdUniwersytetu(1L);
         //when
-        prowadzacyWalidator.waliduj_dodaj_prowadzacego_do_uniwersytetu(req, res);
+        prowadzacyWalidator.walidujDodajProwadzacegoDoUniwersytetu(req, res);
         //then
         Assertions.assertNotNull(res);
         Assertions.assertEquals(ProwadzacyWalidator.POLE_IMIE_NIE_MOŻE_BYĆ_PUSTE, res.getWynikWalidacji());
@@ -40,7 +40,7 @@ public class ProwadzacyWalidatorTest {
         req.setTytul("PROFESOR");
         req.setIdUniwersytetu(1L);
         //when
-        prowadzacyWalidator.waliduj_dodaj_prowadzacego_do_uniwersytetu(req, res);
+        prowadzacyWalidator.walidujDodajProwadzacegoDoUniwersytetu(req, res);
         //then
         Assertions.assertNotNull(res);
         Assertions.assertEquals(ProwadzacyWalidator.POLE_NAZWISKO_NIE_MOŻE_BYĆ_PUSTE, res.getWynikWalidacji());
@@ -56,7 +56,7 @@ public class ProwadzacyWalidatorTest {
         req.setTytul("PROFESOR");
         req.setIdUniwersytetu(1L);
         //when
-        prowadzacyWalidator.waliduj_dodaj_prowadzacego_do_uniwersytetu(req, res);
+        prowadzacyWalidator.walidujDodajProwadzacegoDoUniwersytetu(req, res);
         //then
         Assertions.assertNotNull(res);
         Assertions.assertEquals(ProwadzacyWalidator.POLE_EMAIL_NIE_MOŻE_BYĆ_PUSTE, res.getWynikWalidacji());
@@ -73,7 +73,7 @@ public class ProwadzacyWalidatorTest {
         req.setEmail("email@gmail.com");
         req.setIdUniwersytetu(1L);
         //when
-        prowadzacyWalidator.waliduj_dodaj_prowadzacego_do_uniwersytetu(req, res);
+        prowadzacyWalidator.walidujDodajProwadzacegoDoUniwersytetu(req, res);
         //then
         Assertions.assertNotNull(res);
         Assertions.assertEquals(ProwadzacyWalidator.POLE_TYTUŁ_NIE_MOŻE_BYĆ_PUSTE, res.getWynikWalidacji());
@@ -89,7 +89,7 @@ public class ProwadzacyWalidatorTest {
         req.setEmail("email@gmail.com");
         req.setTytul("PROFESOR");
         //when
-        prowadzacyWalidator.waliduj_dodaj_prowadzacego_do_uniwersytetu(req, res);
+        prowadzacyWalidator.walidujDodajProwadzacegoDoUniwersytetu(req, res);
         //then
         Assertions.assertNotNull(res);
         Assertions.assertEquals(ProwadzacyWalidator.POLE_ID_UNIWERSYTETU_NIE_MOŻE_BYĆ_PUSTE, res.getWynikWalidacji());
@@ -107,7 +107,7 @@ public class ProwadzacyWalidatorTest {
         req.setTytul("PROFESOR");
         req.setIdUniwersytetu(1L);
         //when
-        prowadzacyWalidator.waliduj_dodaj_prowadzacego_do_uniwersytetu(req, res);
+        prowadzacyWalidator.walidujDodajProwadzacegoDoUniwersytetu(req, res);
         //then
         Assertions.assertNotNull(res);
         Assertions.assertNull(res.getWynikWalidacji());
@@ -120,7 +120,7 @@ public class ProwadzacyWalidatorTest {
         ObjectFactory factory = new ObjectFactory();
         WyswietlProwadzacychOdpowiedz res = factory.createWyswietlProwadzacychOdpowiedz();
         //when
-        prowadzacyWalidator.waliduj_wyswietl_prowadzacych(req, res);
+        prowadzacyWalidator.walidujWyswietlProwadzacych(req, res);
         //then
         Assertions.assertNotNull(res);
     }
@@ -133,7 +133,7 @@ public class ProwadzacyWalidatorTest {
         WyswietlProwadzacychOdpowiedz res = factory.createWyswietlProwadzacychOdpowiedz();
         req.setIdUniwersytetu(1L);
         //when
-        prowadzacyWalidator.waliduj_wyswietl_prowadzacych(req, res);
+        prowadzacyWalidator.walidujWyswietlProwadzacych(req, res);
         //then
         Assertions.assertNotNull(res);
     }

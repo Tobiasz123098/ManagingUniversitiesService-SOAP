@@ -7,6 +7,7 @@ C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\prowadzacy\s
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\przedmiot\serwisy\PrzedmiotSerwis.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\student\serwisy\StudentWalidator.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\sala\serwisy\SalaWalidator.java
+C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\student\wyjatki\NieMoznaWyswietlicStudentowException.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\ocena\domena\Ocena.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\UtworzOceneZapytanie.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\WyswietlStudentaPoIdOdpowiedz.java
@@ -77,6 +78,7 @@ C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\stypendium\d
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\ocena\serwisy\OcenaSerwis.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\osiagniecie\repozytoria\OsiagniecieRepozytorium.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\mapowanie\SRUWSEndpoint.java
+C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\student\wyjatki\NieMoznaWyswietlicStudentaPoIdException.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\WyswietlProwadzacychZapytanie.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\stypendium\serwisy\StypendiumWalidacja.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\prowadzacy\serwisy\ProwadzacySerwis.java

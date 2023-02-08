@@ -9,6 +9,7 @@ com\sruuniwersytet\WyswietlProwadzacychOdpowiedz.class
 com\sruuniwersytet\DodajStypendiumDoStudentaOdpowiedz.class
 com\codeusingjava\mapowanie\SRUWSEndpoint.class
 com\sruuniwersytet\PrzypiszPlanZajecDoGrupyZapytanie.class
+com\codeusingjava\student\wyjatki\NieMoznaWyswietlicStudentowException.class
 com\codeusingjava\dzien\repozytoria\DzienRepozytorium.class
 com\sruuniwersytet\UtworzGrupeOdpowiedz.class
 com\codeusingjava\grupa\domena\Grupa.class
@@ -81,6 +82,7 @@ com\sruuniwersytet\DodajIndexDoGrupyOdpowiedz.class
 com\codeusingjava\sala\repozytoria\SalaRepozytorium.class
 com\sruuniwersytet\WyswietlProwadzacychZapytanie.class
 com\sruuniwersytet\DodajStypendiumDoStudentaZapytanie.class
+com\codeusingjava\student\wyjatki\NieMoznaWyswietlicStudentaPoIdException.class
 com\codeusingjava\planzajec\repozytoria\PlanZajecRepozytorium.class
 com\codeusingjava\ocena\domena\Ocena.class
 com\codeusingjava\sala\domena\Sala.class

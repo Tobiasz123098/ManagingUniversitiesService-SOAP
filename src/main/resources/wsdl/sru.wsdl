@@ -63,7 +63,7 @@
                         <xs:element type="xs:string" name="imie" />
                         <xs:element type="xs:string" name="nazwisko" />
                         <xs:element type="xs:string" name="email" />
-                        <xs:element type="xs:long" name="idUniwersytetu" />
+                        <xs:element type="xs:long" name="idUniwersytetu" minOccurs="0"/>
                         <xs:element type="xs:string" name="numerIndexu" />
                         <xs:element type="xs:string" name="KierunekStudiow" />
                     </xs:sequence>
@@ -98,7 +98,7 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element type="xs:string" name="RodzajStypendium" />
-                        <xs:element type="xs:long" name="idStudenta" />
+                        <xs:element type="xs:long" name="idStudenta" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -244,7 +244,7 @@
             <xs:element name="wyswietlStudentowZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:long" name="idUniwersytetu" />
+                        <xs:element type="xs:long" name="idUniwersytetu" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -259,7 +259,7 @@
             <xs:element name="wyswietlStudentaPoIdZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:long" name="idStudenta"/>
+                        <xs:element type="xs:long" name="idStudenta" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
