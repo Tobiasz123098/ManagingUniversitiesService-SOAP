@@ -1,4 +1,5 @@
 com\sruuniwersytet\DodajIndexDoGrupyZapytanie.class
+com\codeusingjava\planzajec\dto\PlanZajecDto.class
 com\codeusingjava\osiagniecie\domena\RodzajOsiagniecia.class
 com\codeusingjava\index\serwisy\IndexSerwis.class
 com\sruuniwersytet\DodajStudentaDoUniwersytetuZapytanie.class
@@ -11,11 +12,14 @@ com\codeusingjava\mapowanie\SRUWSEndpoint.class
 com\sruuniwersytet\PrzypiszPlanZajecDoGrupyZapytanie.class
 com\codeusingjava\student\wyjatki\NieMoznaWyswietlicStudentowException.class
 com\codeusingjava\dzien\repozytoria\DzienRepozytorium.class
+com\sruuniwersytet\PlanZajecElementLists.class
 com\sruuniwersytet\UtworzGrupeOdpowiedz.class
 com\codeusingjava\grupa\domena\Grupa.class
 com\sruuniwersytet\StudentElementWithLists.class
+com\sruuniwersytet\DzienElement.class
 com\sruuniwersytet\UtworzUniwersytetZapytanie.class
 com\codeusingjava\ocena\serwisy\OcenaSerwis.class
+com\codeusingjava\planzajec\dto\DzienResponseDto.class
 com\sruuniwersytet\DodajProwadzacegoDoUniwersytetuZapytanie.class
 com\sruuniwersytet\UtworzDzienOdpowiedz.class
 com\codeusingjava\planzajec\domena\PlanZajec.class
@@ -63,6 +67,7 @@ com\codeusingjava\prowadzacy\domena\Prowadzacy.class
 com\sruuniwersytet\WyswietlStudentaPoIdZapytanie.class
 com\codeusingjava\walidacja\Akcje.class
 com\sruuniwersytet\IdObiektuWynikWalidacji.class
+com\codeusingjava\planzajec\dto\PrzedmiotDto.class
 com\codeusingjava\planzajec\serwisy\PlanZajecWalidator.class
 com\codeusingjava\student\serwisy\StudentWalidator.class
 com\codeusingjava\sala\serwisy\SalaSerwis.class
@@ -73,6 +78,7 @@ com\codeusingjava\uniwersytet\domena\Uniwersytet.class
 com\sruuniwersytet\ProwadzacyElement.class
 com\codeusingjava\student\serwisy\StudentSerwis.class
 com\codeusingjava\dzien\domena\Dzien.class
+com\sruuniwersytet\WyswietlPlanZajecPoIdOdpowiedz.class
 com\sruuniwersytet\PrzypiszPlanZajecDoGrupyOdpowiedz.class
 com\codeusingjava\stypendium\serwisy\StypendiumSerwis.class
 com\sruuniwersytet\DodajDzienDoPlanuZajecZapytanie.class
@@ -83,6 +89,7 @@ com\codeusingjava\sala\repozytoria\SalaRepozytorium.class
 com\sruuniwersytet\WyswietlProwadzacychZapytanie.class
 com\sruuniwersytet\DodajStypendiumDoStudentaZapytanie.class
 com\codeusingjava\student\wyjatki\NieMoznaWyswietlicStudentaPoIdException.class
+com\codeusingjava\planzajec\dto\DzienDto.class
 com\codeusingjava\planzajec\repozytoria\PlanZajecRepozytorium.class
 com\codeusingjava\ocena\domena\Ocena.class
 com\codeusingjava\sala\domena\Sala.class
@@ -91,15 +98,18 @@ com\sruuniwersytet\WyswietlStudentaPoIdOdpowiedz.class
 com\codeusingjava\uniwersytet\serwisy\UniwersytetWalidator.class
 com\codeusingjava\dzien\serwisy\DzienSerwis.class
 com\codeusingjava\grupa\serwisy\GrupaSerwis.class
+com\codeusingjava\planzajec\dto\ProwadzacyDto.class
 com\codeusingjava\osiagniecie\serwisy\OsiagniecieSerwis.class
 com\sruuniwersytet\DodajProwadzacegoDoUniwersytetuOdpowiedz.class
 com\codeusingjava\przedmiot\serwisy\PrzedmiotWalidator.class
 com\codeusingjava\configuracja\LocalDateTimeAttributeConverter.class
 com\codeusingjava\prowadzacy\wyjatki\NieMoznaWyswietlicProwadzacychException.class
+com\sruuniwersytet\PrzedmiotElement.class
 com\codeusingjava\planzajec\wyjatki\NieMoznaWyswietlicPlanuZajecException.class
 com\sruuniwersytet\DodajSaleDoUniwersytetuZapytanie.class
 com\codeusingjava\student\domena\Student.class
 com\sruuniwersytet\UtworzDzienZapytanie.class
+com\sruuniwersytet\WyswietlPlanZajecPoIdZapytanie.class
 com\codeusingjava\student\serwisy\StudentSerwisImpl.class
 com\codeusingjava\dzien\serwisy\DzienWalidator.class
 com\sruuniwersytet\WyswietlStudentowOdpowiedz.class

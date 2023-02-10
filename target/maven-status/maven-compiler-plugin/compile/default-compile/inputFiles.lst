@@ -18,6 +18,7 @@ C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersy
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\UtworzOceneOdpowiedz.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\grupa\repozytoria\GrupaRepozytorium.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\planzajec\wyjatki\NieMoznaWyswietlicPlanuZajecException.java
+C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\WyswietlPlanZajecPoIdOdpowiedz.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\prowadzacy\repozytoria\ProwadzacyRepozytorium.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\UtworzPrzedmiotOdpowiedz.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\stypendium\serwisy\StypendiumSerwis.java
@@ -27,6 +28,7 @@ C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\dzien\serwis
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\StudentElementWithLists.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\UtworzPrzedmiotZapytanie.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\WyswietlStudentowZapytanie.java
+C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\WyswietlPlanZajecPoIdZapytanie.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\configuracja\LocalDateTimeAttributeConverter.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\osiagniecie\serwisy\OsiagniecieWalidator.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\dzien\domena\Dzien.java
@@ -38,6 +40,7 @@ C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersy
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\stypendium\domena\RodzajStypendium.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\DodajDzienDoPlanuZajecOdpowiedz.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\DodajSaleDoUniwersytetuZapytanie.java
+C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\PrzedmiotElement.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\dzien\repozytoria\DzienRepozytorium.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\ProwadzacyElement.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\osiagniecie\serwisy\OsiagniecieSerwis.java
@@ -49,8 +52,11 @@ C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersy
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\StypendiumElement.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\PrzypiszPlanZajecDoGrupyOdpowiedz.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\DodajStypendiumDoStudentaZapytanie.java
+C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\planzajec\dto\PrzedmiotDto.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\uniwersytet\serwisy\UniwersytetSerwis.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\przedmiot\domena\Przedmiot.java
+C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\DzienElement.java
+C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\planzajec\dto\ProwadzacyDto.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\OsiagniecieElement.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\osiagniecie\domena\Osiagniecie.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\sala\serwisy\SalaSerwis.java
@@ -83,6 +89,7 @@ C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersy
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\stypendium\serwisy\StypendiumWalidacja.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\prowadzacy\serwisy\ProwadzacySerwis.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\grupa\serwisy\GrupaWalidator.java
+C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\PlanZajecElementLists.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\planzajec\repozytoria\PlanZajecRepozytorium.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\UtworzUniwersytetZapytanie.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\WyswietlProwadzacychOdpowiedz.java
@@ -94,12 +101,15 @@ C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\planzajec\se
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\przedmiot\serwisy\PrzedmiotWalidator.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\DodajOsiagnieciaDoStudentaZapytanie.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\grupa\serwisy\GrupaSerwis.java
+C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\planzajec\dto\DzienDto.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\ObjectFactory.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\DodajOsiagnieciaDoStudentaOdpowiedz.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\przedmiot\repozytoria\PrzedmiotRepozytorium.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\uniwersytet\repozytoria\UniwersytetRepozytorium.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\prowadzacy\domena\Tytul.java
+C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\planzajec\dto\DzienResponseDto.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\package-info.java
 C:\Users\tobia\Downloads\WebService\target\generated-sources\xjc\com\sruuniwersytet\WyswietlStudentaPoIdZapytanie.java
+C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\planzajec\dto\PlanZajecDto.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\configuracja\LocalDateAttributeConverter.java
 C:\Users\tobia\Downloads\WebService\src\main\java\com\codeusingjava\planzajec\serwisy\PlanZajecSerwis.java

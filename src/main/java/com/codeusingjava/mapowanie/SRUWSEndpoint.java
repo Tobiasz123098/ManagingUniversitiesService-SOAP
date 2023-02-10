@@ -180,4 +180,10 @@ public class SRUWSEndpoint {
     public WyswietlProwadzacychOdpowiedz wyswietlProwadzacych(@RequestPayload WyswietlProwadzacychZapytanie req) {
         return prowadzacySerwis.wyswietlProwadzacych(req);
     }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "wyswietlPlanZajecPoIdZapytanie")
+    @ResponsePayload
+    public WyswietlPlanZajecPoIdOdpowiedz wyswietlPlanZajecPoId(@RequestPayload WyswietlPlanZajecPoIdZapytanie req) {
+        return planZajecSerwis.wyswietlPlanZajecPoId(req);
+    }
 }

@@ -10,7 +10,7 @@
             <xs:element name="utworzUniwersytetZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:string" name="nazwa" />
+                        <xs:element type="xs:string" name="nazwa"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -25,10 +25,11 @@
             <xs:element name="dodajProwadzacegoDoUniwersytetuZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:string" name="imie" />
-                        <xs:element type="xs:string" name="nazwisko" />
-                        <xs:element type="xs:string" name="email" />
-                        <xs:element type="xs:string" name="Tytul" />  <!--Tutaj dodać enum, zobaczyć czy taki trzeba utworzyć w WSDL-->
+                        <xs:element type="xs:string" name="imie"/>
+                        <xs:element type="xs:string" name="nazwisko"/>
+                        <xs:element type="xs:string" name="email"/>
+                        <xs:element type="xs:string"
+                                    name="Tytul"/>  <!--Tutaj dodać enum, zobaczyć czy taki trzeba utworzyć w WSDL-->
                         <xs:element type="xs:long" name="idUniwersytetu" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
@@ -60,12 +61,12 @@
             <xs:element name="dodajStudentaDoUniwersytetuZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:string" name="imie" />
-                        <xs:element type="xs:string" name="nazwisko" />
-                        <xs:element type="xs:string" name="email" />
+                        <xs:element type="xs:string" name="imie"/>
+                        <xs:element type="xs:string" name="nazwisko"/>
+                        <xs:element type="xs:string" name="email"/>
                         <xs:element type="xs:long" name="idUniwersytetu" minOccurs="0"/>
-                        <xs:element type="xs:string" name="numerIndexu" />
-                        <xs:element type="xs:string" name="KierunekStudiow" />
+                        <xs:element type="xs:string" name="numerIndexu"/>
+                        <xs:element type="xs:string" name="KierunekStudiow"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -80,8 +81,8 @@
             <xs:element name="dodajOsiagnieciaDoStudentaZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:string" name="RodzajOsiagniecia" />  <!--Tutaj dadać enum-->
-                        <xs:element type="xs:string" name="opis" />
+                        <xs:element type="xs:string" name="RodzajOsiagniecia"/>  <!--Tutaj dadać enum-->
+                        <xs:element type="xs:string" name="opis"/>
                         <xs:element type="xs:long" name="idStudenta" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
@@ -97,7 +98,7 @@
             <xs:element name="dodajStypendiumDoStudentaZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:string" name="RodzajStypendium" />
+                        <xs:element type="xs:string" name="RodzajStypendium"/>
                         <xs:element type="xs:long" name="idStudenta" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
@@ -113,7 +114,7 @@
             <xs:element name="utworzGrupeZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:string" name="nazwaGrupy" />
+                        <xs:element type="xs:string" name="nazwaGrupy"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -144,8 +145,8 @@
             <xs:element name="utworzPlanZajecZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:date" name="dzienOd" />  <!--Zobaczyć jak dodać datę jako typedate w WSDL-->
-                        <xs:element type="xs:date" name="dzienDo" />
+                        <xs:element type="xs:date" name="dzienOd"/>  <!--Zobaczyć jak dodać datę jako typedate w WSDL-->
+                        <xs:element type="xs:date" name="dzienDo"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -176,8 +177,8 @@
             <xs:element name="dodajDzienDoPlanuZajecZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:long" name="idDnia" />
-                        <xs:element type="xs:long" name="idPlanuZajec" />
+                        <xs:element type="xs:long" name="idDnia"/>
+                        <xs:element type="xs:long" name="idPlanuZajec"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -192,10 +193,11 @@
             <xs:element name="utworzDzienZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:date" name="dataDnia" />  <!--Zobaczyć jak dodać datć jako typedate w WSDL-->
-                        <xs:element type="xs:time" name="odKiedyZajecia" />
-                        <xs:element type="xs:time" name="doKiedyZajecia" />
-                        <xs:element type="xs:long" name="idPrzedmiotu" />
+                        <xs:element type="xs:date"
+                                    name="dataDnia"/>  <!--Zobaczyć jak dodać datć jako typedate w WSDL-->
+                        <xs:element type="xs:time" name="odKiedyZajecia"/>
+                        <xs:element type="xs:time" name="doKiedyZajecia"/>
+                        <xs:element type="xs:long" name="idPrzedmiotu"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -210,7 +212,7 @@
             <xs:element name="utworzPrzedmiotZapytanie">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element type="xs:string" name="nazwa" />
+                        <xs:element type="xs:string" name="nazwa"/>
                         <xs:element type="xs:long" name="idProwadzacego" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
@@ -286,246 +288,320 @@
                 </xs:complexType>
             </xs:element>
 
+            <xs:element name="wyswietlPlanZajecPoIdZapytanie">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:long" name="idPlanuZajec" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="wyswietlPlanZajecPoIdOdpowiedz">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="sru:PlanZajecElementLists"/>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+
             <xs:complexType name="IdObiektuWynikWalidacji">
                 <xs:sequence>
-                    <xs:element type="xs:long" name="idObiektu" />
-                    <xs:element type="xs:string" name="wynikWalidacji" />
+                    <xs:element type="xs:long" name="idObiektu"/>
+                    <xs:element type="xs:string" name="wynikWalidacji"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="StudentElement">
                 <xs:sequence>
-                    <xs:element type="xs:long" name="id" />
-                    <xs:element type="xs:string" name="name" />
-                    <xs:element type="xs:string" name="nazwisko" />
-                    <xs:element type="xs:string" name="email" />
+                    <xs:element type="xs:long" name="id"/>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element type="xs:string" name="nazwisko"/>
+                    <xs:element type="xs:string" name="email"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="StypendiumElement">
                 <xs:sequence>
-                    <xs:element type="xs:long" name="id" />
-                    <xs:element type="xs:string" name="RodzajStypendium" />
+                    <xs:element type="xs:long" name="id"/>
+                    <xs:element type="xs:string" name="RodzajStypendium"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="OsiagniecieElement">
                 <xs:sequence>
-                    <xs:element type="xs:long" name="id" />
-                    <xs:element type="xs:string" name="RodzajOsiagniecia" />
-                    <xs:element type="xs:string" name="opis" />
+                    <xs:element type="xs:long" name="id"/>
+                    <xs:element type="xs:string" name="RodzajOsiagniecia"/>
+                    <xs:element type="xs:string" name="opis"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="StudentElementWithLists">
                 <xs:sequence>
-                    <xs:element type="xs:long" name="id" />
-                    <xs:element type="xs:string" name="name" />
-                    <xs:element type="xs:string" name="nazwisko" />
-                    <xs:element type="xs:string" name="email" />
+                    <xs:element type="xs:long" name="id"/>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element type="xs:string" name="nazwisko"/>
+                    <xs:element type="xs:string" name="email"/>
                     <xs:element type="sru:StypendiumElement" name="stypendium" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element type="sru:OsiagniecieElement" name="osiagniecie" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="ProwadzacyElement">
                 <xs:sequence>
-                    <xs:element type="xs:long" name="id" />
-                    <xs:element type="xs:string" name="name" />
-                    <xs:element type="xs:string" name="nazwisko" />
-                    <xs:element type="xs:string" name="email" />
-                    <xs:element type="xs:string" name="Tytul" />
+                    <xs:element type="xs:long" name="id"/>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element type="xs:string" name="nazwisko"/>
+                    <xs:element type="xs:string" name="email"/>
+                    <xs:element type="xs:string" name="Tytul"/>
                 </xs:sequence>
             </xs:complexType>
+            <xs:complexType name="PrzedmiotElement">
+                <xs:sequence>
+                    <xs:element type="xs:long" name="id"/>
+                    <xs:element type="xs:string" name="nazwa"/>
+                    <xs:element type="xs:time" name="odKiedyZajecia"/>
+                    <xs:element type="xs:time" name="doKiedyZajecia"/>
+                    <xs:element type="sru:ProwadzacyElement" name="Prowadzacy"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DzienElement">
+                <xs:sequence>
+                    <xs:element type="xs:long" name="id"/>
+                    <xs:element type="xs:date" name="dataDnia"/>
+                    <xs:element type="xs:time" name="odKiedyZajecia"/>
+                    <xs:element type="xs:time" name="doKiedyZajecia"/>
+                    <xs:element type="sru:PrzedmiotElement" name="przedmiot" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PlanZajecElementLists">
+                <xs:sequence>
+                    <xs:element type="xs:long" name="id"/>
+                    <xs:element type="xs:date" name="dzienOd"/>
+                    <xs:element type="xs:date" name="dzienDo"/>
+                    <xs:element type="sru:DzienElement" name="dzien" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+
+
+            <!--
+                        <xs:complexType mixed="true">
+                            <xs:sequence>
+                                <xs:element type="sru:PrzedmiotElement" name="przedmiot" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType mixed="true">
+                                        <xs:sequence>
+                                            <xs:element type="sru:ProwadzacyElement" name="prowadzacy" minOccurs="0" maxOccurs="unbounded"/>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+            -->
+
+
+            <!--
+                    <xs:element type="sru:DzienElement" name="dzien" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element type="sru:PrzedmiotElement" name="przedmiot" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element type="sru:ProwadzacyElement" name="prowadzacy" minOccurs="0" maxOccurs="unbounded"/>
+            -->
+
         </xs:schema>
     </wsdl:types>
 
 
-
     <wsdl:message name="utworzUniwersytetZapytanie">
-        <wsdl:part name="in" element="sru:utworzUniwersytetZapytanie" />
+        <wsdl:part name="in" element="sru:utworzUniwersytetZapytanie"/>
     </wsdl:message>
     <wsdl:message name="utworzUniwersytetOdpowiedz">
-        <wsdl:part name="out" element="sru:utworzUniwersytetOdpowiedz" />
+        <wsdl:part name="out" element="sru:utworzUniwersytetOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="dodajProwadzacegoDoUniwersytetuZapytanie">
-        <wsdl:part name="in" element="sru:dodajProwadzacegoDoUniwersytetuZapytanie" />
+        <wsdl:part name="in" element="sru:dodajProwadzacegoDoUniwersytetuZapytanie"/>
     </wsdl:message>
     <wsdl:message name="dodajProwadzacegoDoUniwersytetuOdpowiedz">
-        <wsdl:part name="out" element="sru:dodajProwadzacegoDoUniwersytetuOdpowiedz" />
+        <wsdl:part name="out" element="sru:dodajProwadzacegoDoUniwersytetuOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="dodajSaleDoUniwersytetuZapytanie">
-        <wsdl:part name="in" element="sru:dodajSaleDoUniwersytetuZapytanie" />
+        <wsdl:part name="in" element="sru:dodajSaleDoUniwersytetuZapytanie"/>
     </wsdl:message>
     <wsdl:message name="dodajSaleDoUniwersytetuOdpowiedz">
-        <wsdl:part name="out" element="sru:dodajSaleDoUniwersytetuOdpowiedz" />
+        <wsdl:part name="out" element="sru:dodajSaleDoUniwersytetuOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="dodajStudentaDoUniwersytetuZapytanie">
-        <wsdl:part name="in" element="sru:dodajStudentaDoUniwersytetuZapytanie" />
+        <wsdl:part name="in" element="sru:dodajStudentaDoUniwersytetuZapytanie"/>
     </wsdl:message>
     <wsdl:message name="dodajStudentaDoUniwersytetuOdpowiedz">
-        <wsdl:part name="out" element="sru:dodajStudentaDoUniwersytetuOdpowiedz" />
+        <wsdl:part name="out" element="sru:dodajStudentaDoUniwersytetuOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="dodajOsiagnieciaDoStudentaZapytanie">
-        <wsdl:part name="in" element="sru:dodajOsiagnieciaDoStudentaZapytanie" />
+        <wsdl:part name="in" element="sru:dodajOsiagnieciaDoStudentaZapytanie"/>
     </wsdl:message>
     <wsdl:message name="dodajOsiagnieciaDoStudentaOdpowiedz">
-        <wsdl:part name="out" element="sru:dodajOsiagnieciaDoStudentaOdpowiedz" />
+        <wsdl:part name="out" element="sru:dodajOsiagnieciaDoStudentaOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="dodajStypendiumDoStudentaZapytanie">
-        <wsdl:part name="in" element="sru:dodajStypendiumDoStudentaZapytanie" />
+        <wsdl:part name="in" element="sru:dodajStypendiumDoStudentaZapytanie"/>
     </wsdl:message>
     <wsdl:message name="dodajStypendiumDoStudentaOdpowiedz">
-        <wsdl:part name="out" element="sru:dodajStypendiumDoStudentaOdpowiedz" />
+        <wsdl:part name="out" element="sru:dodajStypendiumDoStudentaOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="utworzGrupeZapytanie">
-        <wsdl:part name="in" element="sru:utworzGrupeZapytanie" />
+        <wsdl:part name="in" element="sru:utworzGrupeZapytanie"/>
     </wsdl:message>
     <wsdl:message name="utworzGrupeOdpowiedz">
-        <wsdl:part name="out" element="sru:utworzGrupeOdpowiedz" />
+        <wsdl:part name="out" element="sru:utworzGrupeOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="dodajIndexDoGrupyZapytanie">
-        <wsdl:part name="in" element="sru:dodajIndexDoGrupyZapytanie" />
+        <wsdl:part name="in" element="sru:dodajIndexDoGrupyZapytanie"/>
     </wsdl:message>
     <wsdl:message name="dodajIndexDoGrupyOdpowiedz">
-        <wsdl:part name="out" element="sru:dodajIndexDoGrupyOdpowiedz" />
+        <wsdl:part name="out" element="sru:dodajIndexDoGrupyOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="utworzPlanZajecZapytanie">
-        <wsdl:part name="in" element="sru:utworzPlanZajecZapytanie" />
+        <wsdl:part name="in" element="sru:utworzPlanZajecZapytanie"/>
     </wsdl:message>
     <wsdl:message name="utworzPlanZajecOdpowiedz">
-        <wsdl:part name="out" element="sru:utworzPlanZajecOdpowiedz" />
+        <wsdl:part name="out" element="sru:utworzPlanZajecOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="przypiszPlanZajecDoGrupyZapytanie">
-        <wsdl:part name="in" element="sru:przypiszPlanZajecDoGrupyZapytanie" />
+        <wsdl:part name="in" element="sru:przypiszPlanZajecDoGrupyZapytanie"/>
     </wsdl:message>
     <wsdl:message name="przypiszPlanZajecDoGrupyOdpowiedz">
-        <wsdl:part name="out" element="sru:przypiszPlanZajecDoGrupyOdpowiedz" />
+        <wsdl:part name="out" element="sru:przypiszPlanZajecDoGrupyOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="dodajDzienDoPlanuZajecZapytanie">
-        <wsdl:part name="in" element="sru:dodajDzienDoPlanuZajecZapytanie" />
+        <wsdl:part name="in" element="sru:dodajDzienDoPlanuZajecZapytanie"/>
     </wsdl:message>
     <wsdl:message name="dodajDzienDoPlanuZajecOdpowiedz">
-        <wsdl:part name="out" element="sru:dodajDzienDoPlanuZajecOdpowiedz" />
+        <wsdl:part name="out" element="sru:dodajDzienDoPlanuZajecOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="utworzDzienZapytanie">
-        <wsdl:part name="in" element="sru:utworzDzienZapytanie" />
+        <wsdl:part name="in" element="sru:utworzDzienZapytanie"/>
     </wsdl:message>
     <wsdl:message name="utworzDzienOdpowiedz">
-        <wsdl:part name="out" element="sru:utworzDzienOdpowiedz" />
+        <wsdl:part name="out" element="sru:utworzDzienOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="utworzPrzedmiotZapytanie">
-        <wsdl:part name="in" element="sru:utworzPrzedmiotZapytanie" />
+        <wsdl:part name="in" element="sru:utworzPrzedmiotZapytanie"/>
     </wsdl:message>
     <wsdl:message name="utworzPrzedmiotOdpowiedz">
-        <wsdl:part name="out" element="sru:utworzPrzedmiotOdpowiedz" />
+        <wsdl:part name="out" element="sru:utworzPrzedmiotOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="utworzOceneZapytanie">
-        <wsdl:part name="in" element="sru:utworzOceneZapytanie" />
+        <wsdl:part name="in" element="sru:utworzOceneZapytanie"/>
     </wsdl:message>
     <wsdl:message name="utworzOceneOdpowiedz">
-        <wsdl:part name="out" element="sru:utworzOceneOdpowiedz" />
+        <wsdl:part name="out" element="sru:utworzOceneOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="wyswietlStudentowZapytanie">
-        <wsdl:part name="in" element="sru:wyswietlStudentowZapytanie" />
+        <wsdl:part name="in" element="sru:wyswietlStudentowZapytanie"/>
     </wsdl:message>
     <wsdl:message name="wyswietlStudentowOdpowiedz">
-        <wsdl:part name="out" element="sru:wyswietlStudentowOdpowiedz" />
+        <wsdl:part name="out" element="sru:wyswietlStudentowOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="wyswietlStudentaPoIdZapytanie">
-        <wsdl:part name="in" element="sru:wyswietlStudentaPoIdZapytanie" />
+        <wsdl:part name="in" element="sru:wyswietlStudentaPoIdZapytanie"/>
     </wsdl:message>
     <wsdl:message name="wyswietlStudentaPoIdOdpowiedz">
-        <wsdl:part name="out" element="sru:wyswietlStudentaPoIdOdpowiedz" />
+        <wsdl:part name="out" element="sru:wyswietlStudentaPoIdOdpowiedz"/>
     </wsdl:message>
 
     <wsdl:message name="wyswietlProwadzacychZapytanie">
-        <wsdl:part name="in" element="sru:wyswietlProwadzacychZapytanie" />
+        <wsdl:part name="in" element="sru:wyswietlProwadzacychZapytanie"/>
     </wsdl:message>
     <wsdl:message name="wyswietlProwadzacychOdpowiedz">
-        <wsdl:part name="out" element="sru:wyswietlProwadzacychOdpowiedz" />
+        <wsdl:part name="out" element="sru:wyswietlProwadzacychOdpowiedz"/>
+    </wsdl:message>
+
+    <wsdl:message name="wyswietlPlanZajecPoIdZapytanie">
+        <wsdl:part name="in" element="sru:wyswietlPlanZajecPoIdZapytanie"/>
+    </wsdl:message>
+    <wsdl:message name="wyswietlPlanZajecPoIdOdpowiedz">
+        <wsdl:part name="out" element="sru:wyswietlPlanZajecPoIdOdpowiedz"/>
     </wsdl:message>
 
 
     <wsdl:portType name="SRUEndpoint">
 
         <wsdl:operation name="SRUUtworzUniwersytet">
-            <wsdl:input message="sru:utworzUniwersytetZapytanie" />
-            <wsdl:output message="sru:utworzUniwersytetOdpowiedz" />
+            <wsdl:input message="sru:utworzUniwersytetZapytanie"/>
+            <wsdl:output message="sru:utworzUniwersytetOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUDodajProwadzacegoDoUniwersytetu">
-            <wsdl:input message="sru:dodajProwadzacegoDoUniwersytetuZapytanie" />
-            <wsdl:output message="sru:dodajProwadzacegoDoUniwersytetuOdpowiedz" />
+            <wsdl:input message="sru:dodajProwadzacegoDoUniwersytetuZapytanie"/>
+            <wsdl:output message="sru:dodajProwadzacegoDoUniwersytetuOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUDodajSaleDoUniwersytetu">
-            <wsdl:input message="sru:dodajSaleDoUniwersytetuZapytanie" />
-            <wsdl:output message="sru:dodajSaleDoUniwersytetuOdpowiedz" />
+            <wsdl:input message="sru:dodajSaleDoUniwersytetuZapytanie"/>
+            <wsdl:output message="sru:dodajSaleDoUniwersytetuOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUDodajStudentaDoUniwersytetu">
-            <wsdl:input message="sru:dodajStudentaDoUniwersytetuZapytanie" />
-            <wsdl:output message="sru:dodajStudentaDoUniwersytetuOdpowiedz" />
+            <wsdl:input message="sru:dodajStudentaDoUniwersytetuZapytanie"/>
+            <wsdl:output message="sru:dodajStudentaDoUniwersytetuOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUDodajOsiagnieciaDoStudenta">
-            <wsdl:input message="sru:dodajOsiagnieciaDoStudentaZapytanie" />
-            <wsdl:output message="sru:dodajOsiagnieciaDoStudentaOdpowiedz" />
+            <wsdl:input message="sru:dodajOsiagnieciaDoStudentaZapytanie"/>
+            <wsdl:output message="sru:dodajOsiagnieciaDoStudentaOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUDodajStypendiumDoStudenta">
-            <wsdl:input message="sru:dodajStypendiumDoStudentaZapytanie" />
-            <wsdl:output message="sru:dodajStypendiumDoStudentaOdpowiedz" />
+            <wsdl:input message="sru:dodajStypendiumDoStudentaZapytanie"/>
+            <wsdl:output message="sru:dodajStypendiumDoStudentaOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUUtworzGrupe">
-            <wsdl:input message="sru:utworzGrupeZapytanie" />
-            <wsdl:output message="sru:utworzGrupeOdpowiedz" />
+            <wsdl:input message="sru:utworzGrupeZapytanie"/>
+            <wsdl:output message="sru:utworzGrupeOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUDodajIndexDoGrupy">
-            <wsdl:input message="sru:dodajIndexDoGrupyZapytanie" />
-            <wsdl:output message="sru:dodajIndexDoGrupyOdpowiedz" />
+            <wsdl:input message="sru:dodajIndexDoGrupyZapytanie"/>
+            <wsdl:output message="sru:dodajIndexDoGrupyOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUUtworzPlanZajec">
-            <wsdl:input message="sru:utworzPlanZajecZapytanie" />
-            <wsdl:output message="sru:utworzPlanZajecOdpowiedz" />
+            <wsdl:input message="sru:utworzPlanZajecZapytanie"/>
+            <wsdl:output message="sru:utworzPlanZajecOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUPrzypiszPlanZajecDoGrupy">
-            <wsdl:input message="sru:przypiszPlanZajecDoGrupyZapytanie" />
-            <wsdl:output message="sru:przypiszPlanZajecDoGrupyOdpowiedz" />
+            <wsdl:input message="sru:przypiszPlanZajecDoGrupyZapytanie"/>
+            <wsdl:output message="sru:przypiszPlanZajecDoGrupyOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUDodajDzienDoPlanuZajec">
-            <wsdl:input message="sru:dodajDzienDoPlanuZajecZapytanie" />
-            <wsdl:output message="sru:dodajDzienDoPlanuZajecOdpowiedz" />
+            <wsdl:input message="sru:dodajDzienDoPlanuZajecZapytanie"/>
+            <wsdl:output message="sru:dodajDzienDoPlanuZajecOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUUtworzDzien">
-            <wsdl:input message="sru:utworzDzienZapytanie" />
-            <wsdl:output message="sru:utworzDzienOdpowiedz" />
+            <wsdl:input message="sru:utworzDzienZapytanie"/>
+            <wsdl:output message="sru:utworzDzienOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUUtworzPrzedmiot">
-            <wsdl:input message="sru:utworzPrzedmiotZapytanie" />
-            <wsdl:output message="sru:utworzPrzedmiotOdpowiedz" />
+            <wsdl:input message="sru:utworzPrzedmiotZapytanie"/>
+            <wsdl:output message="sru:utworzPrzedmiotOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUUtworzOcene">
-            <wsdl:input message="sru:utworzOceneZapytanie" />
-            <wsdl:output message="sru:utworzOceneOdpowiedz" />
+            <wsdl:input message="sru:utworzOceneZapytanie"/>
+            <wsdl:output message="sru:utworzOceneOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUWyswietlStudentow">
-            <wsdl:input message="sru:wyswietlStudentowZapytanie" />
-            <wsdl:output message="sru:wyswietlStudentowOdpowiedz" />
+            <wsdl:input message="sru:wyswietlStudentowZapytanie"/>
+            <wsdl:output message="sru:wyswietlStudentowOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUWyswietlStudentaPoId">
-            <wsdl:input message="sru:wyswietlStudentaPoIdZapytanie" />
-            <wsdl:output message="sru:wyswietlStudentaPoIdOdpowiedz" />
+            <wsdl:input message="sru:wyswietlStudentaPoIdZapytanie"/>
+            <wsdl:output message="sru:wyswietlStudentaPoIdOdpowiedz"/>
         </wsdl:operation>
         <wsdl:operation name="SRUWyswietlProwadzacych">
-            <wsdl:input message="sru:wyswietlProwadzacychZapytanie" />
-            <wsdl:output message="sru:wyswietlProwadzacychOdpowiedz" />
+            <wsdl:input message="sru:wyswietlProwadzacychZapytanie"/>
+            <wsdl:output message="sru:wyswietlProwadzacychOdpowiedz"/>
+        </wsdl:operation>
+        <wsdl:operation name="SRUWyswietlPlanZajecPoId">
+            <wsdl:input message="sru:wyswietlPlanZajecPoIdZapytanie"/>
+            <wsdl:output message="sru:wyswietlPlanZajecPoIdOdpowiedz"/>
         </wsdl:operation>
 
     </wsdl:portType>
@@ -535,188 +611,199 @@
 
         <wsdl:operation name="SRUUtworzUniwersytet">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUDodajProwadzacegoDoUniwersytetu">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUDodajSaleDoUniwersytetu">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUDodajStudentaDoUniwersytetu">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUDodajOsiagnieciaDoStudenta">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUDodajStypendiumDoStudenta">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUUtworzGrupe">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUDodajIndexDoGrupy">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUUtworzPlanZajec">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUPrzypiszPlanZajecDoGrupy">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUDodajDzienDoPlanuZajec">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUUtworzDzien">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUUtworzPrzedmiot">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUUtworzOcene">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUWyswietlStudentow">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUWyswietlStudentaPoId">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="SRUWyswietlProwadzacych">
             <soap:operation soapAction="http://sruuniwersytet.com"
-                            style="document" />
+                            style="document"/>
             <wsdl:input>
-                <soap:body parts="in" use="literal" />
+                <soap:body parts="in" use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <soap:body parts="out" use="literal" />
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="SRUWyswietlPlanZajecPoId">
+            <soap:operation soapAction="http://sruuniwersytet.com"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
