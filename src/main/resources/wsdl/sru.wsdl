@@ -360,10 +360,7 @@
             </xs:complexType>
             <xs:complexType name="DzienElement">
                 <xs:sequence>
-                    <xs:element type="xs:long" name="id"/>
                     <xs:element type="xs:date" name="dataDnia"/>
-                    <xs:element type="xs:time" name="odKiedyZajecia"/>
-                    <xs:element type="xs:time" name="doKiedyZajecia"/>
                     <xs:element type="sru:PrzedmiotElement" name="przedmiot" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:complexType>

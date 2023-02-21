@@ -21,9 +21,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class PlanZajecSerwis {
@@ -114,26 +112,19 @@ public class PlanZajecSerwis {
 
             List<Dzien> dzien = dzienRepozytorium.findByPlanZajecId(req.getIdPlanuZajec());
 
-            //zmienić na rozwiązanie ze slacka : utworzyć mape <LocalDate, List<Dzien>>, przeiterować ją, a następnie dodać coś do mapToDzien, aby działało
-            //cel zadania: ma pokazywać 4 x matematyka w 2002-09-25 (zmieniająć godzinę), bo obecnie filtruje dni jedynie zwracając uwagę na datę, na nic innego
-            List<Dzien> filteredDays = new ArrayList<>();
-            for (Dzien d : dzien) {
-                boolean found = false;
-                for (Dzien f : filteredDays) {
-                    if (d.getDataDnia().equals(f.getDataDnia())) {
-                        f.setDataDnia(d.getDataDnia());
-                        found = true;
-                        break;
-                    }
+            Map<LocalDate, List<Dzien>> localDateListMap = new HashMap<>();
+
+            for (Dzien dzien1 : dzien) {
+                List<Dzien> dziens = localDateListMap.get(dzien1.getDataDnia());
+                if (dziens == null) {
+                    localDateListMap.put(dzien1.getDataDnia(), new ArrayList<>());
                 }
-                if (!found) {
-                    filteredDays.add(d);
-                }
+                localDateListMap.get(dzien1.getDataDnia()).add(dzien1);
             }
 
-            filteredDays.forEach(dzien1 -> {
-                response.getDzien().add(mapToDzien(dzien1));
-            });
+            for (Map.Entry<LocalDate, List<Dzien>> localDateListEntry : localDateListMap.entrySet()) {
+                response.getDzien().add(mapToDzien(localDateListEntry.getValue()));
+            }
 
             return response;
         } catch (Exception e) {
@@ -141,23 +132,23 @@ public class PlanZajecSerwis {
         }
     }
 
-    private DzienElement mapToDzien(Dzien dzien) {
+    private DzienElement mapToDzien(List<Dzien> dzien) {
         DzienElement dzienElement = new DzienElement();
-        dzienElement.setId(dzien.getId());
-        dzienElement.setDataDnia(localDateToGregorianCalendar(dzien.getDataDnia()));
-        dzienElement.getPrzedmiot().add(mapToPrzedmiot(dzien.getPrzedmiot()));
+        dzienElement.setDataDnia(localDateToGregorianCalendar(dzien.get(0).getDataDnia()));
+        for (Dzien dzien1 : dzien) {
+            dzienElement.getPrzedmiot().add(mapToPrzedmiot(dzien1));
+        }
         return dzienElement;
     }
 
-    private PrzedmiotElement mapToPrzedmiot(Przedmiot przedmiot) {
+    private PrzedmiotElement mapToPrzedmiot(Dzien dzien) {
         try {
-            Dzien dzienRepo = dzienRepozytorium.findOne(przedmiot.getId());
             PrzedmiotElement przedmiotElement = new PrzedmiotElement();
-            przedmiotElement.setId(przedmiot.getId());
-            przedmiotElement.setNazwa(przedmiot.getNazwa());
-            przedmiotElement.setOdKiedyZajecia(localTimeToGregorianCalendar(dzienRepo.getOdKiedyZajecia()));
-            przedmiotElement.setDoKiedyZajecia(localTimeToGregorianCalendar(dzienRepo.getDoKiedyZajecia()));
-            przedmiotElement.setProwadzacy(mapToProwadzacy(przedmiot.getProwadzacy()));
+            przedmiotElement.setId(dzien.getPrzedmiot().getId());
+            przedmiotElement.setNazwa(dzien.getPrzedmiot().getNazwa());
+            przedmiotElement.setOdKiedyZajecia(localTimeToGregorianCalendar(dzien.getOdKiedyZajecia()));
+            przedmiotElement.setDoKiedyZajecia(localTimeToGregorianCalendar(dzien.getDoKiedyZajecia()));
+            przedmiotElement.setProwadzacy(mapToProwadzacy(dzien.getPrzedmiot().getProwadzacy()));
             return przedmiotElement;
         } catch (Exception e) {
             throw new NieMoznaWyswietlicPlanuZajecException(e);
